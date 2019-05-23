@@ -1,0 +1,252 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;\f2\fnil\fcharset0 Consolas;
+}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue0;}
+\margl1440\margr1440\vieww24320\viewh14120\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 \ul \ulc0 Fundamental
+\b0\fs24 \ulnone \
+\
+\
+1) 
+\b\fs28 Install Latex
+\b0\fs24 : To install the latex program, use the following command:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 sudo apt-get install texlive
+\f0\b0\fs24 \
+\
+\
+2) 
+\b\fs28 Make A Latex File
+\b0\fs24 : To make a latex file, you need to make a 
+\f1\b\fs28 .tex
+\f0\b0\fs24  file using your desired text editor.\
+\
+\ul Example\ulnone : 
+\f1\b gedit file_name.tex
+\f0\b0 \
+\
+\
+3) 
+\b\fs28 Initial Commands
+\fs24 :
+\b0  The initial commands for a latex file (
+\f1\b\fs28 .tex
+\f0\b0\fs24 ) are according to the following:\
+\
+\ul The Commands in Mandatory Order\ulnone :\
+\
+
+\b \cf2 \ul \ulc2 Command A
+\b0 \cf0 \ulnone ) 
+\f1\b\fs28 \\documentclass\{article\}
+\f0\b0\fs24 \
+\
+This command specifies the type of the document for processing.\
+\
+\ul The options for the type\ulnone : 
+\f1\b\fs26 article
+\f0\b0\fs24 , 
+\f1\b\fs26 report
+\f0\b0\fs24  , 
+\f1\b\fs26 letter
+\f0\b0\fs24  , and 
+\f1\b\fs26 book
+\f0\b0\fs24 .\
+\
+
+\b Important
+\b0 : To change the font size of the class, use this command:\
+\
+\ul Command\ulnone : 
+\f1\b\fs26 \\documentclass[font_size]\{article\}
+\f0\b0\fs24 \
+\
+The 
+\f1\b\fs26 font_size
+\f0\b0\fs24  should be in this format: 
+\f1\b\fs26 10pt
+\f0\b0\fs24 , 
+\f1\b\fs26 11pt
+\f0\b0\fs24  , 
+\f1\b\fs26 12pt
+\f0\b0\fs24 \
+\
+
+\b\fs27 Preamble
+\b0\fs24 : It is a space between "\ul Command A\ulnone " and "\ul Command B\ulnone ", which most of the commands that affect the whole document should be included in here.\
+\
+
+\b \cf2 \ul Command B
+\b0 \cf0 \ulnone ) 
+\f1\b\fs28 \\begin\{document\}
+\f0\b0\fs24 \
+\
+
+\b \cf2 \ul Command C
+\b0 \cf0 \ulnone ) 
+\f1\b\fs28 \\end\{document\}
+\f0\b0\fs24 \
+\
+\ul Notice\ulnone : These commands need to be placed in the 
+\f1\b\fs28 .tex
+\f0\b0\fs24  file to be 
+\b \ul executable
+\b0 \ulnone .\
+\
+\
+4) 
+\b\fs28 Executing Latex File
+\b0\fs24 : To execute the latex file, either of the following commands can be used:\
+\
+\ul Command 1\ulnone : 
+\f1\b\fs28 latex file_name.tex
+\f0\b0\fs24 \
+\
+\ul Command 2\ulnone : 
+\f1\b\fs28 pdflatex file_name.tex
+\f0\b0\fs24 \
+\
+\ul Notice\ulnone : The second command provides the output in PDF version.\
+\
+\
+5) 
+\b\fs28 Required and Optional Information
+\b0\fs24 : The \ul required information\ulnone  is included in \ul Braces\ulnone  
+\f1\b\fs28 \{\}
+\f0\b0\fs24  and the \ul optional information\ulnone  is included in \ul Square Brackets\ulnone  
+\f1\b\fs28 []
+\f0\b0\fs24 .\
+\
+\
+6) 
+\b\fs28 Page Numbering and Heading
+\b0\fs24 : To control page numbering and headings, the following commands can be used in preamble:\
+\
+\ul Default Command\ulnone : 
+\f1\b\fs28 \\pagestyle\{plain\}
+\f0\b0\fs24 \
+\
+This command puts the page numbers at the center of the bottom of each page and provides no headings.\
+\
+\ul Another 1 Command\ulnone : 
+\f1\b\fs28 \\pagestyle\{headings\}
+\f0\b0\fs24 \
+\
+This command provides a heading in related pages that a section has been defined (
+\f1\b \\section
+\f0\b0 ) along with the page numbers.\
+\
+\ul Another 2 Command\ulnone : 
+\f1\b\fs28 \\pagestyle\{empty\}
+\f0\b0\fs24 \
+\
+This command provides neither headings nor page numbers.\
+\
+\
+7) 
+\b\fs28 Creating Page Title
+\b0\fs24 : To create a page title (it is a page that only has title), the following command should be used in preamble:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 \\title\{Your_Title\}
+\f0\b0\fs24 \
+\
+
+\b Important
+\b0 : The command 
+\f1\b\fs28 \\maketitle
+\f0\b0\fs24  should be placed immediately after 
+\f1\b \\begin\{document\}
+\f0\b0  command.\
+\
+\
+8) 
+\b\fs28 Creating Section
+\b0\fs24 : To create a section, either of the following commands can be used in the text body. The first command numbers the sections and the second one does not.\
+\
+\ul Command 1\ulnone : 
+\f1\b\fs28 \\section\{Section_Title\}
+\f0\b0\fs24 \
+\
+\ul Command 2\ulnone : 
+\f1\b\fs28 \\section*\{Section_Title\}
+\f0\b0\fs24 \
+\
+\
+9) 
+\b\fs28 Table of Contents
+\b0\fs24 : To construct a table of contents, you need to use the following command in the text body:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 \\tableofcontents
+\f0\b0\fs24 \
+\
+\
+10) 
+\b\fs28 Commenting
+\b0\fs24 : To write a comment in latex environment, the operator 
+\f1\b\fs32 %
+\f0\b0\fs24  should be used.\
+\
+\
+11) 
+\b\fs28 Creating Abstracts
+\b0\fs24 : To create an abstract, the following commands should be used in the text body:\
+\
+\ul Commands\ulnone :\
+\
+
+\f1\b\fs28 \\begin\{abstract\}\
+\
+% The Body of Abstract\
+\
+\\end\{abstract\}
+\f0\b0\fs24 \
+\
+\
+12) 
+\b\fs28 Order of Commands
+\b0\fs24 : The order of commands in the main text body should be according to the following:\
+\
+-- 
+\f2\fs28 \\maketitle
+\f0\fs24 \
+\
+-- 
+\f2\fs28 Abstract Commands
+\f0\fs24 \
+\
+-- 
+\f2\fs28 Table of Content Command
+\f0\fs24 \
+\
+-- 
+\f2\fs28 Other Commands \'85
+\f0\fs24 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

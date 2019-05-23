@@ -1,0 +1,29 @@
+Performance Parameters Extraction in Gem5
+
+1) Cache Occupancy for Level-1 Data Cache (%):
+
+system.cpu.dcache.tags.occ_percent::total
+
+2) Cache Occupancy for Level-1 Instruction Cache (%):
+
+system.cpu.icache.tags.occ_percent::total
+
+3) Miss Rate for Level-1 Data Cache:
+
+system.cpu.dcache.overall_miss_rate::total
+
+4) Miss Rate for Level-1 Instruction Cache:
+
+system.cpu.icache.overall_miss_rate::total
+
+5) Miss Rate for Level-2 Cache:
+
+system.l2.overall_miss_rate::total
+
+6) Branch Target Buffer Hit Rate (%):
+
+system.switch_cpus.branchPred.BTBHitPct (or system.cpu.branchPred.BTBHitPct)
+
+7) Instruction Per Cycle (IPC):
+
+system.switch_cpus.ipc_total (or system.cpu.ipc_total)

@@ -1,0 +1,318 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;\f2\fnil\fcharset0 Consolas;
+}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf0 IC Compiler Tutorial (GUI)
+\b0\fs24 \
+\
+
+\b 1)
+\b0  The following files are required from the synthesis process of your design:\
+\
+\'97 Netlist File (
+\f1\b\fs28 .v
+\f0\b0\fs24 ) and SDC File (
+\f1\b\fs28 .sdc
+\f0\b0\fs24 )\
+\
+
+\b 2)
+\b0  Open Cadence SoC Encounter by:\
+\
+
+\b Command
+\b0 : 
+\f2\fs28 icc_shell -gui
+\f0\fs24 \
+\
+
+\b 3)
+\b0  To setup the application and environment:\
+\
+\'97 
+\b Main Window
+\b0  = File > Setup > Application Setup \'85\
+\
+\'97 Insert the path of the standard cell library \'93
+\f1\b\fs28 .db
+\f0\b0\fs24 \'94 file for \'93
+\b Link library
+\b0 \'94, \'93
+\b Target library
+\b0 \'94, and \'93
+\b Symbol library
+\b0 \'94.\
+\
+4) To create a library:\
+\
+\'97 
+\b Main Window
+\b0  = File > Create Library \'85\
+\
+\'97 
+\b New library path
+\b0 : Insert a directory path that is inside the root directory (\'93
+\f1\b\fs28 test_dir
+\f0\b0\fs24 \'94).\
+\
+\'97 
+\b New library name
+\b0 : Enter a library name.\
+\
+\'97 
+\b Technology file
+\b0 : Insert the library technology file, which has \'93
+\f1\b\fs28 .tf
+\f0\b0\fs24 \'94 format.\
+\
+\'97 
+\b Input reference libraries > Add \'85
+\b0   = A directory that contains the cells is added in here.\
+\
+\'97 Use the \'93
+\b Open Library
+\b0 \'94 check box.\
+\
+5) To setup the TLU environment:\
+\
+\'97 
+\b Main Window
+\b0  = File > Set TLU+ \'85\
+\
+\'97 
+\b Max TLU+ file
+\b0 : Insert the \'93
+\f1\b\fs28 Cmax tluplus
+\f0\b0\fs24 \'94 file.\
+\
+\'97 
+\b Min TLU+ file
+\b0 : Insert the \'93
+\f1\b\fs28 Cmin tluplus
+\f0\b0\fs24 \'94 file.\
+\
+\'97 
+\b Mapping file
+\b0 : Insert the \'93
+\f1\b\fs28 .map
+\f0\b0\fs24 \'94 file.\
+\
+6) Import your design files:\
+\
+\'97 
+\b Main Window
+\b0  = File > Import > Read Verilog \'85\
+\
+\'97 
+\b Input verilog files
+\b0 : Import the Netlist file.\
+\
+\'97 
+\b Main Window
+\b0  = File > Import > Read SDC \'85\
+\
+\'97 
+\b Input file name
+\b0 : Import the design constraints file.\
+\
+7) Let\'92s create a Floorplan:\
+\
+\'97 
+\b Layout Window
+\b0  = Floorplan > Create Floorplan \'85\
+\
+\'97 
+\b Control type
+\b0 : Set to 
+\b Aspect Ratio
+\b0 .\
+\
+\'97 
+\b Core utilization
+\b0 : Set its value to 
+\b 0.7
+\b0 .\
+\
+\'97 In 
+\b Space between core area and terminals
+\b0 :\
+\
+*** \'93
+\i Left
+\i0 \'94, \'93
+\i Right
+\i0 \'94, \'93
+\i Bottom
+\i0 \'94, and \'93
+\i Top
+\i0 \'94 \'97> 10\
+\
+8) Create power and ground rails:\
+\
+\'97 
+\b Layout Window
+\b0  = Preroute > Derive PG Connection \'85\
+\
+\'97 Use \'93
+\b Manual connection
+\b0 \'94.\
+\
+\'97 
+\b Power net
+\b0  = VDD\
+\
+\'97 
+\b Ground net
+\b0  = VSS\
+\
+\'97 
+\b Power pin
+\b0  = VDD\
+\
+\'97 
+\b Ground pin
+\b0  = VSS\
+\
+9) To create power and ground rings:\
+\
+\'97 
+\b Layout Window
+\b0  = Preroute > Create Rings \'85\
+\
+ \'97 Go to 
+\b Rectangular
+\b0  tab.\
+\
+\'97 
+\b Nets
+\b0 : VDD and VSS\
+\
+\'97 Set the 
+\b Around
+\b0  to 
+\b Core
+\b0 .\
+\
+\'97 
+\b Side
+\b0  configuration:\
+\
+*** 
+\b Offset
+\b0  for all of the sides \'97> 
+\b 1
+\b0 \
+\
+*** 
+\b Width
+\b0  for all of the sides \'97> 
+\b 3
+\b0 \
+\
+*** 
+\b Left
+\b0  and 
+\b Right
+\b0  metal layers \'97> 
+\b M5
+\b0 \
+\
+*** 
+\b Bottom
+\b0  and 
+\b Top
+\b0  metal layers \'97> 
+\b M6
+\b0 \
+\
+10) Create power straps:\
+\
+\'97 
+\b Layout Window
+\b0  = Preroute > Create Power Straps \'85\
+\
+\'97 
+\b Nets
+\b0 : VDD and VSS\
+\
+\'97 
+\b Layer
+\b0 : 
+\b M5
+\b0 \
+\
+\'97 
+\b Width
+\b0 : 0.160\
+\
+\'97 In 
+\b Configure by
+\b0 :\
+\
+*** 
+\b Groups
+\b0  (Number of Power Straps) \'97> 40\
+\
+*** 
+\b Step
+\b0  (Distance Between Power Straps) \'97> 2\
+\
+11) Now, perform placement:\
+\
+\'97 
+\b Layout Window
+\b0  = Placement > Core Placement and Optimization \'85\
+\
+12) To preroute standard cells:\
+\
+\'97 
+\b Layout Window
+\b0  = Preroute > Preroute Standard Cells \'85\
+\
+\'97 Go to \'93
+\b Routing Options
+\b0 \'94 tab.\
+\
+\'97 Use the following check boxes:\
+\
+* 
+\i Horizontally
+\i0 \
+\
+* 
+\i Extend to boundaries and generate pins
+\i0 \
+\
+* 
+\i Fill empty rows
+\i0 \
+\
+13) Preroute the instances by:\
+\
+\'97 
+\b Layout Window
+\b0  = Preroute > Preroute Instances \'85\
+\
+14) If your design has CLOCK signal, do this:\
+\
+\'97 In 
+\b Main Window
+\b0 , enter the following command:\
+\
+
+\b Command
+\b0 : 
+\f2\fs28 clock_opt -fix_hold_all_clocks
+\f0\fs24 \
+\
+15) Route your design:\
+\
+\'97 
+\b Layout Window
+\b0  = Route > Core Routing and Optimization \'85\
+\
+16) Export output files, such as Verilog File, and Parasitics File.\
+}

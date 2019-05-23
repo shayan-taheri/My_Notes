@@ -1,0 +1,117 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww21660\viewh11340\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 Creating SimPoint and Checkpoint
+\b0\fs24 \
+\
+
+\b\fs28 1)
+\b0  Find the number of instructions in the program (or benchmark) under test:\
+\
+
+\f1 ./build/X86/gem5.opt --outdir=out_res configs/My_se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello  --caches --l2cache \'96cpu-type=detailed
+\f0 \
+\
+
+\b Notice 1
+\b0 : Different CPU architectures can be used for these steps.\
+\
+
+\b Notice 2
+\b0 : The "
+\f1 Hello World
+\f0 " program is used in this command.\
+\
+
+\b 2)
+\b0  Generate basic block vectors ("
+\f1 .bb
+\f0 " file) for SimPoint tool:\
+\
+
+\f1 ./build/X86/gem5.opt --outdir=out_res configs/My_se.py --simpoint-profile --simpoint-interval=100000000 --cpu-type=AtomicSimpleCPU --fastmem --cmd=tests/test-progs/hello/bin/x86/linux/hello
+\f0 \
+\
+
+\b Notice
+\b0 : The simpoint interval needs to be compatible with the number of instructions in the program under test.\
+\
+
+\b 3)
+\b0  Use the following command in "
+\f1 Makefile
+\f0 " that is present in the SimPoint/bin directory:\
+\
+
+\f1 ./simpoint -loadFVFile /home/shayan/Shayan_Files/Work/gem5/out_res/simpoint.bb.gz -maxK 10 -saveSimpoints /home/shayan/Shayan_Files/Work/gem5/out_res/SimPoint/sample.simpoints -saveSimpointWeights /home/shayan/Shayan_Files/Work/gem5/out_res/SimPoint/sample.weights -inputVectorsGzipped
+\f0 \
+\
+
+\b Notice
+\b0 : The option "
+\f1 maxK
+\f0 " represents the maximum number of clusters (or intervals).\
+\
+
+\b 4)
+\b0  The following command is used in order to find the instruction number of each simpoint:\
+\
+
+\f1 ./build/X86/gem5.opt --outdir=out_res configs/My_se.py --take-simpoint-checkpoint=/home/shayan/Shayan_Files/Work/gem5/out_res/SimPoint/sample.simpoints,/home/shayan/Shayan_Files/Work/gem5/out_res/SimPoint/sample.weights,interval_length,warmup_length --cmd=tests/test-progs/hello/bin/x86/linux/hello
+\f0 \
+\
+
+\b Notice 1
+\b0 : The value for "
+\f1 interval_length
+\f0 " parameter should be equal to the used value in Step 2.\
+\
+
+\b Notice 2
+\b0 : The value for "
+\f1 warmup_length
+\f0 " parameter can be considered equal to 0.\
+\
+
+\b 5)
+\b0  After getting the instruction number of desired simpoint, enter the following command in order to create a checkpoint for it:\
+\
+
+\f1 ./build/X86/gem5.opt --outdir=out_res configs/My_se.py --at-instruction --take-checkpoints=Instruction_Number --cmd=tests/test-progs/hello/bin/x86/linux/hello
+\f0 \
+\
+
+\b Notice
+\b0 : The value for "
+\f1 Instruction_Number
+\f0 " parameter is specified based on the result of Step 4.\
+\
+
+\b 6)
+\b0  In order to restore checkpoint and run a simulation, use the following command:\
+\
+
+\f1 ./build/X86/gem5.opt --outdir=out_res configs/My_se.py --checkpoint-dir=out_res --at-instruction --checkpoint-restore=Instruction_Number --caches --l2cache --cpu-type=detailed --maxinsts=100000000 --cmd=tests/test-progs/hello/bin/x86/linux/hello
+\f0 \
+\
+
+\b Notice
+\b0 : The "
+\f1 maxinsts
+\f0 " parameter shows the desired number of instructions for simulation.\
+\
+
+\b 7)
+\b0  
+\b Remember
+\b0 : The path to the executable file of a benchmark and its input data file 
+\b must
+\b0  be the same during this process (
+\b before
+\b0  and 
+\b after
+\b0  creation of sim-points and checkpoint). Otherwise, the created checkpoint will not be restored.\
+}

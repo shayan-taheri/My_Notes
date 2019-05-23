@@ -1,0 +1,231 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas;\f2\fnil\fcharset0 Consolas-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red8\green35\blue87;\red38\green38\blue38;\red43\green80\blue140;
+\red42\green139\blue0;}
+\margl1440\margr1440\vieww14900\viewh9740\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs32 \cf0 Setting Up Gem5
+\b0\fs24 \
+\
+\pard\pardeftab720
+
+\f1 \cf0 echo \cf2 "export GEM5_HOME=$PWD"\cf3  \cf0 >> ~/.bashrc
+\f0 \
+\pard\pardeftab720
+\cf3 \
+\pard\pardeftab720
+
+\f1 \cf0 source ~/.bashrc
+\f0 \
+\
+
+\b\fs32 Building X86 Architecture (Compilation)
+\b0\fs24 \
+\
+
+\b Format
+\b0 : 
+\f1 scons <\cf4 build\cf3  \cf0 dir>/<\cf4 configuration\cf0 >/<\cf4 target\cf0 >
+\f0 \
+\
+In the root directory, please enter:  
+\f1 scons build/X86/gem5.opt -j4
+\f0 \
+\
+\ul Configuration\ulnone : ALPHA, ARM, MIPS, POWER, SPARC, or X86.\
+\
+\ul Typical Value for Target\ulnone : gem5.debug, gem5.opt, gem5.fast, gem5.prof, or gem5.perf.\
+\
+
+\b -jN
+\b0 : Turning on multi-thread compilation. Parameter 
+\b N
+\b0  specifies the number of threads.\
+\
+\ul Notice\ulnone : the output of compilation process is an executable binary file.\
+\
+
+\b\fs32 Gem5 Modes
+\b0\fs24 \
+\
+1) Full System (FS): For booting operating system.\
+\
+2) Syscall Emulation (SE): For running individual applications.\
+\
+\ul Notice\ulnone : SE cannot guarantee to support the simulation of all applications.\
+\
+
+\b\fs32 Running Gem5 Simulation
+\b0\fs24 \
+\
+
+\b Format
+\b0 : 
+\f1 <gem5 binary> [gem5 binary's options] <simulation script (python)> [script's options]
+\f0 \
+\
+
+\b\fs32 Setting Up Environment for SPEC Benchmarks
+\b0\fs24 \
+\
+1) Enter the following command only one time:\
+\
+
+\f1 echo export PERL5LIB=/opt/software/architecture/util:\\$PERL5LIB >> ~/.bashrc
+\f0 \
+\pard\pardeftab720
+\cf3 \
+\pard\pardeftab720
+
+\f1 \cf0 source ~/.bashrc
+\f0 \
+\
+2) For each directory under simulation, enter the following command:\
+\
+
+\f1 /opt/software/architecture/util/setenvall.pl
+\f0 \
+\
+
+\b\fs32 SimPoints (Simulation Points) of SPEC and PARSEC Benchmarks
+\b0\fs24 \
+\
+They are in the following directory:\
+\
+
+\b SPEC
+\b0 : 
+\f1 /opt/software/architecture/spec2k6_simpoint
+\f0 \
+\
+
+\b PARSEC
+\b0 : 
+\f1 \cf3 /opt/software/architecture/PARSEC2.1.ckpts/v5
+\f0 \cf0 \
+\
+\ul Notice\ulnone : The options for using checkpoints are according to the following:\
+\
+1) 
+\f1 --checkpoint-dir=
+\f0  : It needs the directory of the checkpoint.\
+\
+2) 
+\f1 --checkpoint-restore=
+\f0  : It needs the instruction number of the checkpoint to be restored.\
+\
+3) 
+\f1 --simpoint
+\f0 : It specifies the usage of "SimPoint" instruction number.\
+\
+
+\b\fs32 Out-Of-Order (O3) Processor
+\b0\fs24 \
+\
+The command of simulation uses "Atomic CPU" by default, which is an extremely fast but less accurate CPU model.\
+\
+For turning on the O3 CPU model, provide the following flags for the python script:\
+\
+\pard\pardeftab720
+
+\f1 \cf3 --caches --l2cache --cpu-type=detailed
+\f0 \
+\
+
+\b\fs32 Running SPEC Benchmarks (Example)
+\b0\fs24 \
+\
+\pard\pardeftab720
+
+\f1 \cf0 $GEM5_HOME/build/X86/gem5.opt --stats-file=tonto.o3stats.txt $GEM5_HOME/configs/cmp.py -b tonto --checkpoint-dir=/opt/software/architecture/spec2k6_simpoint/\cf5 465\cf0 .tonto/ -r \cf5 426005016\cf3  \cf0 -S --caches --l2cache --cpu-type=detailed --maxinsts=\cf5 10000000
+\f0 \
+\cf0 \
+\ul Notice\ulnone : The configuration of a simulation can be found in "config.ini" and "config.json" files.\
+\
+
+\b\fs32 Processor Parameters
+\b0\fs24 :\
+\
+Some of the processor parameters can be modified in "cmp.py" file.\
+\
+
+\b\fs32 Architectural Modifications
+\b0\fs24 \
+\
+After the desired modifications have been done on the processor (in Source Files), the gem5 needs to be compiled again.\
+\
+
+\b\fs32 Debug/Verify Architectural Modifications
+\b0\fs24 \
+\
+The applied modifications on the architecture of the processor can be verified by providing 
+\f2\b --debug-flags=IQ
+\f0\b0  option to the gem5.opt executable binary file.\
+\
+
+\b\fs32 Applying Patches
+\b0\fs24 \
+\
+Several patches are required to be used for correct simulation of gem5 with ruby memory system using ALPHA processor or etc.
+\fs28 \
+
+\fs24 \
+To apply patches, enter: 
+\f1 /opt/software/architecture/util/patches/apply.sh
+\f0 \
+\
+
+\b\fs32 Enabling Ruby Memory System
+\b0\fs24 \
+\
+
+\f1 scons PROTOCOL=MOESI_CMP_directory RUBY=True build/ALPHA/gem5.opt
+\f0 \
+\
+
+\b\fs32 Full System Simulation
+\b0\fs24 \
+\
+Please follow the below steps:\
+\
+1) Enter the following command only once:\
+\
+
+\f1 echo \cf2 "export M5_PATH=$PWD"\cf3  \cf0 >> ~/.bashrc
+\f0 \cf3 \
+\cf0 \
+
+\f1 source ~/.bashrc
+\f0 \
+\
+2) Acquire system images and kernel.\
+\
+
+\f1 ln -s /opt/software/architecture/fs-alpha/binaries
+\f0 \
+\pard\pardeftab720
+\cf3 \
+\pard\pardeftab720
+
+\f1 \cf0 ln -s /opt/software/architecture/fs-alpha/disks
+\f0 \
+\
+
+\b\fs32 PARSEC Benchmarks
+\b0\fs24 \
+\
+They consist of several parallel programs that can be used for comprehensive evaluation of multi-core processors. These benchmarks are built into FS system images.\
+\
+\pard\pardeftab720
+
+\b\fs32 \cf3 Running PARSEC Benchmarks (Example)
+\b0\fs24 \
+\
+\pard\pardeftab720
+
+\f1 \cf0 ./build/ALPHA/gem5.opt ./configs/example/ruby_fs.py -n \cf5 8\cf3  \cf0 --restore-with-cpu=detailed --cpu-type=detailed --mem-size=1024MB --checkpoint-dir=/opt/software/architecture/PARSEC2.\cf5 1\cf0 .ckpts/v5/blackscholes -r \cf5 1
+\f0 \
+\
+}
