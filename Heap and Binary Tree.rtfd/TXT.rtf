@@ -1,0 +1,1835 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset178 GeezaPro;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww16240\viewh9720\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 Heap and Binary Tree
+\b0\fs32 \
+\
+\pard\pardeftab720\sa20\rtlpar\qj
+
+\f1\b \cf0 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0 \
+
+\b0 \
+
+\f1 \uc0\u1740 \u1705 
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'c7\'d3\'ca\'a1
+\f0  
+\f1 \'e5\'d1\'90\'c7\'e5
+\f0  
+\f1 \'ca\'e3\'c7\'e3\uc0\u1740 
+\f0  
+\f1 \'d3\'d8\'e6\'cd
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'db\uc0\u1740 \'d1
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'c7\'cd\'ca\'e3\'c7\'e1\'c7
+\f0  
+\f1 \'c2\'ce\'d1\uc0\u1740 \'e4
+\f0  
+\f1 \'d3\'d8\'cd
+\f0  
+\f1 \'81\'d1
+\f0  
+\f1 \'c8\'e6\'cf\'e5\'a1
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c8\'d1\'90
+\f0 \uc0\u8204 
+\f1 \'e5\'c7\uc0\u1740 
+\f0  
+\f1 \'d3\'d8\'cd
+\f0  
+\f1 \'c2\'ce\'d1
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'d3\'e3\'ca
+\f0  
+\f1 \'8d\'81
+\f0  
+\f1 \'de\'d1\'c7\'d1
+\f0  
+\f1 \'90\'d1\'dd\'ca\'e5
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf
+\f0 . 
+\f1 \'cf\'d1
+\f0  
+\f1 \'e6\'c7\'de\'da
+\f0  
+\f1 \'ca\'e3\'c7\'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'d1\'90
+\f0 \uc0\u8204 
+\f1 \'e5\'c7\uc0\u1740 
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'cf\'e6
+\f0  
+\f1 \'d3\'d8\'cd
+\f0  
+\f1 \'c2\'ce\'d1
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'de\'d1\'c7\'d1
+\f0  
+\f1 \'cf\'c7\'d1\'e4\'cf
+\f0 .\
+\
+
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \'de\'c7\'c8\'e1
+\f0  
+\f1 \'e4\'e3\'c7\uc0\u1740 \'d4
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'e1\uc0\u1740 \'e4\u1705 
+\f0  
+\f1 \'e1\uc0\u1740 \'d3\'ca
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c2\'d1\'c7\uc0\u1740 \'e5
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\'d4\'cf
+\f0 .\
+\
+
+\f1 \'e4\uc0\u1705 \'ca\'e5
+\f0  : 
+\f1 \'c8\'d1
+\f0  
+\f1 \'c7\'d3\'c7\'d3
+\f0  
+\f1 \'e4\'e6\'da
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'a1
+\f0  
+\f1 \uc0\u1740 \u1705 \u1740 
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'cf\'e6
+\f0  
+\f1 \'cd\'c7\'e1\'ca
+\f0  
+\f1 \'e1\uc0\u1740 \'e4\u1705 
+\f0  
+\f1 \'e1\uc0\u1740 \'d3\'ca
+\f0  
+\f1 \uc0\u1740 \'c7
+\f0  
+\f1 \'c2\'d1\'c7\uc0\u1740 \'e5
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'e4\'e3\'c7\uc0\u1740 \'d4\u1740 
+\f0  
+\f1 \'c8\'e5\uc0\u1740 \'e4\'e5
+\f0  
+\f1 \'ca\'d1
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'e3\uc0\u1740 \'d2\'c7\'e4
+\f0  
+\f1 \'e3\'d5\'d1\'dd
+\f0  
+\f1 \uc0\u1705 \'e3\'ca\'d1
+\f0  
+\f1 \'cd\'c7\'dd\'d9\'e5
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'e3\'c7
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'cf\'e5\'cf
+\f0 .\
+
+\f1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\b \cf0 \'e4\uc0\u1705 \'ca\'e5 \'c8\'d3\u1740 \'c7\'d1 \'e3\'e5\'e3 
+\f2 :
+\f1  
+\b0 \'cf\'d1\'ce\'ca \'ce\'c7\'e1\uc0\u1740  \u1740 \'da\'e4\u1740  \'c2\'cf\'d1\'d3 \'ca\'e4\'e5\'c7 \'90\'d1\'e5 \'e3\'e6\'cc\'e6\'cf \'cf\'d1 \'c2\'e4 \'c8\'d1\'c7\'c8\'d1 
+\f2 ''
+\f1  \'e4\'e6\'e1 
+\f2 '' 
+\f1 \'c8\'c7\'d4\'cf
+\f2 . 
+\f1 \'cf\'d1 \'e4\'ca\uc0\u1740 \'cc\'e5
+\f2  
+\f1 \'c7\'d2
+\f2  
+\f1 \'c2\'cf\'d1\'d3
+\f2  
+\f1 \'90\'d1\'e5 \'e5\'c7
+\f2  
+\f1 \'c8\'d1\'c7\uc0\u1740 
+\f2  
+\f1 \'c8\'d1\'d1\'d3\uc0\u1740 
+\f2  
+\f1 \'c2\'e4
+\f2  
+\f1 \'e5\'c7
+\f2  
+\f1 \'e6
+\f2  
+\f1 \'e1\uc0\u1740 \'e4\u1705 
+\f2  
+\f1 \uc0\u1705 \'d1\'cf\'e4
+\f2  
+\f1 \'c2\'e4
+\f2  
+\f1 \'e5\'c7
+\f2  
+\f1 \'c8\'e5
+\f2  
+\f1 \'e5\'e3
+\f2  
+\f1 \'c7\'d3\'ca\'dd\'c7\'cf\'e5
+\f2  
+\f1 \'e3\uc0\u1740 
+\f2  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f2  
+\f1 \'e6
+\f2  
+\f1 \'c8\'e5
+\f2  
+\f1 \'e5\'e3\uc0\u1740 \'e4
+\f2  
+\f1 \'cf\'e1\uc0\u1740 \'e1
+\f2  
+\f1 \'e4\uc0\u1740 \'c7\'d2
+\f2  
+\f1 \'c8\'e5
+\f2  
+\f1 \'c7\'d4\'c7\'d1\'e5 \'90\'d1 \'e5\'c7 \'cf\'c7\'d1\uc0\u1740 \'e3.
+\f0 \
+\pard\pardeftab720\sa20\rtlpar\qj
+\cf0 \
+
+\f1 \'90\'d1\'e5
+\f0 \uc0\u8204 
+\f1 \'e5\'c7\uc0\u1740 
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'d4\'d1\'e6\'da
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'e5\'d1
+\f0  
+\f1 \'d3\'d8\'cd
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'8d\'81
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'d1\'c7\'d3\'ca
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'ca\'d1\'ca\uc0\u1740 \'c8
+\f0  
+\f1 \'d4\'e3\'c7\'d1\'e5
+\f0 \uc0\u8204 
+\f1 \'90\'d0\'c7\'d1\uc0\u1740 
+\f0  
+\f1 \'d4\'cf\'e5
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'e3\'de\'cf\'c7\'d1
+\f0  
+\f1 \'e5\'d1
+\f0  
+\f1 \uc0\u1705 \'cf\'c7\'e3
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'90\'d1\'e5
+\f0 \uc0\u8204 
+\f1 \'e5\'c7
+\f0 \'a0
+\f1 \'c8\'c7
+\f0  
+\f1 \'ca\'e6\'cc\'e5
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'d4\'e3\'c7\'d1\'e5
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \uc0\u1740 \u1705 \u1740 
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'ce\'c7\'e4\'e5
+\f0 \uc0\u8204 
+\f1 \'e5\'c7\uc0\u1740 
+\f0  
+\f1 \'c2\'d1\'c7\uc0\u1740 \'e5
+\f0  
+\f1 \'de\'d1\'c7\'d1
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \'90\uc0\u1740 \'d1\'cf
+\f0 .\
+\
+
+\f1 \'e3\'cb\'c7\'e1
+\f0  :\
+\
+\pard\pardeftab720\sa20\rtlpar\qc
+
+\fs24 \cf0 {{\NeXTGraphic 012_01.jpg \width4725 \height4050 \noorient
+}¬}\pard\pardeftab720\sa20\rtlpar\qc
+
+\fs32 \cf0 \
+\
+\
+\pard\pardeftab720\sa20\rtlpar\qc
+
+\fs24 \cf0 {{\NeXTGraphic 012_02.jpg \width5520 \height1095 \noorient
+}¬}\pard\pardeftab720\sa20\rtlpar\qc
+
+\fs32 \cf0 \
+\
+\pard\pardeftab720\sa20\rtlpar\qr
+\cf0 \
+
+\f1 \'e4\uc0\u1705 \'ca\'e5
+\f0  : 
+\f1 \'ca\'e6\'c7\'c8\'da
+\f0  Left 
+\f1 \'a1
+\f0 Parent\'a0
+\f1 \'e6
+\f0  Right 
+\f1 \'d4\'e3\'c7\'d1\'e5
+\f0  
+\f1 \uc0\u1740 \u1705 
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'90\uc0\u1740 \'d1\'e4\'cf
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'ca\'d1\'ca\uc0\u1740 \'c8
+\f0  
+\f1 \'d4\'e3\'c7\'d1\'e5
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'e6\'c7\'e1\'cf\'a1
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf
+\f0  
+\f1 \'8d\'81
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf
+\f0  
+\f1 \'d1\'c7\'d3\'ca
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'c8\'d1
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'90\'d1\'cf\'c7\'e4\'e4\'cf
+\f0 .\
+\
+\pard\pardeftab720\sa20\qc
+\cf0 Parent( i ) = [ i / 2 ]\'a0 \'a0\'a0 ,\'a0 \'a0 \'a0Left( i ) = 2 i\'a0\'a0\'a0\'a0 ,\'a0\'a0\'a0\'a0 Right( i ) = 2 i + 1\
+\
+\pard\pardeftab720\sa20\qr
+\cf0 \uc0\u8235 *\uc0\u8236  
+\f1 \'e3\'e4\'d9\'e6\'d1
+\f0  
+\f1 \'c7\'d2
+\f0  [ ] 
+\f1 \'cc\'d2\'c1
+\f0  
+\f1 \'d5\'cd\uc0\u1740 \'cd
+\f0  (
+\f1 \uc0\u1705 \'dd
+\f0 ) 
+\f1 \'da\'cf\'cf
+\f0  
+\f1 \'c7\'d3\'ca
+\f0 .\
+\
+
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \'81\'d1
+\f0 \uc0\u8204 \uc0\u8235 :\uc0\u8236  
+\f1 \'cf\'d1
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \'81\'d1
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'e5\'d1
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\uc0\u1740 \'d3\'ca
+\f0  
+\f1 \'cd\'ca\'e3\'c7
+\f0  
+\f1 \'cf\'e6
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf
+\f0  
+\f1 \'ce\'e6\'cf
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'cf\'c7\'d4\'ca\'e5
+\f0  
+\f1 \'c8\'c7\'d4\'cf
+\f0 \uc0\u8235 .\uc0\u8236  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \'81\'d1
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\uc0\u1740 \'d3\'ca
+\f0  
+\f1 \'e5\'e3\'e5
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'e5\'c7\uc0\u1740 \'d4
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'c8\'c7\'d4\'cf
+\f0 \uc0\u8235 .\uc0\u8236 \
+\
+
+\f1 \'e4\uc0\u1705 \'ca\'e5
+\f0  \uc0\u8235 :\uc0\u8236  
+\f1 \'dd\'d1\'d2\'e4\'cf\'c7\'e4\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'cf\uc0\u1740 \'90\'d1
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf
+\f0  
+\f1 \'e4\'cf\'c7\'d4\'ca\'e5
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'e4\'c7\'e3\uc0\u1740 \'cf\'e5
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'d4\'e6\'e4\'cf
+\f0 \uc0\u8235 .\uc0\u8236 \
+\
+
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  \uc0\u8235 :\uc0\u8236 \uc0\u8204  
+\f1 \'cf\'d1
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\uc0\u1740 \'d3\'ca
+\f0  
+\f1 \'e5\'e3\'e5
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf\'c7\'e4
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'cf\'c7\'d4\'ca\'e5
+\f0  
+\f1 \'c8\'c7\'d4\uc0\u1740 \'e3
+\f0  
+\f1 \'e6\'e1\uc0\u1740 
+\f0  
+\f1 \'e1\'d2\'e6\'e3\uc0\u1740 
+\f0  
+\f1 \'e4\'cf\'c7\'d1\'cf
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'e5\'e3\'e5
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'e5\'c7
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'cf\'c7\'d4\'ca\'e5
+\f0  
+\f1 \'c8\'c7\'d4\uc0\u1740 \'e3
+\f0 \uc0\u8235 .\uc0\u8236  
+\f1 \'e1\'c7\'d2\'e3
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'d0\uc0\u1705 \'d1
+\f0  
+\f1 \'c7\'d3\'ca
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'e5\'c7
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\uc0\u1740 \'d3\'ca
+\f0  
+\f1 \'ca\'c7
+\f0  
+\f1 \'cd\'cf
+\f0  
+\f1 \'c7\'e3\uc0\u1705 \'c7\'e4
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'d3\'e3\'ca
+\f0  
+\f1 \'8d\'81
+\f0  
+\f1 \'ca\'d1\uc0\u1740 \'e4
+\f0  
+\f1 \'e3\uc0\u1705 \'c7\'e4
+\f0  
+\f1 \'e5\'c7\uc0\u1740 
+\f0  
+\f1 \'e3\'e3\uc0\u1705 \'e4
+\f0  
+\f1 \'de\'d1\'c7\'d1
+\f0  
+\f1 \'90\'d1\'dd\'ca\'e5
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf
+\f0 \uc0\u8235 .\uc0\u8236 \
+\
+
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'e3\'e6\'d1\'c8
+\f0  \uc0\u8235 :\uc0\u8236  
+\f1 \'cf\'d1
+\f0  
+\f1 \'c7\uc0\u1740 \'e4
+\f0  
+\f1 \'cd\'c7\'e1\'ca
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'ca\'e4\'e5\'c7
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \uc0\u1740 \u1705 
+\f0  
+\f1 \'d8\'d1\'dd
+\f0  
+\f1 \uc0\u1740 \'da\'e4\u1740 
+\f0  
+\f1 \'8d\'81
+\f0  
+\f1 \'e6
+\f0  
+\f1 \uc0\u1740 \'c7
+\f0  
+\f1 \'d1\'c7\'d3\'ca
+\f0  
+\f1 \'d1\'d4\'cf
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e4\'cf
+\f0 \uc0\u8235 .\uc0\u8236  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'e3\'e6\'d1\'c8
+\f0  
+\f1 \'c8\'e5\'ca\'d1
+\f0  
+\f1 \'c7\'d3\'ca
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'e1\uc0\u1740 \'e4\u1705 
+\f0  
+\f1 \'e1\uc0\u1740 \'d3\'ca
+\f0  
+\f1 \'81\uc0\u1740 \'c7\'cf\'e5
+\f0  
+\f1 \'d3\'c7\'d2\uc0\u1740 
+\f0  
+\f1 \'90\'d1\'cf\'cf
+\f0 \uc0\u8235 .\uc0\u8236 \
+\
+
+\f1 \'ca\'e6\'cc\'e5
+\f0  \uc0\u8235 :\uc0\u8236  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'81\'d1
+\f0  
+\f1 \uc0\u1740 \'c7
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'c8\'e5\'ca\'d1
+\f0  
+\f1 \'c7\'d3\'ca
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'c2\'d1\'c7\uc0\u1740 \'e5
+\f0  
+\f1 \'e4\'e3\'c7\uc0\u1740 \'d4
+\f0  
+\f1 \'cf\'c7\'cf\'e5
+\f0  
+\f1 \'d4\'e6\'cf
+\f0 \uc0\u8235 .\uc0\u8236 \
+\
+
+\f1 \'e4\uc0\u1705 \'ca\'e5
+\f0  
+\f1 \'e3\'e5\'e3
+\f0  \uc0\u8235 :\uc0\u8236  
+\f1 \'da\'e1\'ca
+\f0  
+\f1 \'c7\uc0\u1740 \'e4\u1705 \'e5
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'90\'e6\uc0\u1740 \u1740 \'e3
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'e5\'c7
+\f0  
+\f1 \'ca\'c7
+\f0  
+\f1 \'cd\'cf
+\f0  
+\f1 \'c7\'e3\uc0\u1705 \'c7\'e4
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'d3\'e3\'ca
+\f0  
+\f1 \'8d\'81
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf
+\f0  
+\f1 \'c7\uc0\u1740 \'e4
+\f0  
+\f1 \'c7\'d3\'ca
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'ce\'e6\'c7\'e5\uc0\u1740 \'e3
+\f0  
+\f1 \'c2\'d1\'c7\uc0\u1740 \'e5
+\f0  
+\f1 \'e3\'ca\'d1\'c7\uc0\u1705 \'e3
+\f0  
+\f1 \'ca\'d1\uc0\u1740 
+\f0  
+\f1 \'cf\'c7\'d4\'ca\'e5
+\f0  
+\f1 \'c8\'c7\'d4\uc0\u1740 \'e3
+\f0  
+\f1 \'d2\uc0\u1740 \'d1\'c7
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'e5\'c7
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'e5\'d1
+\f0  
+\f1 \'d3\'d8\'cd
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'d3\'e3\'ca
+\f0  
+\f1 \'8d\'81
+\f0  
+\f1 \'d4\'e3\'c7\'d1\'e5
+\f0  
+\f1 \'90\'d0\'c7\'d1\uc0\u1740 
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'90\'d1\'cf\'e4\'cf
+\f0 \uc0\u8235 .\uc0\u8236 \
+\
+
+\f1 \'e4\uc0\u1705 \'ca\'e5
+\f0  \uc0\u8235 :\uc0\u8236   
+\f1 \'d4\'e3\'c7\'d1\'e5
+\f0  
+\f1 \'90\'d0\'c7\'d1\uc0\u1740 
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'e5\'c7
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \uc0\u1740 \u1705 
+\f0  
+\f1 \'d4\'d1\'e6\'da
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0  
+\f1 \uc0\u1740 \'da\'e4\u1740 
+\f0  
+\f1 \'d4\'e3\'c7\'d1\'e5
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \uc0\u1740 \u1705 
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\'d4\'cf
+\f0 \uc0\u8235 .\uc0\u8236 \
+\
+\pard\pardeftab720\sa20\rtlpar\qj
+
+\f1\b \cf0 \'e5\'d1\'e3
+\f0  
+\f1 \'e3\'c7\uc0\u1705 \'d2\u1740 \'e3\'e3
+\f0  (
+\f1 \'e3\'c7\uc0\u1705 \'d3
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  / max-heap)\
+
+\b0 \
+
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1\u1740 
+\f0  
+\f1 \'c7\'d3\'ca
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'e3\'de\'cf\'c7\'d1
+\f0  
+\f1 \'e5\'d1
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'c8\uc0\u1740 \'d4\'ca\'d1
+\f0  
+\f1 \uc0\u1740 \'c7
+\f0  
+\f1 \'e3\'d3\'c7\'e6\uc0\u1740 
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf\'c7\'e4
+\f0  
+\f1 \'ce\'e6\'cf
+\f0  
+\f1 \'c7\'d3\'ca
+\f0 .\
+\
+
+\f1 \'e3\'cb\'c7\'e1
+\f0  :\
+\
+\
+\pard\pardeftab720\sa20\rtlpar\qc
+\cf0 \'a0{\field{\*\fldinst{HYPERLINK "http://www.algorithmha.ir/post-%D8%AF%D8%B1%D8%AE%D8%AA-%D9%87%DB%8C%D9%BE.aspx"}}{\fldrslt 
+\fs24 {{\NeXTGraphic 012_03.jpg \width4860 \height4095 \noorient
+}¬}}}\
+\
+\
+\pard\pardeftab720\sa20\rtlpar\qc
+{\field{\*\fldinst{HYPERLINK "http://www.algorithmha.ir/post-%D8%AF%D8%B1%D8%AE%D8%AA-%D9%87%DB%8C%D9%BE.aspx"}}{\fldrslt 
+\fs24 \cf0 {{\NeXTGraphic 012_04.jpg \width6720 \height1080 \noorient
+}¬}}}\pard\pardeftab720\sa20\rtlpar\qc
+\cf0 \
+\
+\
+\pard\pardeftab720\sa20\rtlpar\qj
+
+\f1\b \cf0 \'e5\'d1\'e3
+\f0  
+\f1 \'e3\uc0\u1740 \'e4\u1740 \'e3\'e3
+\f0  (
+\f1 \'e3\uc0\u1740 \'e4
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  / min-heap)\
+
+\b0 \
+
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1\u1740 
+\f0  
+\f1 \'c7\'d3\'ca
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'e3\'de\'cf\'c7\'d1
+\f0  
+\f1 \'e5\'d1
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \uc0\u1705 \'e3\'ca\'d1
+\f0  
+\f1 \uc0\u1740 \'c7
+\f0  
+\f1 \'e3\'d3\'c7\'e6\uc0\u1740 
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf\'c7\'e4
+\f0  
+\f1 \'ce\'e6\'cf
+\f0  
+\f1 \'c7\'d3\'ca
+\f0 .\
+\
+\pard\pardeftab720\sa20\rtlpar\qr
+
+\f1 \cf0 \'e3\'cb\'c7\'e1
+\f0  :\
+\pard\pardeftab720\sa20\rtlpar\qc
+\cf0 \
+\pard\pardeftab720\sa20\rtlpar\qc
+{\field{\*\fldinst{HYPERLINK "http://www.algorithmha.ir/post-%D8%AF%D8%B1%D8%AE%D8%AA-%D9%87%DB%8C%D9%BE.aspx"}}{\fldrslt 
+\fs24 \cf0 {{\NeXTGraphic 012_05.jpg \width4770 \height4110 \noorient
+}¬}}}\pard\pardeftab720\sa20\rtlpar\qc
+\cf0 \
+\
+\
+\pard\pardeftab720\sa20\rtlpar\qc
+{\field{\*\fldinst{HYPERLINK "http://www.algorithmha.ir/post-%D8%AF%D8%B1%D8%AE%D8%AA-%D9%87%DB%8C%D9%BE.aspx"}}{\fldrslt 
+\fs24 \cf0 {{\NeXTGraphic 012_06.jpg \width6765 \height1020 \noorient
+}¬}}}\pard\pardeftab720\sa20\rtlpar\qc
+\cf0 \
+\
+\pard\pardeftab720\sa20\rtlpar\qj
+
+\f1\b \cf0 \'d3\'c7\'ce\'ca\'e4
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  Heap\
+
+\b0 \
+\'a0
+\f1 \'d3\'c7\'ce\'ca\'e4
+\f0  
+\f1 \uc0\u1740 \u1705 
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  heap 
+\f1 \'cf\'d1
+\f0  
+\f1 \'e6\'c7\'de\'da
+\f0  
+\f1 \'e6\'c7\'d1\'cf
+\f0  
+\f1 \uc0\u1705 \'d1\'cf\'e4
+\f0  
+\f1 \'e3\'ca\'e6\'c7\'e1\uc0\u1740 
+\f0  
+\f1 \'90\'d1\'e5
+\f0 \uc0\u8204 
+\f1 \'e5\'c7
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'c7\'d3\'ca
+\f0 .\
+\
+
+\f1\b \'cf\'d1\'cc
+\f0  
+\f1 \'90\'d1\'e5
+\f0 \'a0
+\f1 \'cf\'d1
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  Heap\
+\
+
+\f1\b0 \'c8\'d1\'c7\uc0\u1740 
+\f0  
+\f1 \'e6\'c7\'d1\'cf
+\f0  
+\f1 \uc0\u1705 \'d1\'cf\'e4
+\f0  
+\f1 \uc0\u1740 \u1705 
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  heap
+\f1 \'a1
+\f0  
+\f1 \'d8\uc0\u1740 
+\f0  
+\f1 \'cf\'e6
+\f0  
+\f1 \'e3\'d1\'cd\'e1\'e5
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'d5\'e6\'d1\'ca
+\f0  
+\f1 \'d2\uc0\u1740 \'d1
+\f0  
+\f1 \'da\'e3\'e1
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0 :\
+\
+1- 
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'e3\'dd\'d1\'e6\'d6
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'e3\'cd\'e1\uc0\u1740 
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'c8\'e6\'cf\'e4
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'e5\'e3
+\f0  
+\f1 \'e4\'ce\'e6\'d1\'cf
+\f0 \'a0(
+\f1 \'c8\'cf\'e6\'e4
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'e4\'d9\'d1
+\f0  
+\f1 \'90\'d1\'dd\'ca\'e4
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  max-heap 
+\f1 \uc0\u1740 \'c7
+\f0  min-heap 
+\f1 \'c8\'e6\'cf\'e4
+\f0 ) 
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0 . 
+\f1 \uc0\u1740 \'da\'e4\u1740 
+\f0  
+\f1 \'ca\'c7
+\f0  
+\f1 \'cc\'c7\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'c7\'e3\uc0\u1705 \'c7\'e4
+\f0  
+\f1 \'e5\'d3\'ca
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'d3\'e3\'ca
+\f0  
+\f1 \'8d\'81
+\f0  
+\f1 \'ca\'d1\uc0\u1740 \'e4
+\f0  
+\f1 \'e3\uc0\u1705 \'c7\'e4
+\f0  
+\f1 \'e3\'e3\uc0\u1705 \'e4
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0 .\
+\
+2- 
+\f1 \'c7\'90\'d1
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'e3\'d0\uc0\u1705 \'e6\'d1
+\f0  
+\f1 \'c8\'d1
+\f0  
+\f1 \'c7\'d3\'c7\'d3
+\f0  
+\f1 \'e3\'e6\'de\'da\uc0\u1740 \'ca
+\f0  
+\f1 \'ce\'e6\'cf
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'cf\'d1\'ce\'ca\'a1
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  max-heap 
+\f1 \uc0\u1740 \'c7
+\f0  min-heap 
+\f1 \'c8\'e6\'cf\'e4
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'e4\'de\'d6
+\f0  
+\f1 \'e4\uc0\u1705 \'e4\'cf\'a1
+\f0  
+\f1 \'e4\uc0\u1740 \'c7\'d2
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'c7\'e4\'cc\'c7\'e3
+\f0  
+\f1 \uc0\u1705 \'c7\'d1\u1740 
+\f0  
+\f1 \'e4\uc0\u1740 \'d3\'ca
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'da\'e3\'e1\uc0\u1740 \'c7\'ca
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'ca\'e3\'c7\'e3
+\f0  
+\f1 \'d4\'cf\'e5
+\f0  
+\f1 \'c7\'d3\'ca
+\f0 . 
+\f1 \'cf\'d1
+\f0  
+\f1 \'db\uc0\u1740 \'d1
+\f0  
+\f1 \'c7\uc0\u1740 \'e4\'d5\'e6\'d1\'ca\'a1
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'d4\'cf\'e5
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'e6\'c7\'e1\'cf\'e5\'c7\uc0\u1740 
+\f0  
+\f1 \'ce\'e6\'cf
+\f0  
+\f1 \'ca\'c7
+\f0  
+\f1 \'cc\'c7\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  max-heap 
+\f1 \uc0\u1740 \'c7
+\f0  min-heap 
+\f1 \'c8\'e6\'cf\'e4
+\f0  
+\f1 \'c8\'d1\'de\'d1\'c7\'d1
+\f0  
+\f1 \'d4\'e6\'cf
+\f0  
+\f1 \'cc\'c7\'c8\'cc\'c7
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0 .\
+\
+
+\f1 \'e4\uc0\u1705 \'ca\'e5
+\f0  (
+\f1 \'e3\'de\'c7\uc0\u1740 \'d3\'e5
+\f0 ) : 
+\f1 \'c8\'d1\'c7\uc0\u1740 
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'90\'d1\'e5
+\f0  :\
+\
+
+\f1 \uc0\u1777 
+\f0 ) 
+\f1 \'cf\'d1
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'c7\'c8\'ca\'cf\'c7
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'e3\uc0\u1705 \'c7\'e4\u1740 
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  ''
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'c8\'e6\'cf\'e4
+\f0 '' 
+\f1 \'c8\'e5
+\f0  
+\f1 \'e5\'e3
+\f0  
+\f1 \'e4\'ce\'e6\'d1\'cf
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'d4\'cf\'e5
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'d3\'81\'d3
+\f0  
+\f1 \'da\'e3\'e1
+\f0  
+\f1 \'c8\'d1\'d1\'d3\uc0\u1740 
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'81\uc0\u1740 \'e3\'c7\u1740 \'d4
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'de\'d3\'e3\'ca
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'e5\'c7
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'d8\'d1\'dd
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'c7\'e4\'cc\'c7\'e3
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'d4\'e6\'cf
+\f0  
+\f1 \'ca\'c7
+\f0  
+\f1 \'e3\uc0\u1705 \'c7\'e4
+\f0  
+\f1 \'cf\'d1\'d3\'ca
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'d4\'cf\'e5
+\f0  
+\f1 \'81\uc0\u1740 \'cf\'c7
+\f0  
+\f1 \'90\'d1\'cf\'cf
+\f0 .\
+\
+
+\f1 \uc0\u1778 
+\f0 ) 
+\f1 \'cf\'d1
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cc\'d3\'ca\'cc\'e6\uc0\u1740 
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \'c7\'c8\'ca\'cf\'c7
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'de\'d3\'e3\'ca
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'d8\'d1\'dd
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'e5\'c7
+\f0  
+\f1 \'da\'e3\'e1
+\f0  
+\f1 \'c8\'d1\'d1\'d3\uc0\u1740 
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'81\uc0\u1740 \'e3\'c7\u1740 \'d4
+\f0  
+\f1 \'d5\'e6\'d1\'ca
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'90\uc0\u1740 \'d1\'cf
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c7\'90\'d1
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'e3\uc0\u1705 \'c7\'e4
+\f0  
+\f1 \'e3\'e4\'c7\'d3\'c8
+\f0  
+\f1 \'81\uc0\u1740 \'cf\'c7
+\f0  
+\f1 \'90\'d1\'cf\uc0\u1740 \'cf
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'e3\'e6\'d1\'cf
+\f0  
+\f1 \'e4\'d9\'d1
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'90\'d1\'cf\'cf
+\f0 . 
+\f1 \'cf\'d1
+\f0  
+\f1 \'c7\uc0\u1740 \'e4
+\f0  
+\f1 \'cd\'c7\'e1\'ca
+\f0  
+\f1 \'8d\'e6\'e4
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'c8\'d1\'d1\'d3\uc0\u1740 
+\f0  
+\f1 \'da\'e3\'e1
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'d5\'e6\'d1\'ca
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'90\uc0\u1740 \'d1\'cf
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'e4\'ca\uc0\u1740 \'cc\'e5
+\f0  
+\f1 \'cf\'d1\'d3\'ca\uc0\u1740 
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'81\'d3
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'e5\'e3\'8d\'e4\'c7\'e4
+\f0  
+\f1 \'c8\'d1\'de\'d1\'c7\'d1
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\'d4\'cf
+\f0 .\
+\
+
+\f1\b \'cd\'d0\'dd
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  Heap\
+\
+
+\f1\b0 \'cd\'d0\'dd
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  
+\f1 \'da\'e3\'e6\'e3\'c7
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'d5\'e6\'d1\'ca
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \'90\uc0\u1740 \'d1\'cf
+\f0 . 
+\f1 \'c8\'c7
+\f0  
+\f1 \'cd\'d0\'dd
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'c7\uc0\u1740 
+\f0  
+\f1 \'db\uc0\u1740 \'d1
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'e4\'e5
+\f0  
+\f1 \'ca\'e4\'e5\'c7
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  
+\f1 \'e3\'c7\uc0\u1705 \'d2\u1740 \'e3\'e3
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  
+\f1 \uc0\u1740 \'c7
+\f0  
+\f1 \'e3\uc0\u1740 \'e4\u1740 \'e3\'e3
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'c8\'e1\uc0\u1705 \'e5
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'c8\'e6\'cf\'e4
+\f0  
+\f1 \'e4\uc0\u1740 \'d2
+\f0  
+\f1 \'e3\'e3\uc0\u1705 \'e4
+\f0  
+\f1 \'c7\'d3\'ca
+\f0  
+\f1 \'e4\'de\'d6
+\f0  
+\f1 \'90\'d1\'cf\'cf
+\f0 .\
+\
+
+\f1 \'c8\'d1\'c7\uc0\u1740 
+\f0  
+\f1 \'cd\'d0\'dd
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cf\'e6
+\f0  
+\f1 \'e3\'d1\'cd\'e1\'e5
+\f0  
+\f1 \'d2\uc0\u1740 \'d1
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'c7\'cc\'d1\'c7
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0 :\
+\
+1- 
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'cd\'d0\'dd
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'d3\'e3\'ca
+\f0  
+\f1 \'d1\'c7\'d3\'ca
+\f0 \uc0\u8204 
+\f1 \'ca\'d1\uc0\u1740 \'e4
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'d3\'d8\'cd
+\f0  
+\f1 \'c2\'ce\'d1
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'cc\'c7\uc0\u1740 \'90\'d2\u1740 \'e4
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0 .\
+\
+2- 
+\f1 \'cf\'d1
+\f0  
+\f1 \'d5\'e6\'d1\'ca\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'cf\'d1\'cc
+\f0  
+\f1 \'d4\'cf\'e5
+\f0  
+\f1 \'cc\'cf\uc0\u1740 \'cf
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  
+\f1 \'e3\'c7\uc0\u1705 \'d2\u1740 \'e3\'e3
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  
+\f1 \uc0\u1740 \'c7
+\f0  
+\f1 \'e3\uc0\u1740 \'e4\u1740 \'e3\'e3
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  
+\f1 \'c8\'e6\'cf\'e4
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'e4\'de\'d6
+\f0  
+\f1 \'e4\uc0\u1705 \'e4\'cf
+\f0  
+\f1 \'da\'e3\'e1\uc0\u1740 \'c7\'ca
+\f0  
+\f1 \'cd\'d0\'dd
+\f0  
+\f1 \'ca\'e3\'c7\'e3
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \'d4\'e6\'cf
+\f0 . 
+\f1 \'cf\'d1
+\f0  
+\f1 \'db\uc0\u1740 \'d1
+\f0  
+\f1 \'c7\uc0\u1740 \'e4\'d5\'e6\'d1\'ca
+\f0  
+\f1 \'c7\uc0\u1740 \'e4
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf
+\f0  
+\f1 \'e3\'e4\'c7\'d3\'c8
+\f0  
+\f1 \'cc\'c7\uc0\u1740 \'90\'d2\u1740 \'e4
+\f0  
+\f1 \'d4\'cf\'e5
+\f0  
+\f1 \'e6
+\f0 \'a0
+\f1 \'c7\uc0\u1740 \'e4
+\f0  
+\f1 \'e3\'d1\'cd\'e1\'e5
+\f0  
+\f1 \'c8\'d1\'c7\uc0\u1740 
+\f0  
+\f1 \'cf\'d1\'ce\'ca
+\f0  
+\f1 \'cc\'cf\uc0\u1740 \'cf
+\f0  
+\f1 \'e3\'cc\'cf\'cf\'c7
+\f0  
+\f1 \'c7\'cc\'d1\'c7
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0 \uc0\u8204 
+\f1 \'d4\'e6\'cf
+\f0  
+\f1 \'ca\'c7
+\f0  
+\f1 \'e3\uc0\u1705 \'c7\'e4
+\f0  
+\f1 \'e3\'e4\'c7\'d3\'c8
+\f0  
+\f1 \'90\'d1\'e5
+\f0  
+\f1 \'81\uc0\u1740 \'cf\'c7
+\f0  
+\f1 \'90\'d1\'cf\'cf
+\f0 .\
+\
+
+\f1 \'e4\uc0\u1705 \'ca\'e5
+\f0  : 
+\f1 \'da\'e1\'ca
+\f0  
+\f1 \'c7\uc0\u1740 \'e4\u1705 \'e5
+\f0  
+\f1 \'d3\'e3\'ca
+\f0  
+\f1 \'d1\'c7\'d3\'ca
+\f0  
+\f1 \'ca\'d1\uc0\u1740 \'e4
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'c8\'d1\'c7\uc0\u1740 
+\f0  
+\f1 \'cc\'c7\uc0\u1740 \'90\'d2\u1740 \'e4\u1740 
+\f0  
+\f1 \'c7\'e4\'ca\'ce\'c7\'c8
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0  
+\f1 \'c7\uc0\u1740 \'e4
+\f0  
+\f1 \'c7\'d3\'ca
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  
+\f1 \'e3\'d1\'c8\'e6\'d8
+\f0  
+\f1 \'c8\'e5
+\f0  ''
+\f1 \'8d\'81
+\f0  
+\f1 \'c8\'e6\'cf\'e4
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'e5\'c7
+\f0  
+\f1 \'ca\'c7
+\f0  
+\f1 \'cd\'cf
+\f0  
+\f1 \'c7\'e3\uc0\u1705 \'c7\'e4
+\f0 ''  
+\f1 \uc0\u1740 \'da\'e4\u1740 
+\f0  
+\f1 \'cf\'e6\'cf\'e6\uc0\u1740 \u1740 
+\f0  
+\f1 \uc0\u1705 \'c7\'e3\'e1
+\f0  
+\f1 \'c8\'e6\'cf\'e4
+\f0  
+\f1 \'c8\'d1\'de\'d1\'c7\'d1
+\f0  
+\f1 \'c8\'c7\'d4\'cf
+\f0 .\
+\
+
+\f1 \'e4\uc0\u1705 \'ca\'e5
+\f0  
+\f1 \'c8\'d3\uc0\u1740 \'c7\'d1
+\f0  
+\f1 \'e3\'e5\'e3
+\f0  : 
+\f1 \'d2\'e3\'c7\'e4\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'ce\'e6\'c7\'e5\uc0\u1740 \'e3
+\f0  
+\f1 \'c8\'d1\'90
+\f0  
+\f1 \'c2\'e6\'d1\'cf\'e5
+\f0  
+\f1 \'d4\'cf\'e5
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'d1\uc0\u1740 \'d4\'e5
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'c8\'c7\'dd\'d1\'d2\'e4\'cf\'c7\'e4
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'cc\'c7
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'cc\'c7
+\f0  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'c7\'90\'d1
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  
+\f1 \'e3\uc0\u1740 \'e4\u1740 \'e3\'e3
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  
+\f1 \'c8\'e6\'cf
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \uc0\u1705 \'e6\'8d\u1705 \'ca\'d1\u1740 \'e4
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf
+\f0  
+\f1 \'cc\'c7
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'cc\'c7
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0  
+\f1 \'e6\'e1\uc0\u1740 
+\f0  
+\f1 \'c7\'90\'d1
+\f0  
+\f1 \'d4\'d1\'d8
+\f0  
+\f1 \'e3\'c7\uc0\u1705 \'d2\u1740 \'e3\'e3
+\f0  
+\f1 \'e5\uc0\u1740 \'81
+\f0  
+\f1 \'c8\'e6\'cf
+\f0  
+\f1 \'a1
+\f0  
+\f1 \'c2\'e4
+\f0  
+\f1 \'d1\'c7
+\f0  
+\f1 \'c8\'c7
+\f0  
+\f1 \'c8\'d2\'d1\'90\'ca\'d1\uc0\u1740 \'e4
+\f0  
+\f1 \'dd\'d1\'d2\'e4\'cf
+\f0  
+\f1 \'cc\'c7
+\f0  
+\f1 \'c8\'e5
+\f0  
+\f1 \'cc\'c7
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f0 .}

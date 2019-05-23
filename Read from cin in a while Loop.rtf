@@ -1,0 +1,166 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier-Bold;\f2\fmodern\fcharset0 Courier;
+\f3\fswiss\fcharset0 ArialMT;\f4\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;\red78\green0\blue0;\red255\green255\blue208;\red255\green255\blue0;
+\red240\green239\blue255;\red0\green0\blue247;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid302\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid402\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\margl1440\margr1440\vieww21480\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\li20\ri740
+
+\f0\b\fs32 \cf2 Read from 
+\f1 cin
+\f0  in a 
+\f1 while
+\f0  loop\
+\
+\pard\pardeftab720
+
+\b0\fs28 \cf0 The standard C/C++ style for reading is to put the read operation in a while loop condition. If the read proceeds correctly, then the value is true. If there is an end-of-file (EOF) meaning that the end of the data has been reached, or if there is an error in reading, then the value returned is false and execution continues at the end of the loop.\
+
+\b\fs32 \cf2 \
+Example -- Adding numbers in the input\
+\
+\pard\pardeftab720
+
+\f2\b0\fs24 \cf0 \cb3 int sum = 0;\
+int x;\
+\
+\pard\pardeftab720
+
+\f1\b \cf0 \cb4 while (cin >> x)
+\f2\b0 \cb3  \{		-->	\cb5 while (! std::cin.eof()) : 
+\f3\i WRONG! (not reliable)
+\f2\i0 \cb3 \
+   sum = sum + x;\
+\}\
+\
+cout << sum;
+\f0 \
+\pard\pardeftab720\li20\ri740
+
+\b\fs32 \cf2 \cb1 \
+Testing the value from an input operation\
+\
+\pard\pardeftab720
+
+\b0\fs28 \cf0 Using
+\f2  
+\f1\b cin
+\f2\b0  
+\f0 in a while loop is a very common style of programming.\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0
+\b \cf0 {\listtext	\'95	}Produces a value
+\b0 . The input operation with
+\f2  cin 
+\f0 not only reads values into variables, but it also produces a value. That's because >> is an operator that produces a value. This value can be tested in loops and ifs.\
+\pard\tx720\pardeftab720
+\cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls2\ilvl0
+\b \cf0 {\listtext	\'95	}true
+\b0 . The value of
+\f2  cin >> x 
+\f0 is true if a value was read into 
+\fs24 x
+\fs28 .\
+\pard\tx720\pardeftab720
+\cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls3\ilvl0
+\b \cf0 {\listtext	\'95	}false
+\b0 . The value of
+\f2  cin >> x 
+\f0 is false if it was unable to read. There are several possible causes for a reading failure.\
+\pard\tx720\pardeftab720
+\cf0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440
+\ls4\ilvl1
+\b \cf0 {\listtext	
+\f4 \uc0\u9702 
+\f0 	}EOF
+\b0 . When there is \ul no more data\ulnone , the EOF (End-Of-File) condition occurs. Every stream of input has an end so this is a normal event. It happens when reading a disk file and the end is reached. It's also possible to signal an EOF from the console by entering a special key combination, which depends on which operating system and C++ library you are using. Generally, you can use Control-Z followed by Enter to send an EOF from the keyboard. See {\field{\*\fldinst{HYPERLINK "http://www.fredosaurus.com/notes-cpp/io/eof.html"}}{\fldrslt \cf6 \ul \ulc6 End-Of-File (EOF)}}.\
+\pard\tx720\tx1440\pardeftab720
+\cf0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440
+\ls5\ilvl1
+\b \cf0 {\listtext	
+\f4 \uc0\u9702 
+\f0 	}Bad data
+\b0 . The read may fail if the data \ul isn't formatted correctly\ulnone . For example, when trying to read a floating-point temperature and the user types "zero", the read will fail.\
+\pard\tx720\tx1440\pardeftab720
+\cf0 \
+\
+\pard\pardeftab720\li20\ri740
+
+\b\fs32 \cf2 End-Of-File (EOF) when reading from 
+\f1 cin
+\f0 \
+\
+\pard\pardeftab720
+
+\b0\fs28 \cf0 When a program is reading from a disk file, the system "knows" when it gets to the end. This condition is called End-Of-File (EOF). All systems also provide some way of indicating an EOF when reading from the keyboard. This varies from system to system.\
+\
+\pard\pardeftab720
+
+\b \cf0 Dev-C++\
+\pard\pardeftab720
+
+\b0 \cf0 Type: Enter, Control-z, Enter\
+\
+\pard\pardeftab720
+
+\b \cf0 MS Visual C++\
+\pard\pardeftab720
+
+\b0 \cf0 Type: Enter, Control-z, Enter, Enter \
+\
+\pard\pardeftab720
+
+\b \cf0 Other systems\
+\pard\pardeftab720
+
+\b0 \cf0 Some may use other characters: control-D then Enter, or control-D followed by a control-Z, or ... .\
+\
+\pard\pardeftab720
+
+\b \cf0 Important: 
+\b0 You can just provide bad data to make 
+\f2 cin
+\f0  fail in many cases.\
+\
+\ul Example:\ulnone  A student once claimed that typing "EOF" was the way to indicate the end-of-file. Yes, it stops reading (because of an error) if you're reading numbers, but not when reading characters or strings!\
+\pard\pardeftab720\li20\ri740
+
+\b\fs32 \cf2 \
+Resetting after EOF\
+\pard\pardeftab720
+
+\b0\fs28 \cf0 Although it doesn't make sense to read after an EOF on a file, it is reasonable to read again from the console after an EOF has been entered. The 
+\f1\b clear
+\f0\b0  function allows this.\
+\
+\pard\pardeftab720
+
+\f2\fs24 \cf0 \cb3 while (cin >> x) \{\
+   ... // loop reading until EOF (or bad input)\
+\}\
+\
+\pard\pardeftab720
+
+\f1\b \cf0 \cb4 cin.clear()
+\f2\b0 \cb3 ;   // allows more reading\
+cin >> n;\
+...
+\f0 \
+\pard\tx720\tx1440\pardeftab720
+
+\fs28 \cf0 \cb1 \
+}

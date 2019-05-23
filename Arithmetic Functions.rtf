@@ -1,0 +1,127 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green45\blue153;\red255\green39\blue18;\red0\green68\blue254;
+\red249\green255\blue248;\red58\green0\blue98;\red0\green0\blue169;\red73\green0\blue38;\red34\green112\blue0;
+\red217\green11\blue0;}
+\margl1440\margr1440\vieww22700\viewh14980\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\b\fs36 \cf0 1) fabs
+\b0\fs28 \
+\
+
+\f1 \cf2 double fabs (double x);
+\f0 \cf0 \
+\
+This function returns the absolute value of 
+\b x --> |x|
+\b0 .\
+The variable "x" has "double" type.\
+\
+
+\b\fs36 2) abs
+\b0\fs28 \
+\
+
+\f1 \cf2 int abs (int x);
+\f0 \cf0 \
+\
+This function returns the absolute value of 
+\b n --> |n|
+\b0 .\
+The variable "n" has "int" type.\
+\
+
+\b\fs36 3) sizeof()\
+\
+\pard\pardeftab720
+
+\b0\fs28 \cf0 It is an \ul operator\ulnone  and it returns \ul the 
+\b size
+\b0  of a \cf3 \ulc3 Type\cf0 \ulc0  or a \cf3 \ulc3 Variable\cf0 \ulnone  in 
+\b bytes
+\b0 . It isn't a function.\
+\
+\pard\pardeftab720
+
+\b\fs36 \cf0 4) strlen\
+\
+\pard\pardeftab720
+
+\f1\b0\fs28 \cf4 \cb5 size_t strlen ( const char * str );
+\f0\b \cf0 \cb1 \
+\
+It returns the length of a string
+\b0 . The length of a string is determined by the terminating the null-character = A string is as long as the number of characters between \ul the beginning of the string\ulnone  and the \ul terminating null character\ulnone  (\ul without including the terminating null character itself\ulnone ).\
+\
+\pard\pardeftab720
+
+\b \cf0 Example
+\b0 :\
+\
+\pard\pardeftab720
+
+\f1\fs24 \cf6 #include <stdio.h>\cf0 \
+\cf6 #include <string.h>\cf0 \
+\
+\pard\pardeftab720
+\cf7 int\cf0  main ()\
+\{\
+  \cf7 char\cf0  szInput[256];\
+  printf (\cf8 "Enter a sentence: "\cf0 );\
+  gets (szInput);\
+  printf (\cf8 "The sentence entered is %u characters long.\\n"\cf0 ,(\cf7 unsigned\cf0 )strlen(szInput));\
+  \cf7 return\cf0  0;\
+\}\
+\
+\pard\pardeftab720
+
+\f0\b\fs36 \cf0 5) floor\
+\
+\pard\pardeftab720
+
+\f1\b0\fs28 \cf4 \cb5 double floor (double x);
+\fs24 \cf9 \
+\
+\pard\pardeftab720
+
+\f0\fs28 \cf0 \cb1 It 
+\b \cf10 rounds x downward
+\b0 \cf0 , returning \ul the largest 
+\b integral
+\b0  value\ulnone  that is \ul equal or less than x\ulnone .\
+\
+\pard\pardeftab720
+
+\b\fs36 \cf0 6) ceil\
+\
+\pard\pardeftab720
+
+\f1\b0\fs28 \cf4 \cb5 double ceil (double x);
+\fs24 \cf9 \
+\
+\pard\pardeftab720
+
+\f0\fs28 \cf0 \cb1 It 
+\b \cf10 rounds x upward
+\b0 \cf0 , returning \ul the smallest 
+\b integral
+\b0  value\ulnone  that is \ul equal or greater than x\ulnone .\
+\
+\pard\pardeftab720
+
+\b\fs36 \cf0 7) swap\
+\
+\pard\pardeftab720
+
+\f1\b0\fs28 \cf4 \cb5 void swap (type &x, type &y);
+\fs24 \cf9 \
+\
+\pard\pardeftab720
+
+\f0\fs28 \cf0 \cb1 It exchanges the values of two objects (x and y).\
+\
+
+\b Notice
+\b0 : These two objects can be a class, a vector, and etc. But there are some other more efficient ways to do this operation on these kinds of objects.}

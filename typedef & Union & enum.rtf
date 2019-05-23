@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green45\blue153;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\b\fs36 \cf0 Defined data types (typedef)
+\b0\fs28 \
+\
+C++ allows the definition and making of our own types based on other existing data types. We can do this using the keyword typedef, whose format is: \
+\
+
+\f1 \cf2 typedef existing_type new_type_name ;
+\f0 \cf0 \
+\
+
+\b\fs36 Unions
+\b0\fs28 \
+\
+Unions allow one same portion of memory to be accessed as different data types, since all of them are in fact the same location in memory. Its declaration and use is similar to the one of structures but its functionality is totally different:\
+\
+
+\f1 \cf2 union union_name \{\
+  member_type1 member_name1;\
+  member_type2 member_name2;\
+  member_type3 member_name3;\
+  .\
+  .\
+\} object_names;
+\f0 \cf0 \
+\
+All the elements of the union declaration occupy the same physical space in memory. Its size is the one of the greatest element of the declaration.\
+\
+Since all of them are referring to the same location in memory, the modification of one of the elements will affect the value of all of them. We cannot store different values in them independent of each other.\
+\
+
+\b\fs36 Enumerations (enum)
+\b0\fs28 \
+\
+Enumerations create new data types to contain something different that is not limited to the values fundamental data types may take. Its form is the following:\
+\
+
+\f1 \cf2 enum enumeration_name \{\
+  value1,\
+  value2,\
+  value3,\
+  .\
+  .\
+\} object_names;
+\f0 \cf0 \
+\
+
+\b Example:
+\b0 \
+\
+
+\f1 \cf2 enum colors_t \{black, blue, green, cyan, red, purple, yellow, white\};\
+\
+colors_t mycolor;\
+mycolor = blue;\
+if (mycolor == green) mycolor = red;}

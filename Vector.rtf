@@ -1,0 +1,368 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset178 GeezaPro;
+\f3\fnil\fcharset0 LucidaGrande;\f4\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green45\blue153;\red254\green73\blue64;\red217\green11\blue0;
+\red255\green39\blue18;\red34\green112\blue0;\red174\green0\blue240;\red0\green61\blue204;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww33400\viewh17800\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\b\fs36 \cf0 Vector
+\b0\fs28 \
+\
+\pard\pardeftab720
+
+\f1 \cf2 template <  class T, class Alloc = allocator <T>  > class vector;
+\f0 \cf0 \
+\
+Vectors are sequence containers representing \ul arrays that can change in size\ulnone . Just like arrays, vectors use \ul contiguous storage locations (in memory)\ulnone  for their elements, which means that their elements can also be accessed using 
+\b offsets
+\b0  on regular pointers to its elements, and just as efficiently as in arrays. But unlike arrays, \ul their size can change dynamically\ulnone , with their storage being handled automatically by the container. In fact, vectors use a dynamically allocated array to store their elements.\
+\
+\pard\pardeftab720\qr
+
+\f2\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f3 \uc0\u8235 :
+\f2 \uc0\u8236  
+\b0 \'c8\'d1\'cf\'c7\'d1 \uc0\u1740 \'c7 \'e6\u1705 \'ca\'e6\'d1 \'a1 \'c2\'d1\'c7\u1740 \'e5 \'c7\u1740  \'c7\'d3\'ca \u1705 \'e5 \'c7\'e4\'cf\'c7\'d2\'e5 \'c2\'e4 \'cb\'c7\'c8\'ca \'e4\'c8\'e6\'cf\'e5 \'e6 \'e3\'cf\'c7\'e3 \'e3\u1740  \'ca\'e6\'c7\'e4\'cf \'ca\'db\u1740 \u1740 \'d1 \'e4\'e3\'c7\u1740 \'cf \'a1 \u1740 \'da\'e4\u1740  \'e4\'c7\'e3\'cd\'cf\'e6\'cf \'c7\'d3\'ca\uc0\u8235 .\uc0\u8236  \'e5\'e3\'8d\'e4\uc0\u1740 \'e4 \'da\'e3\'e1\u1705 \'d1\'cf \'c2\'e4 \u1705 \'c7\'e3\'e1\'c7 \'e5\'e3\'c7\'e4\'e4\'cf \'c2\'d1\'c7\u1740 \'e5 \'c7\'d3\'ca\uc0\u8235 .\uc0\u8236  \'e1\'c7\'d2\'e3 \'c8\'e5 \'d0\uc0\u1705 \'d1 \'c7\'d3\'ca \u1705 \'e5 \'c8\'d1\'cf\'c7\'d1 \'e5\'c7 \'ca\'e4\'e5\'c7 \u1740 \u1705  \'d3\'d1 \'c8\'d1\'c7\u1740  \'e6\'c7\'d1\'cf \u1705 \'d1\'cf\'e4 \'c7\'d8\'e1\'c7\'da\'c7\'ca \'cf\'c7\'d1\'e4\'cf\uc0\u8235 .\uc0\u8236  \uc0\u1740 \'da\'e4\u1740  \'dd\'de\'d8 \'c7\'d2 \'c7\'e4\'ca\'e5\'c7\u1740  \'c2\'e4 
+\f3 \uc0\u8235 (
+\f2 \uc0\u8236 \'c8\uc0\u1705 
+\f3 \uc0\u8235 )
+\f2 \uc0\u8236  \'e3\uc0\u1740  \'ca\'e6\'c7\'e4 \'c7\'d8\'e1\'c7\'da\'c7\'ca \'d1\'c7 \'e6\'c7\'d1\'cf \u1705 \'d1\'cf\uc0\u8235 .
+\f0\fs28 \uc0\u8236 \
+\pard\pardeftab720
+\cf0 \
+\pard\pardeftab720\qr
+
+\f2\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f3 \uc0\u8235 :
+\f2 \uc0\u8236  
+\b0 \'c7\'90\'d1 \'c7\'e4\'cf\'c7\'d2\'e5 \uc0\u1740 \u1705  \'e6\u1705 \'ca\'e6\'d1 \'de\'c8\'e1 \'c7\'d2 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'c7\'d2 \'da\'e4\'c7\'d5\'d1 \'c2\'e4 \u1740 \'c7 \'ca\'ce\'d5\u1740 \'d5 \'e3\'de\'cf\'c7\'d1\u1740  \'c8\'e5 \'da\'e4\'c7\'d5\'d1 \'c2\'e4 \'ca\'da\u1740 \u1740 \'e4 \'e4\'90\'d1\'cf\'cf \'a1 \'cf\'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca \'8d\'e6\'e4 \'e6\u1705 \'ca\'e6\'d1 \'ce\'c7\'e1\u1740  \'c7\'d3\'ca \'a1 \'ce\'d8\'c7 \'d1\'ce \'cf\'c7\'cf\'e5 \'e6 \'c8\'d1\'e4\'c7\'e3\'e5 \'c8\'e5 \'cf\'d1\'d3\'ca\u1740  \'c7\'cc\'d1\'c7 \'e4\'e3\u1740  \'90\'d1\'cf\'cf\uc0\u8235 .\uc0\u8236  \'cf\'d1 \'e4\'ca\uc0\u1740 \'cc\'e5 \'c8\'e5\'ca\'d1\u1740 \'e4 \'d1\'c7\'e5 \'c8\'d1\'c7\u1740  \'ca\'ce\'d5\u1740 \'d5 \'e3\'de\'cf\'c7\'d1 \'c8\'e5 \'e6\u1705 \'ca\'e6\'d1\u1740  \u1705 \'e5 \'ce\'c7\'e1\u1740  \'c7\'d3\'ca \'a1 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'c7\'d2 \cf3 \'81\'e6\'d4 \'c8\uc0\u1705 \cf0  \'e3\uc0\u1740  \'c8\'c7\'d4\'cf\uc0\u8235 .\uc0\u8236  
+\f0\fs28 \
+\
+\
+\pard\pardeftab720
+
+\b \cf0 Needed Library:
+\b0  
+\f1 \cf2 #include <vector>
+\f0 \cf0 \
+\
+\pard\pardeftab720
+\ls1\ilvl0
+\f4\b \cf4 vector <type> v_name (initial_size,intial_value);\
+\
+vector <type> v_name (initial_size);\
+\
+// initial_size = The number of the elements.\
+// initial_value = The initial value of the elements.\
+// type = The type of the elements.
+\f0\b0 \cf0 \
+\pard\pardeftab720
+\cf0 \
+
+\b Related Accessories:
+\b0 \
+\
+\pard\tx720\pardeftab720
+\cf0 1) 
+\f1 \cf2 v_name.empty()
+\f0 \cf0 : Test to see if vector is empty !\
+\
+
+\b VERY IMPORTANT
+\b0 :\
+\
+2) 
+\f4\b \cf2 v_name.size()
+\f0\b0 \cf0 : Find how many items are in vector. It works for every 
+\f4\b \cf4 type
+\f0\b0 \cf0 . It means that when there are 'N' 
+\f4\b \cf4 char
+\f0\b0 \cf0  type elements in the vector, It will return 'N' and when there are 'N' 
+\f4\b \cf4 double
+\f0\b0 \cf0  type elements in the vector, it will return 'N' (There is no difference).\
+\
+3) 
+\f1 \cf2 v_name.push_back(*)
+\f0 \cf0 : Push 
+\f4\b \cf4 *
+\f0\b0 \cf0  in onto the end of vector --> 
+\f4\b \cf4 *
+\f0\b0 \cf0 : It should be of type "
+\f4\b \cf4 type
+\f0\b0 \cf0 "\
+\
+4) 
+\f1 \cf2 v_name.pop_back()
+\f0 \cf0 : Pop the back of the vector off --> Reducing the container size\
+\
+5) 
+\f4\b \cf2 v_name[i]
+\f0\b0 \cf0 : Access the 
+\f1 \cf2 i'th
+\f0 \cf0  item ( 0 <= i < size() ) 
+\b without checking
+\b0  to see if it exists --> 
+\b \cf5 UNSAFE ACCESSING\
+\
+
+\b0 \cf0 6) 
+\f4\b \cf2 v_name.at(i)
+\f0\b0 \cf0 : Access the 
+\f1 \cf2 i'th
+\f0 \cf0  item ( 0 <= i < size() ) 
+\b with checking
+\b0  to see if it exists --> 
+\b \cf5 SAFE ACCESSING
+\b0 \cf0 \
+\
+7) 
+\f1 \cf2 v_name = v1
+\f0 \cf0 : Assign a copy of v1 to the vector\
+
+\b \
+8)
+\b0  
+\f4\b \cf2 v_name.back()
+\f0\b0 \cf0 : Returns 
+\b a reference
+\b0  to the Last element in the vector (ex: 
+\f4\b \cf2 v_name[N-1]
+\f0\b0 \cf0 , if there are N elements in the vector).\
+
+\b \
+9)
+\b0  
+\f4\b \cf2 v_name.front()
+\f0\b0 \cf0 : Returns 
+\b a reference
+\b0  to the First element in the vector\
+\
+10) 
+\f1 \cf2 v_name.resize(new_size,initial_value)
+\f0 \cf0 : The content can be 
+\b \ul reduced or expanded
+\b0 \ulnone  by this function.\
+\
+
+\b Notice:
+\b0  If we \ul decrease size of the vector\ulnone , values of eliminated elements are \ul kept\ulnone  in their locations in memory.\
+\
+11) 
+\f1 \cf2 v_name.begin()
+\f0 \cf0 : Return an iterating pointing (pointer) to \ul the FIRST\ulnone  element in the vector. --> 
+\b Normal Mode
+\b0 \
+\
+12) 
+\f1 \cf2 v_name.end()
+\f0 \cf0 : Return an iterating pointing (pointer) to \ul the past the LAST\ulnone  element in the vector ( = a pointer to the end of the vector, not a pointer to the last element). --> 
+\b Normal Mode
+\b0 \
+\
+
+\b Notice:
+\b0  
+\f1 \cf2 vector<type>::iterator 
+\f0 \cf0 : Type for the variable that is 
+\b Normal Pointer
+\b0  to the locations of vector.\
+\
+13) 
+\f1 \cf2 v_name.clear()
+\f0 \cf0 : Removes all elements from the vector (which are destroyed), leaving the container with a 
+\b \ul size
+\b0 \ulnone  of 0.\
+\
+14) 
+\f1 \cf2 v_name.capacity()
+\f0 \cf0 : Return the size of the storage space currently allocated for the vector, expressed in terms of elements. This capacity is not necessarily equal to the {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/vector::size"}}{\fldrslt vector size}}. It can be equal or greater, with the extra space allowing to accommodate for growth without the need to reallocate on each insertion.\
+\
+15) 
+\f1 \cf2 v_name.insert()
+\f0 \cf0 :\
+\
+
+\b a.
+\b0  
+\f1 \cf6 v_name.insert (pointer_position_of_vector, new_value);		// Inserting the "new_value" at \ul specified position
+\f0 \cf0 \ulnone \
+\
+
+\b b. 
+\f1\b0 \cf6 v_name.insert (pointer_position_of_vector, number_of_new_elements, new_value);		// Inserting "N" elements with "new_value" at \ul specified position
+\f0\b \cf0 \ulnone \
+\
+c. 
+\f1\b0 \cf6 v_name.insert (pointer_position_of_vector, start_point_to_an_allocated_memory, end_point_to_an_allocated_memory); 		// Inserting 
+\f4\b an amount
+\f1\b0  of 
+\f4\b an allocated memory
+\f1\b0  at \ul specified position
+\f0 \cf0 \ulnone \
+
+\b \
+Notice: 
+\f1\b0 \cf2 v_name.insert()
+\f0 \cf0  expands the size of the vector.
+\b \
+\
+Notice: 
+\b0 Unlike 
+\f4\b \cf2 v_name.end()
+\f0\b0 \cf0 , which returns an iterator (pointer) to the past the end element (a pointer to the end of the vector, not a pointer to the last element), 
+\f4\b \cf2 v_name.back()
+\f0\b0 \cf0  returns a direct reference to the last element.
+\b \
+\
+
+\b0 16) 
+\f1 \cf2 vector<T>::size_type
+\f0 \cf0 : The proper type for the variable that contains the number of elements in a vector. It can be useful for the return value of 
+\f4\b \cf2 v_name.size()
+\f0\b0 \cf0  function or \ul Index variable\ulnone  of the vector.\
+\
+17) 
+\f1 \cf2 sort(v_name.begin(), v_name.end())
+\f0 \cf0 : Rearranges the elements of the vector in ascending order.\
+\
+18) 
+\f1 \cf2 sort(v_name.begin(), v_name.end(), compare_function)
+\f0 \cf0 : 
+\f1 \cf2 compare_function
+\f0 \cf0  is a function that compares two elements and returns "
+\b True
+\b0 " if it is valid. So, the 
+\f4\b \cf2 sort
+\f0\b0 \cf0  function rearranges the elements of the vector according to the 
+\f1 \cf2 compare_function
+\f0 \cf0 .
+\b \
+\
+Important:
+\b0  This general 
+\f1 \cf2 sort()
+\f0 \cf0  function is used for sorting 
+\f4\b \cf4 vector
+\f0\b0 \cf0  and other sequential containers (but associative containers (such as 
+\f4\b \cf4 list
+\f0\b0 \cf0 ) have 
+\f1 \cf2 sort(compare_function)
+\f0 \cf0  function is their classes.):\
+\
+\pard\pardeftab720
+
+\f4\b \cf4 list <type> list_name;\
+\
+list_name.sort(compare_function);
+\f0 \cf0 \
+\pard\tx720\pardeftab720
+\cf0 \
+
+\b0 19) 
+\f1 \cf2 vector_name.erase()
+\f0 \cf0 :\
+\
+
+\b a.
+\b0  
+\f1 \cf7 vector_name.erase(itreator_position);		// Eliminates the element at position 
+\f4\b itreator_position
+\f1\b0 .
+\f0 \cf0 \
+\
+
+\b b.
+\b0  
+\f1 \cf7 vector_name.erase(itreator_begin, iterator_end);		// Eliminates the range of elements denoted by 
+\f4\b [itreator_begin, iterator_end)
+\f1\b0  from the container.
+\f0 \cf0 \
+\
+20) 
+\f1 \cf2 v_name.rbegin()
+\f0 \cf0 : Return an iterating pointing (pointer) to \ul the Last\ulnone  element in the vector. --> 
+\b Reverse Mode\
+\
+
+\b0 21) 
+\f1 \cf2 v_name.rend()
+\f0 \cf0 : Return an iterating pointing (pointer) to \ul the beyond the FIRST\ulnone  element in the vector ( = a pointer to the element that is \ul before the first element\ulnone  of the vector). --> 
+\b Reverse Mode\
+\
+Notice:
+\b0  
+\f1 \cf2 vector<type>::reverse_iterator 
+\f0 \cf0 : Type for the variable that is 
+\b Reverse Pointer
+\b0  to the locations of vector.
+\b \
+\
+Example
+\b0 :\
+\
+\pard\pardeftab720
+
+\f1 \cf2 vector <int> testVector;\
+vector <long> testVector(10);\
+vector <float> testVector(5,1.0);
+\f0 \cf0 \
+\
+\pard\pardeftab720
+
+\b \cf0 Explanation
+\b0 : The first syntax declares an empty vector capable of storing the integer datatype. The second declares a vector with storage space for 10 long integers, each of which is intialized to the default value for the type. The final line declares a vector with storage for 5 floats, and initializes each of their values to 1.0. Any valid type can be used for any of the constructors.\
+\
+
+\b Very Important Example
+\b0 :\
+\
+\pard\pardeftab720
+
+\f1 \cf8 vector < vector <float> > v2;!\
+\
+// initialize to zeros\
+\
+for(long i=0; i<5; i++)\
+v2.push_back(vector<float>(3,0.0));\
+\
+// assign and print\
+\
+for(long i=0; 
+\f4\b i < v2.size()
+\f1\b0 ; i++) \{\
+  for(long j=0; 
+\f4\b j < v2[i].size()
+\f1\b0 ; j++) \{\
+      v2[i][j]=(float)(i*j);\
+      cout << v2[i][j] << " ";\
+\}\
+cout << endl;\
+\}\
+\
+\pard\pardeftab720
+
+\f0\b \cf0 Notice Important (LOCALITY)
+\b0 : In defining Arrays, Vectors, or Matrices, the rightmost indices of the defined object is the one that has the highest priority for allocating and filling Memory, then the left one has more priority than others and etc.\
+\pard\tx720\pardeftab720
+
+\b \cf0 \
+Example
+\b0 : 
+\f1\fs32 \cf8 A[k][i][j]\
+\
+
+\f0\b\fs28 \cf0 1)
+\b0  
+\f1\fs32 \cf8 j = Columns of each Matrix --> Highest Priority for Memory\
+
+\f0\b\fs28 \cf0 2)
+\b0  
+\f1\fs32 \cf8 i = Rows of each Matrix\
+
+\f0\b\fs28 \cf0 3)
+\b0  
+\f1\fs32 \cf8 k = Number of Matrices --> Lowest Priority for Memory}

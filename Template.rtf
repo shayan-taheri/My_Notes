@@ -1,0 +1,108 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fmodern\fcharset0 Courier-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red0\green45\blue153;\red0\green0\blue169;\red58\green0\blue98;
+}
+\margl1440\margr1440\vieww25200\viewh14720\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\b\fs36 \cf0 Function templates
+\b0\fs28 \
+\
+Function templates are special functions that can operate with 
+\b generic
+\b0  types. This allows us to create a function template whose \ul functionality can be adapted to more than one type or class\ulnone  without repeating the entire code for each type.\
+\
+The format for declaring function templates with type parameters is:\
+\
+
+\f1 \cf2 template <class identifier> function_declaration;\
+template <typename identifier> function_declaration;
+\f0 \cf0 \
+\
+The only difference between both prototypes is the use of either the keyword \ul class\ulnone  or the keyword \ul typename\ulnone . Its use is indistinct, since both expressions have \ul exactly the same meaning\ulnone  and behave exactly the same way.\
+\
+To use this function template we use the following format for the function call:\
+\
+
+\f1 \cf2 function_name <type> (parameters);
+\f0 \cf0 \
+\
+
+\b\fs36 Class templates
+\b0\fs28 \
+\
+We also have the possibility to write class templates, so that a class can have members that use template parameters as types. In case that we define a function member outside the declaration of the class template, we must always precede that definition (of function member) with the template prefix (
+\f2\b \cf3 template\cf0  <\cf3 class\cf0  Type>
+\f0\b0 ) and the class prefix (
+\f2\b Type class_name <Type>::
+\f0\b0 ) --> Refer to Example 2.\
+\
+
+\f1 \cf2 template <class identifier> class_declaration;\
+\
+
+\f0\b \cf0 Example 1:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf4 #include <iostream>\cf0 \
+\pard\pardeftab720
+\cf3 using\cf0  \cf3 namespace\cf0  std;\
+\
+
+\f2\b\fs28 \cf3 template\cf0  <\cf3 class\cf0  T>
+\f1\b0\fs24 \
+
+\f2\b\fs28 T GetMax
+\f1\b0\fs24  (T a, T b) \{\
+  \cf3 return\cf0  (a>b?a:b);\
+\}\
+\
+\cf3 int\cf0  main () \{\
+  \cf3 int\cf0  i=5, j=6, k;\
+  \cf3 long\cf0  l=10, m=5, n;\
+  k=GetMax(i,j);\
+  n=GetMax(l,m);\
+  cout << k << endl;\
+  cout << n << endl;\
+  \cf3 return\cf0  0;\
+\}\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Example 2:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf4 #include <iostream>\cf0 \
+\pard\pardeftab720
+\cf3 using\cf0  \cf3 namespace\cf0  std;\
+\
+
+\f2\b\fs28 \cf3 template\cf0  <\cf3 class\cf0  T>\
+\cf3 class\cf0  mypair
+\f1\b0\fs24  \{\
+    T a, b;\
+  \cf3 public\cf0 :\
+    mypair (T first, T second)\
+      \{a=first; b=second;\}\
+    T getmax ();\
+\};\
+\
+
+\f2\b\fs28 \cf3 template\cf0  <\cf3 class\cf0  T>\
+T mypair<T>::getmax ()
+\f1\b0\fs24 \
+\{\
+  T retval;\
+  retval = a>b? a : b;\
+  \cf3 return\cf0  retval;\
+\}\
+\
+\cf3 int\cf0  main () \{\
+  mypair <\cf3 int\cf0 > myobject (100, 75);\
+  cout << myobject.getmax();\
+  \cf3 return\cf0  0;\
+\}}

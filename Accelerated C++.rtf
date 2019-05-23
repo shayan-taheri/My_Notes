@@ -1,0 +1,585 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset178 GeezaPro;\f2\fnil\fcharset0 LucidaGrande;
+\f3\fmodern\fcharset0 Courier;\f4\fnil\fcharset0 Consolas;\f5\fnil\fcharset0 Consolas-Bold;
+\f6\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red255\green39\blue18;\red0\green68\blue254;\red74\green0\blue230;
+\red0\green0\blue123;\red245\green244\blue255;\red84\green85\blue0;\red51\green51\blue51;\red24\green83\blue83;
+\red77\green0\blue87;\red26\green26\blue26;\red174\green0\blue240;\red26\green26\blue26;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww22340\viewh12580\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 Accelerated C++\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\fs32 \cf0 Getting Started\
+\
+
+\b0\fs28 1) // --> For Comments\
+\
+2) #include --> We can access to each part of standard library by this directive.\
+\
+#include < >  -->  It refers to a part of the C++ library called a "Standard Header".\
+\
+3) function --> It can cause to run the program or It can be called from other parts of the program.\
+\
+4) int main () --> By calling this function, the program can be called.\
+\
+Return Value = 0 --> The program runs successfully.\
+\
+Return Value != 0 --> The program doesn't run successfully.\
+\
+5) Braces \{\}  -->  It specifies all of the statements in it as a single unit and executes each of them by sequence.\
+\
+6) namespace --> It is a collection of related names.\
+\
+Note 1: The standard library uses "std" to contain all the names that it defines.\
+\
+Note 2: "std" is a namespace.\
+\
+7) A function can have \ul more than one "return statement"\ulnone  according to the conditions but all of them should return values with appropriate type.\
+\
+8) left_operand << right_operand;\
+\
+Equivalent: cout << Variable;	// Write the value of variable in output.\
+\
+After the "right_operand" has been written in "left_operand", the result of the operator is the "left_operand".\
+\
+9) scope 
+\b\fs32 \cf2 :: 
+\b0\fs28 \cf0 name\
+\
+
+\b ::
+\b0  = It is scope operator\
+\
+scope = It should be the name of a scope. Such as: std\
+\
+name = It should be the name that is defined in the specified scope. Such as: cout\
+\
+\ul Notice\ulnone : This operator means that "name" belongs to "scope" class.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f1\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f0\b0  
+\b :
+\b0  
+\f1 \'cf\'e6 \'cd\'c7\'e1\'ca \'c8\'d1\'c7\uc0\u1740  \'cf\'d3\'ca\'d1\'d3\u1740  \'c8\'e5 \u1740 \u1705  \u1705 \'e1\'c7\'d3 \'e6\'cc\'e6\'cf \'cf\'c7\'d1\'cf. \'cf\'d1 \u1740 \u1705 \u1740  \'c7\'c8\'ca\'cf\'c7 \u1740 \u1705  \'d4\u1740  
+\f2 (
+\f1 \'c2\'c8\'cc\uc0\u1705 \'ca
+\f2 )
+\f1  \'c7\'d2 \'e4\'e6\'da \'c2\'e4 \uc0\u1705 \'e1\'c7\'d3 \'ca\'da\'d1\u1740 \'dd \'e3\u1740  \'90\'d1\'cf\'cf \'e6 \'d3\'81\'d3 \'c8\'e5 \'e6\'d3\u1740 \'e1\'e5 \'e4\'de\'d8\'e5 
+\f2 (
+\f0\b\fs36 \cf2 .
+\f2\b0\fs32 \cf0 )
+\f1  \'c8\'e5 \'c7\'da\'d6\'c7\uc0\u1740  \'c2\'e4 \u1705 \'e1\'c7\'d3 \'cf\'d3\'ca\'d1\'d3\u1740  \'81\u1740 \'cf\'c7 \'e3\u1740  \u1705 \'e4\u1740 \'e3\'ba \u1705 \'e5 \'c8\'cf\u1740 \'e5\u1740  \'c7\'d3\'ca \'e5\'d1 \'d4\u1740  \'c7\u1740  \'c8\'c7 \'ca\'c7\u1740 \'81 \'c2\'e4 \u1705 \'e1\'c7\'d3 \'a1 \'c7\'da\'d6\'c7\u1740  \'c7\'e4\'cd\'d5\'c7\'d1\u1740  \'ce\'e6\'cf \'d1\'c7 \'cf\'c7\'d1\'cf \u1740 \'da\'e4\u1740  \'e5\'d1 \'d4\u1740  \'c8\'ce\'d4 \'e3\'da\u1740 \'e4\u1740  \'c7\'d2 \'cd\'c7\'dd\'d9\'e5 \'d1\'c7 \'c7\'d4\'db\'c7\'e1 \'e3\u1740  \u1705 \'e4\'cf. \'cf\'d1 \'cd\'c7\'e1\'ca \'cf\u1740 \'90\'d1\'a1 \'e3\u1740  \'ce\'e6\'c7\'e5\u1740 \'e3 \'c8\'e5 \'c7\'da\'d6\'c7\u1740  \u1740 \u1705  \u1705 \'e1\'c7\'d3 \'c8\'e5 \'d5\'e6\'d1\'ca \'e3\'d3\'ca\'de\u1740 \'e3 \'cf\'d3\'ca\'d1\'d3\u1740  \'81\u1740 \'cf\'c7 \u1705 \'e4\u1740 \'e3 
+\f2 (
+\f1 \'e4\'e5 \'c7\'d2 \'d8\'d1\uc0\u1740 \'de \'d4\u1740 
+\f2 )
+\f1 \'a1
+\f2  
+\f1 \uc0\u1705 \'e5
+\f2  
+\f1 \'cf\'d1
+\f2  
+\f1 \'c7\uc0\u1740 \'e4
+\f2  
+\f1 \'d5\'e6\'d1\'ca
+\f2  
+\f1 \'c7\'d2
+\f2  (
+\f0\b\fs36 \cf2 ::
+\f2\b0\fs32 \cf0 ) 
+\f1 \'c7\'d3\'ca\'dd\'c7\'cf\'e5
+\f2  
+\f1 \'e3\uc0\u1740 
+\f2  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f2 .
+\f0\fs28 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f1 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f0\b0  
+\b :
+\b0  
+\f1 \'c7\'90\'d1 \'c8\'ce\'e6\'c7\'e5\uc0\u1740 \'e3 \'c7\'d2 \u1705 \'c7\'d1\'c7\u1705 \'ca\'d1 \'e5\'c7\u1740 \u1740  \'e5\'e3\'8d\'e6\'e4 
+\f2\b '
+\b0  
+\f1 \uc0\u1740 \'c7 
+\f2\b \\
+\b0  
+\f1 \'e6
+\f2  
+\f1 \uc0\u1740 \'c7
+\f2  
+\b "
+\b0  
+\f1 \'cf\'d1
+\f2  
+\f1 \'cc\'e3\'e1\'e5 
+\f2 (
+\f1 \'d1\'d4\'ca\'e5
+\f2 ) 
+\f1 \'c7\uc0\u1740 
+\f2  
+\f1 \uc0\u1705 \'e5
+\f2  
+\f1 \'e3\uc0\u1740 
+\f2  
+\f1 \'ce\'e6\'c7\'e5\uc0\u1740 \'e3
+\f2  
+\f1 \'c8\'e5
+\f2  
+\f1 \'ce\'d1\'e6\'cc\uc0\u1740 
+\f2  
+\f1 \'c8\'cf\'e5\uc0\u1740 \'e3
+\f2  
+\f1 \'c7\'d3\'ca\'dd\'c7\'cf\'e5
+\f2  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f2  
+\f1 \'a1
+\f2  
+\f1 \'e3\uc0\u1740 
+\f2  
+\f1 \'c8\'c7\uc0\u1740 \'d3\'ca
+\f2  
+\f1 \'de\'c8\'e1
+\f2  
+\f1 \'c7\'d2
+\f2  
+\f1 \'c2\'e4
+\f2  
+\f1 \'e5\'c7
+\f2  
+\f1 \'c7\'d2
+\f2  
+\b \\
+\b0  
+\f1 \'c7\'d3\'ca\'dd\'c7\'cf\'e5
+\f2  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f2 .
+\fs28 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs32 \cf0 \
+Working with strings
+\b0\fs28 \
+\
+1) An "Object" is a part of the computer's memory that has a type.\
+
+\b\fs32 \
+
+\b0\fs28 2) A "Variable" is an object that has a name.\
+\
+3) A "Local Variable" is a variable that is defined within the function body. After the end of the function, It is destroyed in memory and its location would be free.\
+\
+4) cin >> Variable;	// Write the input in variable.\
+\
+Important: This operator discard all of the \ul whitespace characters\ulnone  at first. Then, it reads characters until it reaches \ul new Whitespace character\ulnone  or \ul "End-of-File\ulnone ".\
+\
+\ul Whitespace Character\ulnone  = Space, Tab, Backspace, or The End of a Line.\
+\
+5) \ul Buffer\ulnone  = It is an internal data structure that is used by "Input - Output Library" to store output for using it rapidly.\
+\
+6) \ul Flushing Buffer\ulnone  = Writing buffer's content to the output device.\
+\
+Reasons:\
+\
+a. If the buffer is full.\
+b. If we want to read something from input.\
+c. If we explicitly specify to flush buffer.  -->  
+\b flush();\
+\
+
+\b0 7) string_name.size() --> It specifies number of elements in the string.\
+\
+8) Left Associative Operator\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f1\fs32 \cf0 \'c7\'90\'d1 \'ca\'da\'cf\'c7\'cf\uc0\u1740  
+\f2 (
+\f1 \'cf\'e6 \uc0\u1740 \'c7 \'c8\u1740 \'d4\'ca\'d1
+\f2 )
+\f1  \'c7\'d2 \'c7\uc0\u1740 \'e4 \'e4\'e6\'da \'da\'e3\'e1\'90\'d1 \'d1\'c7 \'cf\'d1 \u1740 \u1705  
+\f0 expression
+\f1  \'cf\'c7\'d4\'ca\'e5 \'c8\'c7\'d4\uc0\u1740 \'e3 \'a1 \'e5\'d1 \u1740 \u1705  \'a1 \'e5\'d1 \'8d\'de\'cf\'d1 \'c8\u1740 \'d4\'ca\'d1 \u1705 \'e5 \'e3\u1740  \'ca\'e6\'c7\'e4\'e4\'cf \'c7\'d2 
+\f0 expression
+\f1  \'d1\'c7 \'cf\'d1 \'d3\'e3\'ca \'8d\'81 \'de\'d1\'c7\'d1 \'e3\uc0\u1740  \'cf\'e5\'e4\'cf \'e6 \'e5\'d1 \'8d\'de\'cf\'d1 \u1705 \'e3\'ca\'d1 \u1705 \'e5 \'e3\u1740  \'ca\'e6\'c7\'e4\'e4\'cf \'d1\'c7 \'cf\'d1 \'d3\'e3\'ca \'d1\'c7\'d3\'ca \'de\'d1\'c7\'d1 \'e3\u1740  \'cf\'e5\'e4\'cf.\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5 
+\f2 :
+\f1  
+\b0 \uc0\u1740 \'da\'e4\u1740  \'d2\'e3\'c7\'e4\u1740  \u1705 \'e5 \'ca\'da\'cf\'c7\'cf\u1740  \'c7\'d2 \'c7\u1740 \'e4 \'da\'e3\'e1\'90\'d1 \'d1\'c7 \'cf\'d1 \u1740 \u1705  
+\f0 expression
+\f2  
+\f1 \'de\'d1\'c7\'d1 \'e3\uc0\u1740  \'cf\'e5\u1740 \'e3 \'a1
+\f2  
+\f1 \'c8\uc0\u1740 \'d4\'ca\'d1\u1740 \'e4
+\f2  
+\f1 \'c7\'e6\'e1\'e6\uc0\u1740 \'ca
+\f2  
+\f1 \'c8\'c7
+\f2  
+\f1 \ul \'d3\'e3\'ca \'8d\'81 \'ca\'d1\uc0\u1740 \'e4 \'da\'e3\'e1\'90\'d1\ulnone  \'e3\uc0\u1740  \'c8\'c7\'d4\'cf.\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5 
+\f2 :
+\f1  
+\b0 \'cf\'d1 
+\f0 Right Associative Operator 
+\f1 \'a1
+\f0  
+\f1 \'c8\uc0\u1740 \'d4\'ca\'d1\u1740 \'e4
+\f0  
+\f1 \'c7\'e6\'e1\'e6\uc0\u1740 \'ca \'c8\'c7 \ul \'d3\'e3\'ca \'d1\'c7\'d3\'ca \'ca\'d1\uc0\u1740 \'e4 \'da\'e3\'e1\'90\'d1\ulnone  \'e3\uc0\u1740  \'c8\'c7\'d4\'cf.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\fs28 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f0 \cf0  
+\f1\b\fs32 \'e4\uc0\u1705 \'ca\'e5 
+\f2 :
+\f1  
+\b0 \'ce\'d1\'e6\'cc\uc0\u1740  \u1740 \u1705  \'da\'e3\'e1\'90\'d1 \'a1 \'da\'e3\'e1\'e6\'e4\'cf \'d3\'e3\'ca \'8d\'81 \'c2\'e4 \'e3\u1740  \'c8\'c7\'d4\'cf.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs28 \cf0 9) using-declaration\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f1 \cf0 \'d2\'e3\'c7\'e4\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'c8\'ce\'e6\'c7\'e5\uc0\u1740 \'e3
+\f0  
+\f1 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'c7\'d2 \uc0\u1740 \u1705  \'e3\'ca\'db\u1740 \'d1 
+\f2 (
+\f1 \'e3\'ca\'da\'e1\'de \'c8\'e5 \uc0\u1740 \u1705  \u1705 \'e1\'c7\'d3
+\f2 )
+\f1  \'a1 \uc0\u1740 \u1705  \u1705 \'e1\'c7\'d3 \'e6 \u1740 \'c7 \'db\u1740 \'d1\'e5 \'d1\'c7 \'c8\'e5 \'d8\'e6\'d1 \'e3\'d4\'ce\'d5 \'ca\'da\'d1\u1740 \'dd \u1705 \'e4\u1740 \'e3 \'a1 \'c7\'d2 \'c7\u1740 \'e4 \'cf\'d3\'ca\'e6\'d1 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'e3\u1740  \u1705 \'e4\u1740 \'e3. \'c8\'cf\u1740 \'e4 \'ca\'d1\'ca\u1740 \'c8 \'e5\'d1 \'d2\'e3\'c7\'e4\u1740  \u1705 \'e5 \'c8\'ce\'e6\'c7\'e5\u1740 \'e3 \'c7\'d2 \'c2\'e4 \'e3\'ca\'db\u1740 \'d1 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \u1705 \'e4\u1740 \'e3 \'a1 \'c8\u1705 \'c7\'d1 \'c8\'d1\'cf\'e4 \'e4\'c7\'e3 \'c2\'e4 \u1705 \'c7\'dd\u1740  \'c7\'d3\'ca \'e6 \'c7\'cd\'ca\u1740 \'c7\'cc\u1740  \'c8\'e5 \'c7\'da\'e1\'c7\'e3 \'e4\'e3\'e6\'cf\'e4 \u1705 \'e1\'c7\'d3 \'c2\'e4 \'c8\'e6\'d3\u1740 \'e1\'e5 
+\f0 Scope
+\f1  
+\f0 Operator
+\f1  \'e4\'e3\uc0\u1740  \'c8\'c7\'d4\'cf. \'e1\'c7\'d2\'e3 \'c8\'e5 \'d0\u1705 \'d1 \'c7\'d3\'ca \u1705 \'e5 \'c8\'c7 \'ca\'da\u1740 \u1740 \'e4 \'c7\u1740 \'e4 \'cf\'d3\'ca\'e6\'d1 \'cf\'d1 \'cf\'e6 \'de\'e1\'c7\'c8 
+\f0\b \{\}
+\f1\b0  \'a1  \'ce\'c7\'d5\uc0\u1740 \'ca \'c2\'e4 \'c8\'da\'cf \'c7\'d2 \'cf\'e6\'e3\u1740 \'e4 \'de\'e1\'c7\'c8 
+\f0\b \}
+\f2\b0  
+\f1 \'c8\'e5
+\f2  
+\f1 \'c7\'ca\'e3\'c7\'e3
+\f2  
+\f1 \'e3\uc0\u1740 
+\f2  
+\f1 \'d1\'d3\'cf
+\f2 .\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b \cf0 Example:
+\f1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f3\b0 \cf3 using\cf0  namespace std;\
+\
+\cf3 using\cf0  std\cf4 ::\cf0 cout;\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs32 \cf0 \
+Writing with Batches of Data\
+\
+
+\b0\fs28 1) Significant Numbers\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f1\fs32 \cf0 \'c7\'d1\'de\'c7\'e3\uc0\u1740 
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \uc0\u1740 \u1705 
+\f0  
+\f1 \'da\'cf\'cf
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'cf\'c7\'d1\'c7\uc0\u1740 
+\f0  
+\f1 \'e3\'da\'e4\uc0\u1740 
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c7\'e5\'e3\uc0\u1740 \'ca
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf
+\f0 . 
+\f1 \uc0\u1740 \'da\'e4\u1740 
+\f0  :\
+\
+
+\f1 \uc0\u1777 
+\f2 )
+\f0  
+\f1 \'ca\'e3\'c7\'e3\uc0\u1740  \'c7\'d1\'de\'c7\'e3 \'db\u1740 \'d1 \'d5\'dd\'d1 \'cf\'c7\'d1\'c7\u1740 
+\f0  
+\f1 \'e3\'da\'e4\uc0\u1740 
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c7\'e5\'e3\uc0\u1740 \'ca
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf.\
+\uc0\u1778 
+\f2 )
+\f1  \'ca\'e3\'c7\'e3\uc0\u1740  \'d5\'dd\'d1 \'e5\'c7\u1740 \u1740  \u1705 \'e5 \'c8\u1740 \'e4 \'c7\'d1\'de\'c7\'e3 \'db\u1740 \'d1 \'d5\'dd\'d1 \'de\'d1\'c7\'d1 \'90\'d1\'dd\'ca\'e5 \'c7\'e4\'cf \'cf\'c7\'d1\'c7\u1740 
+\f0  
+\f1 \'e3\'da\'e4\uc0\u1740 
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c7\'e5\'e3\uc0\u1740 \'ca
+\f0  
+\f1 \'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf.\
+\uc0\u1779 
+\f2 )
+\f1  \'ca\'e3\'c7\'e3\uc0\u1740  \'d5\'dd\'d1 \'e5\'c7\u1740 \u1740  \u1705 \'e5 \'d3\'e3\'ca \'8d\'81 \'c7\'d1\'de\'c7\'e3 \'db\u1740 \'d1 \'d5\'dd\'d1 \'de\'d1\'c7\'d1 \'c8\'90\u1740 \'d1\'e4\'cf 
+\f2 (
+\f1 \'cf\'d1 \'e5\'d1 \'cf\'e6 \'cd\'c7\'e1\'ca \'e6\'cc\'e6\'cf \'d1\'de\'e3 \'c7\'da\'d4\'c7\'d1\uc0\u1740  \'e6 \'e4\'c8\'e6\'cf \'d1\'de\'e3 \'c7\'da\'d4\'c7\'d1\u1740 
+\f2 )
+\f1  \'cf\'c7\'d1\'c7\uc0\u1740 
+\f0  
+\f1 \'e3\'da\'e4\uc0\u1740 
+\f0  
+\f1 \'e6
+\f0  
+\f1 \'c7\'e5\'e3\uc0\u1740 \'ca
+\f0  
+\f1 \'e4\'e3\uc0\u1740 
+\f0  
+\f1 \'c8\'c7\'d4\'e4\'cf.\
+\uc0\u1780 
+\f2 )
+\f1  \'c7\'90\'d1 \'ca\'e3\'c7\'e3\uc0\u1740  \'c7\'d1\'de\'c7\'e3
+\f2  
+\f1 \'db\uc0\u1740 \'d1
+\f2  
+\f1 \'d5\'dd\'d1
+\f2  
+\f1 \'d3\'e3\'ca \'d1\'c7\'d3\'ca \'e4\'de\'d8\'e5 \'c7\'da\'d4\'c7\'d1\uc0\u1740  \'de\'d1\'c7\'d1 \'c8\'90\u1740 \'d1\'e4\'cf \'a1 \'cf\'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca \'d5\'dd\'d1 \'e5\'c7\u1740  \'d3\'e3\'ca \'d1\'c7\'d3\'ca \'c2\'e4 \'c7\'d1\'de\'c7\'e3 \'cf\'c7\'d1\'c7\u1740  \'e3\'da\'e4\u1740  \'e6 \'c7\'e5\'e3\u1740 \'ca \'e3\u1740  \'c8\'c7\'d4\'e4\'cf.\
+\uc0\u1781 
+\f2 )
+\f1  \'cf\'d1 \'d5\'e6\'d1\'ca \'e4\'c8\'e6\'cf\'e4 \'e4\'de\'d8\'e5 \'c7\'da\'d4\'c7\'d1\uc0\u1740  \'a1 \'ca\'e3\'c7\'e3\u1740  \'d5\'dd\'d1 \'e5\'c7\u1740  \'d3\'e3\'ca \'d1\'c7\'d3\'ca \'c7\'d1\'de\'c7\'e3 \'db\u1740 \'d1 \'d5\'dd\'d1 \'cf\'c7\'d1\'c7\u1740  \'e3\'da\'e4\u1740  \'e6 \'c7\'e5\'e3\u1740 \'ca \'e4\'e3\u1740  \'c8\'c7\'d4\'e4\'cf.\
+\uc0\u1782 
+\f2 )
+\f1  \'cf\'d1 \'d5\'e6\'d1\'ca \'c8\'e6\'cf\'e4 \'e4\'de\'d8\'e5 \'c7\'da\'d4\'c7\'d1\uc0\u1740  \'e6 \'d3\'e3\'ca \'8d\'81 \'e4\'de\'d8\'e5 \'c7\'da\'d4\'c7\'d1 \'c8\'e6\'cf\'e4 \'c7\'d1\'de\'c7\'e3 \'db\u1740 \'d1 \'d5\'dd\'d1 \'a1 \'ca\'e3\'c7\'e3\u1740  \'d5\'dd\'d1 \'e5\'c7\u1740  \'d3\'e3\'ca \'d1\'c7\'d3\'ca \'c7\'d1\'de\'c7\'e3 \'db\u1740 \'d1 \'d5\'dd\'d1 \'cf\'c7\'d1\'c7\u1740  \'e3\'da\'e4\u1740  \'e6 \'c7\'e5\'e3\u1740 \'ca \'e3\u1740  \'c8\'c7\'d4\'e4\'cf.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs28 \cf0 2) Even or Odd Numbers
+\f1\fs32 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+\cf0 \'c8\'d1\'c7\uc0\u1740  \'e3\'d4\'ce\'d5 \'e4\'e3\'e6\'cf\'e4 \'d2\'e6\'cc \u1740 \'c7 \'dd\'d1\'cf \'c8\'e6\'cf\'e4 \u1740 \u1705  \'da\'cf\'cf \'a1 \u1705 \'c7\'dd\u1740  \'c7\'d3\'ca \u1705 \'e5 \'da\'cf\'cf \'e3\'d1\'c8\'e6\'d8\'e5 \'d1\'c7 \'c8\'d1 \u1778  \'ca\'de\'d3\u1740 \'e3 \'e4\'e3\'c7\u1740 \u1740 \'e3. \'c7\'90\'d1 \u1705 \'e5 \'c8\'c7\'de\u1740  \'e3\'c7\'e4\'cf\'e5 \'c8\'d1\'c7\'c8\'d1 \'d5\'dd\'d1 \'c8\'e6\'cf \u1740 \'da\'e4\u1740  \'da\'cf\'cf \'d2\'e6\'cc \'c7\'d3\'ca \'e6 \'cf\'d1 \'db\u1740 \'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca \'da\'cf\'cf \'dd\'d1\'cf \'e3\u1740  \'c8\'c7\'d4\'cf.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs28 \cf0 3) max (a, b)\
+\
+This function returns the larger of the expressions 'a' and 'b'.\
+\
+Notice: Both expressions 'a' and 'b' must have exactly the same type.\
+\
+
+\b\fs32 Organizing Programs and Data\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f1 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f0  
+\f1 \'e3\'e5\'e3
+\f0  : 
+\f1\b0 \'d2\'e3\'c7\'e4\uc0\u1740 
+\f0  
+\f1 \uc0\u1705 \'e5
+\f0  
+\f1 \'c2\'cf\'d1\'d3\uc0\u1740  \'c7\'d2 \u1740 \u1705  \'c8\'ce\'d4 
+\f0 Allocate
+\f1  \'d4\'cf\'e5
+\f0  
+\f1 \'cf\'d1
+\f0  
+\f1 \'cd\'c7\'dd\'d9\'e5
+\f0  
+\f1 \'cf\'c7\'d4\'ca\'e5 \'c8\'c7\'d4\uc0\u1740 \'e3 \'a1 \'e3\u1740  \'ca\'e6\'c7\'e4\u1740 \'e3 \'c8\'e5 \'de\'d3\'e3\'ca \'e5\'c7\u1740  \'e3\'ce\'ca\'e1\'dd \'c2\'e4 \'c8\'ce\'d4 \'c8\'e6\'d3\u1740 \'e1\'e5
+\f3 \cf4  \uc0\u8234 []\uc0\u8236  
+\f1 \cf0 \'cf\'d3\'ca\'d1\'d3\uc0\u1740  \'81\u1740 \'cf\'c7 \u1705 \'e4\u1740 \'e3. \'e5\'e3\'8d\'e4\u1740 \'e4 \'c7\'d2 \'d8\'d1\u1740 \'de \'c2\'cf\'d1\'d3 \'c2\'dd\'d3\'ca \'e4\u1740 \'d2 \'e3\u1740  \'ca\'e6\'c7\'e4 \'c8\'e5 \'c2\'e4 \'de\'d3\'e3\'ca \'e5\'c7 \'cf\'d3\'ca\'d1\'d3\u1740  \'81\u1740 \'cf\'c7 \u1705 \'d1\'cf.\
+\
+\'e5\'d1 
+\f0 Object
+\f1  \'c7\uc0\u1740  \u1705 \'e5 \'c8\u1740 \'c7\'e4 \u1705 \'e4\'e4\'cf\'e5 \'c2\'cf\'d1\'d3 \'c8\'ce\'d4\u1740  \'c7\'d2 \'cd\'c7\'dd\'d9\'e5 \'c8\'c7\'d4\'cf \'a1 \'e3\u1740  \'ca\'e6\'c7\'e4 \'c8\'e5 \'c7\'e1\'e3\'c7\'e4 \'e5\'c7\u1740  \'c8\'da\'cf\u1740  \'e6 \'de\'c8\'e1\u1740  \'c2\'e4 \'c8\'e5 \'d1\'e6\'d4 \'d0\u1705 \'d1 \'d4\'cf\'e5 \'cf\'d3\'ca\'d1\'d3\u1740  \'81\u1740 \'cf\'c7 \u1705 \'d1\'cf. \u1740 \'da\'e4\u1740  \'e3\'cb\'e1\'c7 \'c7\'90\'d1 \u1740 \u1705  \'ca\'c7\'c8\'da \'a1 \'c2\'cf\'d1\'d3\u1740  \'d1\'c7 
+\f0 Return
+\f1  \uc0\u1705 \'e4\'cf \'a1 \'cf\'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca \'e3\u1740  \'ca\'e6\'c7\'e4 \'c8\'e5 \'e3\'ca\'db\u1740 \'d1 \'e5\'c7\u1740  \'ca\'da\'d1\u1740 \'dd \'d4\'cf\'e5 \'cf\'d1 \'c2\'e4 \'c8\'e5 \'d1\'e6\'d4 \'c8\'c7\'e1\'c7 \'cf\'d3\'ca\'d1\'d3\u1740  \'81\u1740 \'cf\'c7 \u1705 \'d1\'cf. \u1740 \'da\'e4\u1740  
+\f2 :
+\f1 \
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0
+\f4\fs26 \cf5 \cb6 {\listtext	1.	}double\cf0  \cf7 *\cf0 f\cf7 ()\cf8 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf7 {\listtext	2.	}\{\cf8 \
+\ls1\ilvl0\cf0 {\listtext	3.	}    \cf5 static\cf0  \cf5 double\cf0  value\cf7 []\cf0  \cf7 =\cf0  \cf7 \{\cf9 1\cf7 ,\cf9 2\cf7 ,\cf9 3\cf7 ,\cf9 4\cf7 ,\cf9 5\cf7 \};\cf8 \
+\ls1\ilvl0\cf0 {\listtext	4.	}    \cf5 return\cf0  value\cf7 ;\cf8 \
+\ls1\ilvl0\cf7 {\listtext	5.	}\}\cf8 \
+{\listtext	6.	}\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf10 {\listtext	7.	}int\cf0  main \cf7 ()\cf8 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf7 {\listtext	8.	}\{\cf8 \
+\ls1\ilvl0\cf0 {\listtext	9.	}    \cf5 double\cf0  d \cf7 =\cf0  f\cf7 ()\cf0  \cf7 [\cf0 n\cf7 ];	
+\f5\b\fs32 ==
+\f4\b0\fs26 	\cf5 double\cf0  d \cf7 =\cf0  *(f() + n)\cf7 ;
+\f1\fs32 \cf0 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+\cf0 \
+
+\b \'e4\uc0\u1705 \'ca\'e5 \'e3\'e5\'e3 
+\f2 :
+\f1  
+\b0 \'cf\'d1 \uc0\u1740 \u1705  
+\f0 Function
+\f1  \uc0\u1740 \'c7 
+\f0 Subroutine
+\f1  \'c8\'c7 \'ca\'da\'d1\uc0\u1740 \'dd \u1705 \'d1\'cf\'e4 \'e3\'ca\'db\u1740 \'d1 \'e5\'c7 \'c8\'e5 \'d5\'e6\'d1\'ca \'e3\'ca\'e6\'c7\'e1\u1740  \'e6
+\f2  
+\f1 \'ca\'d1\'ca\uc0\u1740 \'c8\u1740 
+\f2  
+\f1 \'a1
+\f2  
+\f1 \'c8\'d1
+\f2  
+\f1 \'c7\'d3\'c7\'d3
+\f2  
+\f1 \'da\'e3\'e1\uc0\u1705 \'d1\'cf \'81\'d4\'ca\'e5 \'cf\'d1 \'cd\'c7\'dd\'d9\'e5 \'d0\'ce\u1740 \'d1\'e5 \'e3\u1740  \'90\'d1\'cf\'e4\'cf \'a1 \u1740 \'da\'e4\u1740  \'e3\'ca\'db\u1740 \'d1 \'e5\'c7\u1740 \u1740  \u1705 \'e5 \'c7\'e6\'e1 \'ca\'da\'d1\u1740 \'dd \'e3\u1740  \'d4\'e6\'e4\'cf \'c2\'cf\'d1\'d3 \'c8\u1740 \'d4\'ca\'d1\u1740  
+\f2 (
+\f1 \'c7\'d2 \'e4\'d9\'d1 \'e3\'de\'cf\'c7\'d1\uc0\u1740 
+\f2 )
+\f1  \'cf\'d1 \'cd\'c7\'dd\'d9\'e5 \'cf\'c7\'d1\'e4\'cf \'e6 \'e3\'ca\'db\uc0\u1740 \'d1 \'e5\'c7\u1740  \'c7\'e4\'ca\'e5\'c7\u1740 \u1740  \'c2\'cf\'d1\'d3 \u1705 \'e3\'ca\'d1\u1740  \'cf\'c7\'d1\'e4\'cf. \'da\'e1\'ca \'c7\u1740 \'e4 \'e3\'d3\'c7\'e1\'e5 \'c7\u1740 \'e4 \'c7\'d3\'ca \u1705 \'e5 \'c8\'d1\'c7\u1740  \'e6\'d1\'e6\'cf \'e5\'d1 \'e3\'ca\'db\u1740 \'d1 \'cf\'d1 \'81\'d4\'ca\'e5 \'a1 \'e3\'de\'cf\'c7\'d1 \'c7\'d4\'c7\'d1\'e5 \'90\'d1 \'81\'d4\'ca\'e5 \u1705 \'c7\'e5\'d4 \'e3\u1740  \u1740 \'c7\'c8\'cf.\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5 \'c8\'d3\u1740 \'c7\'d1 \'e3\'e5\'e3 
+\f2 :
+\f1  
+\b0 \'e3\'dd\'e5\'e6\'e3 
+\f0 Function
+\f1  
+\f0 Overloading
+\f1  \uc0\u1740 \'da\'e4\u1740  \'d2\'e3\'c7\'e4\u1740  \u1705 \'e5 \ul \'8d\'e4\'cf\uc0\u1740 \'e4 \'ca\'c7\'c8\'da\ulnone  \'c8\'c7 \'ca\'e4\'e5\'c7 \ul \uc0\u1740 \u1705  \'e4\'c7\'e3\ulnone  \'ca\'da\'d1\uc0\u1740 \'dd \'90\'d1\'cf\'e4\'cf \'e6 \'da\'c7\'e3\'e1 \'e3\'ca\'e3\'c7\u1740 \'d2 \u1705 \'e4\'e4\'cf\'e5 \'c2\'e4 \'e5\'c7 \'cf\'d1 \'ca\'da\'cf\'c7\'cf \u1740 \'c7 
+\f2 Type
+\f1  
+\f2 (
+\f1 \uc0\u1740 \'c7 \'e5\'d1 \'cf\'e6
+\f2 )
+\f1  \'c2\'d1\'90\'e6\'e3\'c7\'e4 \'e5\'c7\uc0\u1740 \u1740  \'c7\'d3\'ca \u1705 \'e5 \'e3\u1740  \'90\u1740 \'d1\'e4\'cf. \'e1\'c7\'d2\'e3 \'c8\'e5 \'d0\u1705 \'d1 \'c7\'d3\'ca \u1705 \'e5 \'cf\'d1 \'d2\'e3\'c7\'e4 \'dd\'d1\'c7\'ce\'e6\'c7\'e4\u1740  \'c7\u1740 \'e4 \'ca\'e6\'c7\'c8\'da \'a1 \u1705 \'c7\'e3\'81\'c7\u1740 \'e1\'d1 \'e3\'e3\u1705 \'e4 \'c7\'d3\'ca \u1705 \'e5 \'e4\'ca\'e6\'c7\'e4\'cf \'ca\'c7\'c8\'da \'e3\'e4\'c7\'d3\'c8\u1740  
+\f2 (
+\f1 \'c7\'d2 \'e1\'cd\'c7\'d9 \'ca\'d8\'c7\'c8\'de \'c8\'c7 \'e3\'de\'cf\'c7\'d1
+\f2 )
+\f1  \'d1\'c7 \'c7\'d2 \'c8\uc0\u1740 \'e4 \'c2\'e4 \'ca\'e6\'c7\'c8\'da \'81\u1740 \'cf\'c7 \u1705 \'e4\'cf\'ba \u1705 \'e5 \'cf\'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca \'ca\'c7\'c8\'da\u1740  \u1705 \'e5 \'c8\u1740 \'d4\'ca\'d1\u1740 \'e4 \'c7\'e6\'e1\'e6\u1740 \'ca \'cf\'d1 \'c7\u1740 \'cc\'c7\'cf \'ca\'d8\'c7\'c8\'de \'d1\'c7 \'cf\'c7\'d1\'cf \'c7\'e4\'ca\'ce\'c7\'c8 \'e3\u1740  \u1705 \'e4\'cf. \'c7\'e3\'c7 \'e3\'e3\u1705 \'e4 \'c7\'d3\'ca \'cf\'d1 \'c7\u1740 \'e4 \'cd\'c7\'e1\'ca \'8d\'e4\'cf\u1740 \'e4 \'ca\'c7\'c8\'da \'c7\'e4\'ca\'ce\'c7\'c8 \'90\'d1\'cf\'e4\'cf \u1705 \'e5 \'cf\'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca \u1705 \'c7\'e3\'81\'c7\u1740 \'e1\'d1 \'ce\'d8\'c7 \'e3\u1740  \'cf\'e5\'cf.\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5 
+\f2 :
+\f1  
+\b0 \'e3\'dd\'e5\'e6\'e3 
+\f0 Overloading
+\f1  \'cf\'d1 \'e3\'e6\'d1\'cf 
+\f0 Operator
+\f1  \'e5\'c7 \'e4\uc0\u1740 \'d2 \'c8\'d1\'de\'d1\'c7\'d1 \'c7\'d3\'ca.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 How to define "Default Argument" in a Function:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f3\b0 \cf11 Type_x Function_x (Type_y Var1, \'85 , Type_z \cf2 Variable or Function()\cf11  
+\f6\b\fs32 =
+\f3\b0\fs28  Something with \cf12 Type_z\cf11 );\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f1\fs32 \cf11 \'cf\'d1 \'c7\uc0\u1740 \'e4\'cc\'c7 
+\f3\fs28 \cf2 Variable or Function\uc0\u8234 ()\uc0\u8236  
+\f1\fs32 \cf11 \'c8\'e5 \'d5\'e6\'d1\'ca 
+\f0 Default
+\f1  
+\f0 Argument
+\f1  \'ca\'da\uc0\u1740 \u1740 \'e4 \'90\'d1\'cf\u1740 \'cf\'e5 \'c7\'d3\'ca \'a1 \u1740 \'da\'e4\u1740  \'d2\'e3\'c7\'e4\u1740 
+\f2  
+\f1 \uc0\u1705 \'e5
+\f2  
+\f1 \'ca\'c7\'c8\'da
+\f2  
+\f3\fs28 \cf13 Function_x
+\f2\fs32 \cf11  
+\f1 \'d1\'c7
+\f2  
+\f0 Call
+\f2  
+\f1 \'e3\uc0\u1740 
+\f2  
+\f1 \uc0\u1705 \'e4\u1740 \'e3
+\f2  
+\f1 \'a1
+\f2  
+\f1 \'c7\'90\'d1
+\f2  
+\f1 \'e3\'de\'cf\'c7\'d1\uc0\u1740 
+\f2  
+\f1 \'c8\'d1\'c7\uc0\u1740 
+\f2  
+\f1 \'c2\'e4
+\f2  
+\f1 \'e3\'da\uc0\u1740 \'e4
+\f2  
+\f1 \'90\'d1\'cf\'cf
+\f2  
+\f1 \uc0\u1705 \'e5
+\f2  
+\f1 \'e3\'de\'cf\'c7\'d1
+\f2  
+\f1 \'e3\'da\uc0\u1740 \'e4
+\f2  
+\f1 \'d4\'cf\'e5 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'e3\uc0\u1740  \'90\'d1\'cf\'cf \'e6\'e1\u1740  \'c7\'90\'d1 \u1705 \'e5 \'e3\'de\'cf\'c7\'d1\u1740  \'c8\'d1\'c7\u1740  \'c2\'e4 \'e3\'da\u1740 \'e4 \'e4\'90\'d1\'cf\'cf \'a1 \'cf\'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca 
+\f2 "
+\f3\fs28 \cf13 Something with \cf12 Type_z
+\f2\fs32 \cf11 "
+\f1  \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'ce\'e6\'c7\'e5\'cf \'d4\'cf.}

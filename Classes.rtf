@@ -1,0 +1,502 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset178 GeezaPro;
+\f3\fnil\fcharset0 LucidaGrande;\f4\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green45\blue153;\red174\green0\blue240;\red255\green39\blue18;
+\red59\green0\blue164;\red58\green0\blue98;\red0\green0\blue169;\red73\green0\blue38;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww26920\viewh14800\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\b\fs36 \cf0 Classes
+\b0\fs28 \
+\
+A class is an expanded concept of a data structure: instead of holding only data, it can hold 
+\b both data and functions
+\b0 .\
+\
+
+\f1 \cf2 class class_name \{\
+  access_specifier_1:\
+    member1;\
+  access_specifier_2:\
+    member2;\
+\
+	member_function() \cf3 \uc0\u8235 const\cf2 \uc0\u8236 ;	// This is declaring the function. Its definition can be out of the class.\
+\
+	\cf3 class_name();								// Constructor 1 !\
+	class_name(argument1, argument2, \'85);		// Constructor 2 !\cf2 \
+  ...\
+  \} object_names;
+\f0 \cf0 \
+\
+An \ul access specifier\ulnone  is one of the following three keywords: 
+\b private
+\b0 , 
+\b public
+\b0  or 
+\b protected
+\b0 . These specifiers modify the access rights that the members following them acquire:\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf0 {\listtext	\'95	}
+\b Private Members
+\b0  of a class are accessible only from within other members of the same class or from their friends.\
+{\listtext	\'95	}
+\b Protected Members
+\b0  are accessible from members of their same class and from their friends, but also from members of their derived classes.\
+{\listtext	\'95	}
+\b Public Members
+\b0  are accessible from anywhere where the object is visible.\
+\pard\tx720\pardeftab720
+\cf0 \
+\pard\pardeftab720
+\cf0 we can refer within the body of the program to any of the public members of the object, 
+\b object_names
+\b0  as if they were normal functions or normal variables, just by putting the object's name followed by a 
+\b dot (.)
+\b0  and then the name of the member.\
+\
+The operator of scope 
+\b (::, two colons)
+\b0  : It is used to define a member of a class from outside the class definition itself.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Very Important:
+\b0  Size of any class depends upon the size of the variables in the class and not the functions. Functions are only allocated space on the stack when called and popped out when return. So, the size of a class is generally the sum of sizes of non-static member variables.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f2\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5 
+\f0 : 
+\f2\b0 \'c7\'e4\'cf\'c7\'d2\'e5
+\f0  
+\f2 \uc0\u1740 \u1705 
+\f0  
+\f2 \uc0\u1705 \'e1\'c7\'d3
+\f0  
+\f2 \'ca\'e4\'e5\'c7
+\f0  
+\f2 \ul \'e6\'c7\'c8\'d3\'ca\'e5
+\f0  
+\f2 \'c8\'e5
+\f0  
+\f2 \'e3\'ca\'db\uc0\u1740 \'d1
+\f0  
+\f2 \'e5\'c7\uc0\u1740 
+\f0  
+\f2 \'db\uc0\u1740 \'d1
+\f0  
+\f2 \'c7\'d3\'ca\'c7\'ca\uc0\u1740 \u1705 
+\f0 \ulnone  
+\f2 \'c2\'e4
+\f0  
+\f2 \'cf\'c7\'d1\'cf
+\f0  
+\f2 \'e6
+\f0  Member Function 
+\f2 \'e5\'c7
+\f0  
+\f2 \'cf\'d1
+\f0  
+\f2 \'d2\'e3\'c7\'e4 \'dd\'d1\'c7\'ce\'e6\'c7\'e4\uc0\u1740  \'c8\'d1 \'d1\'e6\u1740  
+\f0 Stack
+\f2  \'de\'d1\'c7\'d1 \'e3\uc0\u1740  \'90\u1740 \'d1\'e4\'cf \'e6 \'cf\'d1 \'d2\'e3\'c7\'e4 \'c8\'c7\'d2\'90\'d4\'ca \'c7\'d2 \'d1\'e6\u1740  
+\f0 Stack
+\f2  \'c8\'d1\'cf\'c7\'d4\'ca\'e5 \'e3\uc0\u1740  \'d4\'e6\'e4\'cf \'e6 \'e4\u1740 \'c7\'d2\u1740  \'e4\u1740 \'d3\'ca \u1705 \'e5 \'dd\'d6\'c7\u1740 \u1740  \'d1\'c7 \'c8\'d1\'c7\u1740  \'c2\'e4 \'e5\'c7 \'cf\'d1 \'e4\'d9\'d1 \'90\'d1\'dd\'ca.
+\f0\fs28 \
+\pard\pardeftab720\qr
+\cf0 \
+\pard\tx720\pardeftab720\rtlpar\qr
+
+\f2\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f0\b0  
+\f2\b \'c8\'d3\uc0\u1740 \'c7\'d1
+\f0\b0  
+\f2\b \'e3\'e5\'e3 
+\f0\b0 \uc0\u8235 :\uc0\u8236  
+\f2 \uc0\u1740 \u1705  
+\f3 Member Function
+\f2  \'a1 
+\f3 Constructor
+\f2  \'c7\uc0\u1740  \'cf\'d1 \u1705 \'e1\'c7\'d3 \'c7\'d3\'ca \u1705 \'e5 \'cf\'c7\'d1\'c7\u1740  
+\b \'e4\'c7\'e3\uc0\u1740  \u1740 \u1705 \'d3\'c7\'e4 \'c8\'c7 \'e4\'c7\'e3 \u1705 \'e1\'c7\'d3
+\b0  \'e3\uc0\u1740  \'c8\'c7\'d4\'cf \'e6 
+\b \'e3\'de\'cf\'c7\'d1 \'c8\'c7\'d2\'90\'d4\'ca\uc0\u1740  \'e4\'cf\'c7\'d1\'cf
+\b0 . \'d3\'c7\'d2\'e4\'cf\'e5 
+\f3 (Constructor) 
+\f2 \'e5\'c7 \'e3\uc0\u1740  \'ca\'e6\'c7\'e4\'e4\'cf \'e5\'e3\'8d\'e6\'e4 \'ca\'e6\'c7\'c8\'da 
+\f3 Overload
+\f2  \'90\'d1\'cf\'e4\'cf \uc0\u1740 \'da\'e4\u1740  \'8d\'e4\'cf 
+\f3 Constructor
+\f2  \'e3\'ce\'ca\'e1\'dd \'d1\'c7 \'c8\'c7 \'ca\'e4\'e5\'c7 \uc0\u1740 \u1705  \'e4\'c7\'e3 \'e3\'da\'d1\'dd\u1740  \u1705 \'d1\'cf.\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5
+\f0\b0  
+\f2\b \'e3\'e5\'e3 
+\f0\b0 \uc0\u8235 :\uc0\u8236  
+\f2 \'c7\'90\'d1 \'cf\'d1 \'ca\'da\'d1\uc0\u1740 \'dd \u1740 \u1705  
+\f3 Constructor
+\f2  \'a1 \'e6\'c7\'8e\'e5 
+\f1 \cf4 explicit
+\f2 \cf0  \'81\'d4\'ca \'e4\'c7\'e3 \'c2\'e4 \'c8\uc0\u1740 \'c7\u1740 \'cf \'a1 \'cf\'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca \'dd\'de\'d8 \'e3\u1740  \'ca\'e6\'c7\'e4 \u1740 \u1705  
+\f3 Value
+\f2  \'e3\'ca\'e4\'c7\'d3\'c8 \'c8\'c7 \'c2\'e4 
+\f3 Class
+\f2  
+\f3 Type
+\f2  \'d1\'c7 \'c8\'e5 \uc0\u1740 \u1705  
+\f3 Object
+\f2  \'c7\'d2 \'c2\'e4 
+\f3 Class
+\f2  
+\f3 Type
+\f2  \'cf\'c7\'cf. \'cf\'d1 \'d5\'e6\'d1\'ca\uc0\u1740  \u1705 \'e5 \'c7\'d2 
+\f3 exlplicit
+\f2  \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'e4\'90\'d1\'cf\'cf \'a1 \'c8\'c7 \'cf\'c7\'cf\'e4 \uc0\u1740 \u1705  
+\f3 Value
+\f2  \'c8\'c7 
+\f3 Type
+\f2  \'c7\uc0\u1740  \'e3\'ca\'dd\'c7\'e6\'ca \'c7\'d2 \'c2\'e4 
+\f3 Object
+\f2  \'a1 \'c2\'e4 \'e3\'de\'cf\'c7\'d1 \'c8\'e5 \'d5\'e6\'d1\'ca 
+\f3 implicit
+\f2  \'c8\'e5 \'e3\'de\'cf\'c7\'d1 \'e3\'d1\'c8\'e6\'d8 \'c8\'e5 \'c2\'e4 
+\f3 Class
+\f2  
+\f3 Type
+\f2  \'ca\'c8\'cf\uc0\u1740 \'e1 \'e3\u1740  \'90\'d1\'cf\'cf. \'e5\'e3\'8d\'e4\u1740 \'e4 \'c2\'e4 
+\f3 Constructor
+\f2  \'e3\uc0\u1740  \'c8\'c7\u1740 \'d3\'ca \'c8\'e5 \'e5\'e3\'c7\'e4 \'d5\'e6\'d1\'ca\u1740  \u1705 \'e5 \'ca\'da\'d1\u1740 \'dd \'d4\'cf\'e5 \'a1 \'dd\'d1\'c7\'ce\'e6\'c7\'e4\'cf\'e5 \'d4\'e6\'cf \'e6 \'e3\'de\'cf\'c7\'d1 \'cf\'e5\u1740  \'90\'d1\'cf\'cf. \u1740 \'da\'e4\u1740  \'e3\'cb\'e1\'c7 \'c7\'90\'d1 \'e3\'de\'cf\'c7\'d1 \'cf\'e5\u1740  \'c7\'e6\'e1\u1740 \'e5 \'e4\'e3\'e6\'cf\'e4 \u1740 \u1705  
+\f3 Constructor
+\f2  \'cf\'d1 \'81\'d1\'c7\'e4\'ca\'d2
+\f3  
+\f2 \'d5\'e6\'d1\'ca
+\f3  
+\f2 \'e3\uc0\u1740 
+\f3  
+\f2 \'90\uc0\u1740 \'d1\'cf
+\f3  
+\f2 \'a1
+\f3  
+\f2 \'cf\'d1
+\f3  
+\f2 \'c7\uc0\u1740 \'e4
+\f3  
+\f2 \'d5\'e6\'d1\'ca
+\f3  
+\f2 \'d2\'e3\'c7\'e4\uc0\u1740  \u1705 \'e5 \u1740 \u1705  
+\f3 Object
+\f2  \'c8\'c7 \'c2\'e4 
+\f3 Class
+\f2  
+\f3 Type
+\f2  \'ca\'da\'d1\uc0\u1740 \'dd \'e3\u1740  \'90\'d1\'cf\'cf \'a1 \'e3\u1740  \'c8\'c7\u1740 \'d3\'ca \'e3\'de\'cf\'c7\'d1 \'cf\'e5\u1740  \u1705 \'d1\'cf\'e4 \'c2\'e4 
+\f3 Object
+\f2  \'cf\'d1 \'81\'d1\'c7\'e4\'ca\'d2 \'d5\'e6\'d1\'ca \'90\uc0\u1740 \'d1\'cf \'e6 \'e4\'e3\u1740  \'ca\'e6\'c7\'e4 \'c7\'d2 
+\f3 Assign
+\f2  
+\f3 Operator
+\f2  
+\f3 \uc0\u8234 (=)
+\f2 \uc0\u8236  \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'e4\'e3\'e6\'cf. \'e1\'c7\'d2\'e3 \'c8\'e5 \'d0\uc0\u1705 \'d1 \'c7\'d3\'ca \u1705 \'e5 
+\f1 \cf4 explicit
+\f2 \cf0  \'ca\'e4\'e5\'c7 \'c8\'d1\'c7\uc0\u1740  
+\f3 Constructor
+\f2  \'e5\'c7\uc0\u1740 \u1740  \u1705 \'e5 \ul \uc0\u1740 \u1705  \'c2\'d1\'90\'e6\'e3\'c7\'e4 
+\f3 (Argument)
+\f2  \'cf\'d1\uc0\u1740 \'c7\'dd\'ca \'e3\u1740  \u1705 \'e4\'e4\'cf\ulnone  \'a1 \'c8\uc0\u1705 \'c7\'d1 \'e3\u1740  \'d1\'e6\'cf.\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5
+\f0\b0  
+\f2\b \'e3\'e5\'e3 
+\f0\b0 \uc0\u8235 :\uc0\u8236  Copy
+\f2  
+\f0 Constructor
+\f2  \'a1 \'d3\'c7\'d2\'e4\'cf\'e5 \'c7\uc0\u1740  \'cf\'d1 \u1740 \u1705  
+\f0 Class
+\f2  \'e3\uc0\u1740  \'c8\'c7\'d4\'cf \u1705 \'e5 \'c8\'e5 \'e6\'d3\u1740 \'e1\'e5 \'c2\'e4 \u1740 \u1705  
+\f0 Object
+\f2  \'c8\'c7 \'dd\'d6\'c7\uc0\u1740 \u1740  \'cc\'cf\u1740 \'cf 
+\f3 (
+\f2 \'c8\'e5 \'c7\'e4\'cf\'c7\'d2\'e5 
+\f0 Object
+\f2  \uc0\u1705 \'81\u1740  \u1705 \'e4\'e4\'cf\'e5
+\f3 )
+\f2  \'cf\'d1 \'cd\'c7\'dd\'d9\'e5 \'ca\'d4\uc0\u1705 \u1740 \'e1 \'e3\u1740  \'90\'d1\'cf\'cf \'e6 \'c8\'c7 \'e3\'de\'c7\'cf\u1740 \'d1 
+\f0 Object
+\f2  \uc0\u1705 \'81\u1740  \u1705 \'e4\'e4\'cf\'e5 \'81\'d1 \'e3\u1740  \'d4\'e6\'cf. \'c7\u1740 \'e4 \'d3\'c7\'d2\'e4\'cf\'e5 \'e3\u1740  \'ca\'e6\'c7\'e4\'cf \'c8\'e5 \'d5\'e6\'d1\'ca 
+\f3 implicit
+\f2  \uc0\u1740 \'da\'e4\u1740  \'c8\'e5 \'da\'e4\'e6\'c7\'e4 \'c2\'d1\'90\'e6\'e3\'c7\'e4 \u1740 \u1705  \'ca\'c7\'c8\'da \u1740 \'c7 \'e3\'de\'cf\'c7\'d1 \'c8\'d1\'90\'d4\'ca\u1740  \u1740 \u1705  \'ca\'c7\'c8\'da \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'90\'d1\'cf\'cf \'e6 \u1740 \'c7 \'c8\'e5 \'d5\'e6\'d1\'ca 
+\f3 explicit
+\f2  \'cf\'d1 \'c7\'e4\'cc\'c7\'e3 \'da\'e3\'e1 
+\f3 assignment
+\f2  \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'90\'d1\'cf\'cf.\
+\
+\pard\tx720\pardeftab720\rtlpar\qr
+\cf5 \
+\pard\pardeftab720
+
+\f1\fs28 \cf5 class_name::class_name () : constructor_initializer \{		
+\fs30 \cf0 // constructor_initializer : It is for initializing (private) members.
+\fs28 \cf5 \
+													
+\fs30 \cf0 // Example: If member1 and member2 is "int" Type --> 
+\f4\b member1(0)
+\f1\b0 , 
+\f4\b member2(5)
+\f1\b0\fs28 \cf5 \
+	// Constructor Body\
+\}\
+\
+class_name::class_name (argument1, argument2, \'85) : constructor_initializer \{\
+	// Constructor Body\
+\}\cf2 \
+\pard\pardeftab720
+
+\f0 \cf0 \
+\pard\tx720\pardeftab720
+\cf0 \
+\pard\pardeftab720\rtlpar\qr
+
+\f2\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f0  : 
+\f2\b0 \'c7\'90\'d1 \'cf\'c7\'ce\'e1 \uc0\u1740 \u1705  \u1705 \'e1\'c7\'d3 \'a1 
+\f3 Constructor
+\f2  \'ca\'da\'d1\uc0\u1740 \'dd \'e4\'90\'d1\'cf\'cf \'a1 \'cf\'d1 \'c7\u1740 \'e4 \'d5\'e6\'d1\'ca \u1740 \u1705  
+\f3 Object
+\f2  \'c7\'d2 \'c2\'e4 \uc0\u1705 \'e1\'c7\'d3 \'d1\'c7 \'e4\'e3\u1740  \'ca\'e6\'c7\'e4 \'e3\'de\'cf\'c7\'d1 \'cf\'e5\u1740  \'c7\'e6\'e1\u1740 \'e5 \u1705 \'d1\'cf \'e6 \'ca\'e4\'e5\'c7 \'e3\u1740  \'ca\'e6\'c7\'e4 \'e3\'de\'cf\'c7\'d1 \u1740 \u1705  
+\f3 Object
+\f2  \'cf\uc0\u1740 \'90\'d1 \'d1\'c7 \'c8\'e5 \'c2\'e4 
+\f3 Assign
+\f2  \uc0\u1705 \'d1\'cf.
+\b \
+\pard\tx720\pardeftab720\rtlpar\qr
+\cf0 \
+\'e4\uc0\u1705 \'ca\'e5
+\f0\b0  
+\f2\b \'c8\'d3\uc0\u1740 \'c7\'d1
+\f0\b0  
+\f2\b \'e3\'e5\'e3 
+\f0\b0 \uc0\u8235 :\uc0\u8236  
+\f2 \'d2\'e3\'c7\'e4\uc0\u1740 
+\f0  
+\f2 \uc0\u1705 \'e5
+\f0  
+\f2 \uc0\u1740 \u1705 
+\f0  
+\f2 \'ca\'c7\'c8\'da
+\f0  
+\f2 \'cf\'d1
+\f0  
+\f2 \uc0\u1740 \u1705  \u1705 \'e1\'c7\'d3 \'ca\'da\'d1\u1740 \'dd \'e3\u1740  \'90\'d1\'cf\'cf 
+\f3 (Member Function)
+\f2  \'a1 \'c7\'90\'d1 \'c8\'da\'cf \'c7\'d2 \'81\'d1\'c7\'e4\'ca\'d2 
+\f3 \uc0\u8235 () 
+\f2 \'ca\'c7\'c8\'da
+\f3  
+\f2 \'a1
+\f3  
+\f1 \cf3 const
+\f3 \cf0  
+\f2 \'c8\uc0\u1740 \'c7\u1740 \'cf
+\f3  
+\f2 \'c8\'e5
+\f3  
+\f2 \'c7\uc0\u1740 \'e4
+\f3  
+\f2 \'e3\'da\'e4\uc0\u1740 
+\f3  
+\f2 \'c7\'d3\'ca
+\f3  
+\f2 \uc0\u1705 \'e5 \'c2\'e4 \'ca\'c7\'c8\'da \'e4\'e3\u1740  \'ca\'e6\'c7\'e4\'cf \'e5\u1740 \'8d \u1705 \'cf\'c7\'e3 \'c7\'d2 \'c7\'da\'d6\'c7\u1740  \'c2\'e4 \u1705 \'e1\'c7\'d3 \'d1\'c7 \'ca\'db\u1740 \u1740 \'d1 \'cf\'e5\'cf \'e6 \'ca\'e4\'e5\'c7 \'e3\u1740  \'ca\'e6\'c7\'e4\'cf \'c7\'d2 \'c2\'e4 \'e5\'c7 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'e4\'e3\'c7\u1740 \'cf\uc0\u8236 . \'e5\'e3\'8d\'e4\uc0\u1740 \'e4 \'ca\'e4\'e5\'c7 
+\f3 Object
+\f2  \'e5\'c7\uc0\u1740 \u1740  \u1705 \'e5 \'c8\'e5 \'d5\'e6\'d1\'ca 
+\f1 \cf3 \uc0\u8235 const
+\f2 \cf0 \uc0\u8236  \'a1 \uc0\u1740 \'da\'e4\u1740  \'cb\'c7\'c8\'ca \'ca\'da\'d1\u1740 \'dd \'90\'d1\'cf\'e4\'cf \'a1 \'e3\u1740  \'ca\'e6\'c7\'e4\'e4\'cf \'c7\'d2 
+\f1\fs28 \cf2 member_function\uc0\u8234 ()\uc0\u8236  \cf3 const
+\f2\fs32 \cf0  \uc0\u1705 \'e1\'c7\'d3 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \u1705 \'e4\'e4\'cf.\
+\
+\pard\pardeftab720\rtlpar\qr
+
+\b \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f0  
+\f2 \'e3\'e5\'e3
+\f0  : 
+\f2\b0 \'d2\'e3\'c7\'e4\uc0\u1740 
+\f0  
+\f2 \uc0\u1705 \'e5 \u1740 \u1705  
+\f3 Class
+\f2  \'d1\'c7 \'ca\'da\'d1\uc0\u1740 \'dd \'e3\u1740  \u1705 \'e4\u1740 \'e3 \'a1 \'ca\'e3\'c7\'e3\u1740  \'de\'d3\'e3\'ca \'e5\'c7\u1740  \'de\'c8\'e1 \'c7\'d2 \'c7\'e6\'e1\u1740 \'e4 
+\f3 Protection
+\f2  
+\f3 Label
+\f2  \'c7\'d2 \'e4\'e6\'da 
+\f3 Private
+\f2  \'e3\uc0\u1740  \'c8\'c7\'d4\'e4\'cf. \'cf\'d1 \'e4\'ca\u1740 \'cc\'e5 \'c7\'90\'d1 \'e5\u1740 \'8d 
+\f3 Protection
+\f2  
+\f3 Label
+\f2  \'c7\uc0\u1740  \'cf\'d1 
+\f3 Class
+\f2  \'ca\'da\'d1\uc0\u1740 \'dd \'e4\'90\'d1\'cf\'cf \'a1 \'ca\'e3\'c7\'e3\u1740  \'da\'e4\'c7\'d5\'d1 
+\f3 Class
+\f2  \'c7\'d2 \'e4\'e6\'da 
+\f3 Private
+\f2  \'e3\uc0\u1740  \'c8\'c7\'d4\'e4\'cf.\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5 
+\f3 :
+\f2  
+\f3\b0 Protection Label
+\f2  \'e3\uc0\u1740  \'ca\'e6\'c7\'e4\'cf \'c8\'e5 \'cf\'e6 \'d5\'e6\'d1\'ca 
+\f3 Public
+\f2  \'e6 
+\f3 Private
+\f2  \'c8\'c7\'d4\'cf. \'e4\'e6\'da 
+\f3 Public
+\f2  \'e3\'d1\'c8\'e6\'d8 \'c8\'e5 \'da\'e4\'c7\'d5\'d1\uc0\u1740  \'e5\'d3\'ca\'e4\'cf \u1705 \'e5 \u1705 \'c7\'d1\'c8\'d1 \'de\'c7\'c8\'e1\u1740 \'ca \'cf\'d3\'ca\'d1\'d3\u1740  \'c8\'e5 \'c2\'e4 \'e5\'c7 \'d1\'c7 \'cf\'c7\'d1\'cf \'e6\'e1\u1740  \'e4\'e6\'da 
+\f3 Private
+\f2  \'da\'e4\'c7\'d5\'d1\uc0\u1740  \'e5\'d3\'ca\'e4\'cf \u1705 \'e5 \u1705 \'c7\'d1\'c8\'d1 \'c7\'cc\'c7\'d2\'e5 \'cf\'d3\'ca\'d1\'d3\u1740  \'c8\'e5 \'c2\'e4 \'e5\'c7 \'d1\'c7 \'e4\'cf\'c7\'d1\'cf. \'c7\'d5\'d8\'e1\'c7\'cd\'c7 \'ca\'e6\'c7\'c8\'da \'e6 \'e3\'ca\'db\u1740 \'d1 \'e5\'c7\u1740 \u1740  \u1705 \'e5 \'cf\'d1 \'de\'d3\'e3\'ca 
+\f3 Public
+\f2  \'ca\'da\'d1\uc0\u1740 \'dd \'e3\u1740  \'d4\'e6\'e4\'cf \'a1 \'e6\'c7\'d3\'d8 
+\f3 (Interface)
+\f2  \'c8\'d1\'c7\uc0\u1740  \'cf\'d3\'ca\u1740 \'c7\'c8\u1740  \'c8\'e5 \'c7\'d8\'e1\'c7\'da\'c7\'ca\u1740  \'e5\'d3\'ca\'e4\'cf \u1705 \'e5 \'cf\'d1 \'de\'d3\'e3\'ca 
+\f3 Private
+\f2  \'ca\'da\'d1\uc0\u1740 \'dd \'e3\u1740  \'90\'d1\'cf\'cf.\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5 
+\f3 :
+\f2  
+\b0 \'ca\'c7\'c8\'da\uc0\u1740  \u1705 \'e5 \u1705 \'c7\'d1\'c8\'d1 \'c8\'c7 \'ca\'da\'d1\u1740 \'dd \'c2\'e4 \'cf\'d1 \'de\'d3\'e3\'ca 
+\f3 Public
+\f2  \'a1 \'c7\'cc\'c7\'d2\'e5 \'cf\'d3\'ca\'d1\'d3\uc0\u1740  \'c8\'e5 \u1740 \u1705  \'cf\'c7\'cf\'e5 \'cf\'d1 \'de\'d3\'e3\'ca 
+\f3 Private
+\f2  \'d1\'c7 \'81\uc0\u1740 \'cf\'c7 \'e3\u1740  \u1705 \'e4\'cf \'a1 
+\f3 Accessor
+\f2  
+\f3 Function
+\f2  \'e4\'c7\'e3 \'cf\'c7\'d1\'cf. \'ca\'da\'d1\uc0\u1740 \'dd \'c7\u1740 \'e4 \'ca\'c7\'c8\'da \'e6 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'c7\'d2 \'c2\'e4 \'ca\'e4\'e5\'c7 \'d2\'e3\'c7\'e4\u1740  \'e3\'da\'e4\u1740  \'81\u1740 \'cf\'c7 \'e3\u1740  \u1705 \'e4\'e4\'cf \u1705 \'e5 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'e3\'d3\'ca\'de\u1740 \'e3 \'c8\'e5 \'c2\'e4 \'cf\'c7\'cf\'e5 \'d6\'d1\'e6\'d1\u1740  \'c8\'c7\'d4\'cf 
+\f3 (
+\f2 \uc0\u1740 \'da\'e4\u1740 
+\f3  
+\f2 \'c2\'e4
+\f3  
+\f2 \'cf\'c7\'cf\'e5
+\f3  
+\f2 \'d1\'c7
+\f3  
+\f2 \'c8\'e5 \'d8\'e6\'d1 \'e3\'d3\'ca\'de\uc0\u1740 \'e3 \'cf\'d1 \'c8\'d1\'e4\'c7\'e3\'e5 \'e4\u1740 \'c7\'d2 \'cf\'c7\'d4\'ca\'e5 \'c8\'c7\'d4\u1740 \'e3
+\f3 )
+\f2 .\
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5
+\f0  : 
+\f2\b0 \'da\'e3\'e1\'90\'d1 \uc0\u1740 \'c7 \'ca\'c7\'c8\'da\u1740  \u1705 \'e5 \'cf\'d1 \u1740 \u1705  \u1705 \'e1\'c7\'d3 \'ca\'da\'d1\u1740 \'dd \'e3\u1740  \'90\'d1\'cf\'cf \'a1 \'e3\u1740  \'ca\'e6\'c7\'e4\'cf 
+\f0 Object
+\f2  \'e3\'d1\'c8\'e6\'d8 \'c8\'e5 \'c2\'e4 \uc0\u1705 \'e1\'c7\'d3 \'d1\'c7 \'c8\'e5 \'da\'e4\'e6\'c7\'e4 \u1740 \u1705  \'c2\'d1\'90\'e6\'e3\'c7\'e4 
+\f0 implicit
+\f2  \'cf\'d1 \'e4\'d9\'d1 \'c8\'90\uc0\u1740 \'d1\'cf.
+\f0\fs28 \
+\pard\pardeftab720
+\cf0 \
+\pard\pardeftab720
+\cf0 \ul \ulc0 The basic concept of object-oriented programming\ulnone : Data and functions are both members of the object.\
+\
+
+\b\fs32 Constructors and destructors
+\b0\fs28 \
+\
+A class can include a special function called 
+\b constructor
+\b0 , which is automatically called whenever a new object of this class is created. This constructor function must have \ul the same name\ulnone  as the class, and \ul cannot have any return type\ulnone ; not even void.\
+\
+The destructor fulfills the opposite functionality. The destructor must have \ul the same name as the class\ulnone , but preceded with a 
+\b tilde sign (~)
+\b0  and it must also return no value. Meanwhile, a destructor cannot have any argument.\
+\
+
+\b\fs32 Pointers to classes
+\b0\fs28 \
+\
+It is perfectly valid to create pointers that point to classes. We simply have to consider that once declared, a class becomes a valid type, so we can use the class name as the type for the pointer. In order to \ul refer directly to a member of an object pointed by a pointer\ulnone  we can use the arrow operator 
+\b (->)
+\b0  of indirection.\
+\
+
+\b Example 1:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf6 #include <iostream>\cf0 \
+\pard\pardeftab720
+\cf7 using\cf0  \cf7 namespace\cf0  std;\
+\
+\cf7 class\cf0  CRectangle \{\
+    \cf7 int\cf0  x, y;\
+  \cf7 public\cf0 :\
+    \cf7 void\cf0  set_values (\cf7 int\cf0 ,\cf7 int\cf0 );\
+    \cf7 int\cf0  area () \{\cf7 return\cf0  (x*y);\}\
+\};\
+\
+\cf7 void\cf0  CRectangle::set_values (\cf7 int\cf0  a, \cf7 int\cf0  b) \{\
+  x = a;\
+  y = b;\
+\}\
+\
+\cf7 int\cf0  main () \{\
+  CRectangle rect, rectb;\
+  rect.set_values (3,4);\
+  rectb.set_values (5,6);\
+  cout << \cf8 "rect area: "\cf0  << rect.area() << endl;\
+  cout << \cf8 "rectb area: "\cf0  << rectb.area() << endl;\
+  \cf7 return\cf0  0;\
+\}\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Example 2:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf6 #include <iostream>\cf0 \
+\pard\pardeftab720
+\cf7 using\cf0  \cf7 namespace\cf0  std;\
+\
+\cf7 class\cf0  CRectangle \{\
+    \cf7 int\cf0  *width, *height;\
+  \cf7 public\cf0 :\
+    CRectangle (\cf7 int\cf0 ,\cf7 int\cf0 );\
+    ~CRectangle ();\
+    \cf7 int\cf0  area () \{\cf7 return\cf0  (*width * *height);\}\
+\};\
+\
+CRectangle::CRectangle (\cf7 int\cf0  a, \cf7 int\cf0  b) \{\
+  width = \cf7 new\cf0  \cf7 int\cf0 ;\
+  height = \cf7 new\cf0  \cf7 int\cf0 ;\
+  *width = a;\
+  *height = b;\
+\}\
+\
+CRectangle::~CRectangle () \{\
+  \cf7 delete\cf0  width;\
+  \cf7 delete\cf0  height;\
+\}\
+\
+\cf7 int\cf0  main () \{\
+  CRectangle rect (3,4), rectb (5,6);\
+  cout << \cf8 "rect area: "\cf0  << rect.area() << endl;\
+  cout << \cf8 "rectb area: "\cf0  << rectb.area() << endl;\
+  \cf7 return\cf0  0;\
+\}\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Important: COMPARE Example 1 and Example 2 !!!}

@@ -1,0 +1,720 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset0 Verdana;
+\f3\fmodern\fcharset0 Courier-Bold;\f4\fnil\fcharset178 GeezaPro;\f5\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;\red0\green45\blue153;\red249\green255\blue248;\red0\green0\blue169;
+\red0\green31\blue103;\red236\green236\blue236;\red0\green0\blue98;\red73\green0\blue38;\red217\green11\blue0;
+\red46\green111\blue253;\red255\green39\blue18;\red85\green142\blue40;}
+\margl1440\margr1440\vieww27680\viewh15440\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs32 \cf0 Some Functions:
+\fs28 \
+\
+1. strncpy\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 char * strncpy ( char * destination, const char * source, size_t num );\
+\
+\pard\pardeftab720
+
+\f0 \cf0 This function copies the first "num" characters of \ul source\ulnone  to \ul destination\ulnone .\
+\
+
+\b Example:
+\b0 \
+\
+\pard\pardeftab720
+
+\f1\fs24 \cf4 \cb1 char\cf0  str1[];\
+\cf4 char\cf0  str2[N];\
+strncpy ( str2, str1, \cf4 sizeof\cf0 (str2) );\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 2. fgets\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 char * fgets ( char * str, int num, FILE * stream );\
+\
+\pard\pardeftab720
+
+\f0 \cf0 This function reads characters from \ul stream\ulnone  and stores them as string into \ul str\ulnone . The process will be continued until:\
+\
+a. \ul num\ulnone  character have been read.\
+b. a newline is reached.\
+c. the \ul end-of-file\ulnone  is reached.\
+\
+\pard\pardeftab720
+\cf0 \cb1 Notice: A newline character makes 
+\b \cf5 \ul \ulc5 fgets()
+\b0 \cf0 \ulnone  stop reading, but it is considered a valid character (
+\b \\n
+\b0 ) by the function and 
+\b included in the string
+\b0  copied to \ul str\ulnone .\
+\
+\pard\pardeftab720
+
+\b \cf0 Parameters:
+\b0 \
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \cb6 str\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 Pointer to an array of 
+\f1 char
+\f2 s where the string read is copied.\
+\pard\pardeftab720
+
+\f1 \cf0 \cb6 num\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 Maximum number of characters to be copied into 
+\i str
+\i0  (including the terminating null-character).\
+\pard\pardeftab720
+
+\f1 \cf0 \cb6 stream\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 Pointer to a {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/FILE"}}{\fldrslt \cf7 FILE}} object that identifies an input stream.\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/stdin"}}{\fldrslt \cf7 stdin}} can be used as argument to read from the 
+\i standard input
+\i0 .\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Example:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf0 FILE * pFile;\
+\pard\pardeftab720
+\cf4 char\cf0  mystring [N];\
+pFile = fopen (\cf8 "myfile.txt"\cf0  , \cf8 "r"\cf0 );\
+\cf4 if\cf0  ( fgets (mystring , N , pFile) != NULL )\
+puts (mystring);\
+fclose (pFile);\
+\}
+\f2 \
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Important: 
+\b0 \ul pFile\ulnone  is a pointer to \ul myfile.txt\ulnone  !!!
+\f2\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 3. stdin\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 FILE * stdin;\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 The standard input stream is the \ul default source of data\ulnone  for application. In most systems, it is usually directed by default to the keyboard.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 4. gets\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 char * gets ( char * str );\
+\
+\pard\pardeftab720
+
+\f0 \cf0 This function reads characters from the standard input (stdin) and stores them as string into \ul str\ulnone . The process will be continued until:\
+\
+a. a newline is reached.\
+b. the \ul end-of-file\ulnone  is reached.\
+\
+\pard\pardeftab720
+\cf0 \cb1 Notice: The newline character, if found, is not copied into str. (
+\b Compare to fgets
+\b0 )\
+\
+
+\b Example:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf4 char\cf0  string [256];\
+gets (string);\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 5. scanf\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 int scanf ( const char * format, ... );  
+\f3\b\fs36 \cf0 =
+\f1\b0\fs28 \cf2   scanf( "conversion-string", &variable, ... );\
+\pard\pardeftab720
+\cf2 \cb3 \
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 This function reads data from stdin and stores them according to the \ul parameter format\ulnone  into the locations pointed by the additional arguments. It means that we should \ul specify the pointers to the locations\ulnone  (
+\b Pointers to Variables
+\b0 ) that we want to store data into them.\
+\
+\pard\pardeftab720\qr
+
+\f4\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f0  
+\f4 \'c8\'d3\uc0\u1740 \'c7\'d1
+\f0  
+\f4 \'e3\'e5\'e3
+\f0  \uc0\u8235 :\uc0\u8236 \uc0\u8204 
+\f4  \'cf\'d1 \'ca\'c7\'c8\'da \'c7\'d3\uc0\u1705 \'e4 \'a1 \'8d\'e6\'e4 \'e3\u1740  \'ce\'e6\'c7\'e5\u1740 \'e3 \'e3\'de\'cf\'c7\'d1 \u1740 \u1705  \'e3\'ca\'db\u1740 \'d1 \'d1\'c7 \'cf\'d1 \'c2\'e4 \'ca\'db\u1740 \u1740 \'d1 \'cf\'e5\u1740 \'e3 \'81\'d3 \'e3\u1740  \'c8\'c7\u1740 \'d3\'ca \u1740 \u1705  \'e3\'ca\'db\u1740 \'d1 \'d1\'c7 \'c8\'e5 \'d5\'e6\'d1\'ca \'e3\'d1\'cc\'da 
+\f5 \uc0\u8235 (
+\f4 \uc0\u8236 \'d1\'dd\'d1\'e4\'d3
+\f5 \uc0\u8235 )
+\f4 \uc0\u8236  \'c8\'e5 \'c2\'e4 \'c8\'cf\'e5\uc0\u1740 \'e3 
+\f5 \uc0\u8235 (
+\f4 \uc0\u8236 \'c8\'d1 \'da\uc0\u1705 \'d3 \'ca\'c7\'c8\'da \'81\'d1\u1740 \'e4\'ca
+\f5 \uc0\u8235 )
+\f4 .\uc0\u8236  
+\f0\fs28 \
+\pard\pardeftab720
+\cf0 \
+
+\b Example:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf4 char\cf0  str [N];\
+\cf4 int\cf0  i;\
+scanf (\cf8 "%s"\cf0 ,str);  \
+scanf (\cf8 "%d"\cf0 ,&i);\
+\
+\pard\pardeftab720\sa100
+
+\f0\b\fs28 \cf0 Return Value
+\b0 \
+\pard\pardeftab720
+\cf0 Successfully = the number of items of the argument list successfully filled
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 6. printf\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 int printf ( const char * format, ... );  
+\f3\b\fs36 \cf0 =
+\f1\b0\fs28 \cf2   printf( "format-string", expression, ... );\cb3 \
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 This function writes a string pointed by \ul format\ulnone  to the standard output ({\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/stdout"}}{\fldrslt stdout}}). In this function, we should \ul specify the locations or values\ulnone  that we want to put them in the output.\
+\
+\pard\pardeftab720\qr
+
+\f4\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5
+\f0  
+\f4 \'c8\'d3\uc0\u1740 \'c7\'d1
+\f0  
+\f4 \'e3\'e5\'e3
+\f0  \uc0\u8235 :\uc0\u8236 \uc0\u8204 
+\f4  \'cf\'d1 \'ca\'c7\'c8\'da \'81\'d1\uc0\u1740 \'e4\'ca \'a1 \'8d\'e6\'e4 \'e3\u1740  \'ce\'e6\'c7\'e5\u1740 \'e3 \'ca\'e4\'e5\'c7 \'e3\'de\'cf\'c7\'d1 \u1740 \u1705  \'e3\'ca\'db\u1740 \'d1 \'d1\'c7 \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \u1705 \'e4\u1740 \'e3 \'81\'d3 \'e3\u1740  \'c8\'c7\u1740 \'d3\'ca \u1740 \u1705  \'e3\'ca\'db\u1740 \'d1 \'d1\'c7 \'c8\'e5 \'d5\'e6\'d1\'ca \'e3\'da\'e3\'e6\'e1 \'c8\'e5 \'c2\'e4 \'c8\'cf\'e5\u1740 \'e3 
+\f5 \uc0\u8235 (
+\f4 \uc0\u8236 \'c8\'d1 \'da\uc0\u1705 \'d3 \'ca\'c7\'c8\'da \'c7\'d3\u1705 \'e4
+\f5 \uc0\u8235 )
+\f4 .\uc0\u8236  
+\f0\fs28 \
+\pard\pardeftab720
+\cf0 \
+
+\b Example:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf0 printf (\cf8 "Characters: %c %c \\n"\cf0 , \cf8 'a'\cf0 , 65);\
+printf (\cf8 "Decimals: %d %ld\\n"\cf0 , 1977, 650000L);\
+printf (\cf8 "Preceding with blanks: %10d \\n"\cf0 , 1977);\
+printf (\cf8 "Preceding with zeros: %010d \\n"\cf0 , 1977);\
+printf (\cf8 "Some different radices: %d %x %o %#x %#o \\n"\cf0 , 100, 100, 100, 100, 100);\
+printf (\cf8 "floats: %4.2f %+.0e %E \\n"\cf0 , 3.1416, 3.1416, 3.1416);\
+printf (\cf8 "Width trick: %*d \\n"\cf0 , 5, 10);\
+printf (\cf8 "%s \\n"\cf0 , \cf8 "A string"\cf0 );\
+\pard\pardeftab720
+\cf4 int\cf0  i;\
+printf (\cf8 "You have entered %#x (%d).\\n"\cf0 ,i,i);\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Important: 
+\b0 For outputting all the elements of an 
+\b array
+\b0  with 
+\b printf
+\b0 , we would need \ul loops\ulnone . Because we can't use pointers in printf() as opposed to scanf().
+\f1\fs24 \
+\
+\pard\pardeftab720\sa100
+
+\f0\b\fs28 \cf0 Return Value
+\b0 \
+\pard\pardeftab720
+\cf0 Successfully = Total number of characters written\
+Failure = A negative number
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 7. fopen\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 FILE * fopen ( const char * filename, const char * mode );\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 Opens the file whose name is specified in the parameter filename and associates it with a stream that can be identified in future operations by the {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/FILE"}}{\fldrslt FILE}} pointer returned.\
+\
+\pard\pardeftab720
+
+\f3\b\fs24 \cf0 \cb6 filename
+\f1\b0 \
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 C string containing the name of the file to be opened.\
+Its value shall follow the file name specifications of the running environment and can include a path (if supported by the system).\
+\
+\pard\pardeftab720
+
+\f1 \cf0 \cb6 mode\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 C string containing a file access mode. It can be:\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat1 \clwWidth640\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf0 \clbrdrl\brdrs\brdrw20\brdrcf0 \clbrdrb\brdrs\brdrw20\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf0 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clcbpat1 \clwWidth12980\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf0 \clbrdrl\brdrs\brdrw20\brdrcf0 \clbrdrb\brdrs\brdrw20\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf0 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 "r"\cell 
+\pard\intbl\itap1\pardeftab720
+
+\b \cf0 read:
+\b0  Open file for input operations. The file must exist.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat1 \clwWidth640\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf0 \clbrdrl\brdrs\brdrw20\brdrcf0 \clbrdrb\brdrs\brdrw20\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf0 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clcbpat1 \clwWidth12980\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf0 \clbrdrl\brdrs\brdrw20\brdrcf0 \clbrdrb\brdrs\brdrw20\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf0 \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 "w"\cell 
+\pard\intbl\itap1\pardeftab720
+
+\b \cf0 write:
+\b0  Create an empty file for output operations. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file.\cell \lastrow\row
+\pard\pardeftab720
+\cf0 \
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Example:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf0 FILE * pFile;\
+pFile = fopen (\cf8 "myfile.txt"\cf0 ,\cf8 "w"\cf0 );\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Important: "myfile.txt"
+\b0  is a pointer to the text file.\
+\
+\pard\pardeftab720\sa100
+
+\b \cf0 Return Value
+\b0 \
+\pard\pardeftab720
+\cf9 Successfully = A Pointer to a FILE object\cf0 \
+Failure = Null Pointer\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 8. fclose\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 int fclose ( FILE * stream );\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 This function Closes the file associated with the stream and disassociates it.\
+\
+
+\b Example:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf0 FILE * pFile;\
+pFile = fopen (\cf8 "myfile.txt"\cf0 ,\cf8 "wt"\cf0 );\
+fclose (pFile);\
+\
+\pard\pardeftab720\sa100
+
+\f0\b\fs28 \cf0 Return Value
+\b0 \
+\pard\pardeftab720
+\cf0 Successfully = Zero value\
+Failure = {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/EOF"}}{\fldrslt EOF}}
+\f2\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 9. FILE\
+\
+\pard\pardeftab720
+
+\b0 \cf0 Object 
+\b \ul type
+\b0 \ulnone  that identifies a "\ul stream\ulnone " and contains \ul the information needed to control it\ulnone , including \ul a pointer to its buffer\ulnone , its \ul position indicator\ulnone  and all its \ul state indicators\ulnone .\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 10. free\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 void free (void* ptr);
+\f0\b \cf0 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\pard\pardeftab720
+
+\b0 \cf0 Deallocate memory block.\
+\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \cb6 ptr\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 Pointer to a memory block previously allocated with {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/malloc"}}{\fldrslt 
+\f1 \cf7 malloc}}, {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/calloc"}}{\fldrslt 
+\f1 \cf7 calloc}} or {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/realloc"}}{\fldrslt 
+\f1 \cf7 realloc}}.\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Example:
+\f2\b0\fs24 \
+\
+\pard\pardeftab720
+
+\f1 \cf0 buffer1 = (\cf4 int\cf0 *) malloc (100*\cf4 sizeof\cf0 (\cf4 int\cf0 ));\
+free (buffer1);\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 11. sscanf\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 int sscanf ( const char * s, const char * format, ...);\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 Reads data from 
+\b "
+\b0  
+\b s "
+\b0  and stores them according to parameter format into the locations given by the additional arguments, as if {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/scanf"}}{\fldrslt scanf}} was used, but reading from 
+\b "
+\b0  
+\b s " 
+\b0 instead of the standard input ({\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/stdin"}}{\fldrslt stdin}}).\
+\
+
+\b Example:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf4 char\cf0  sentence []=\cf8 "Rudolph is 12 years old"\cf0 ;\
+\cf4 char\cf0  str [20];\
+\cf4 int\cf0  i;\
+sscanf (sentence,\cf8 "%s %*s %d"\cf0 ,str,&i);\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 12. memset\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 void * memset ( void * ptr, int value, size_t num );\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 Sets the first 
+\b num
+\b0  bytes of the block of memory pointed by 
+\b ptr
+\b0  to the specified 
+\b value
+\b0  (interpreted as an unsigned char).\
+\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \cb6 ptr\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 Pointer to the block of memory to fill.\
+\pard\pardeftab720
+
+\f1 \cf0 \cb6 value\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 Value to be set. The value is passed as an 
+\f1 int
+\f2 , but the function fills the block of memory using the 
+\i unsigned char
+\i0  conversion of this 
+\i value
+\i0 .\
+\pard\pardeftab720
+
+\f1 \cf0 \cb6 num\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 Number of bytes to be set to the 
+\i value
+\i0 .\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/cstring:size_t"}}{\fldrslt \cf7 size_t}} is an unsigned integral type.\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Example:
+\f2\b0\fs24 \
+\
+\pard\pardeftab720
+
+\f1 \cf4 char\cf0  str[] = \cf8 "almost every programmer should know memset!"\cf0 ;\
+memset (str,\cf8 '-'\cf0 ,6);\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 13. malloc\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 void* malloc (size_t size);\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 Allocates a block of size bytes of memory, returning a pointer to the beginning of the block.\
+\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \cb6 size\
+\pard\pardeftab720
+
+\f2 \cf0 \cb1 Size of the memory block, in bytes.\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/cstdlib:size_t"}}{\fldrslt 
+\f1 \cf7 size_t}} is an unsigned integral type.
+\f0\fs28 \
+\
+\pard\pardeftab720
+
+\b \cf0 Example:\
+\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf4 int\cf0  i;\
+\cf4 char\cf0  * buffer;\
+printf (\cf8 "How long do you want the string? "\cf0 );\
+scanf (\cf8 "%d"\cf0 , &i);\
+buffer = (\cf4 char\cf0 *) malloc (i);\
+\
+\pard\pardeftab720
+
+\f0\b\fs28 \cf0 Important: 
+\b0 The 
+\b type
+\b0  that is specified for a 
+\b malloc
+\b0  is \ul the type of data\ulnone  that we can put in the allocated block.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 14. fprintf\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 int fprintf ( FILE * stream, const char * format, ... );\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 This function writes a 
+\b string
+\b0  pointed by format to the 
+\b \ul stream
+\b0 \ulnone  such as a 
+\b \ul file
+\b0 \ulnone .\
+\
+
+\b Important Example:
+\b0 \
+\pard\pardeftab720
+
+\f1 \cf2 \cb3 \
+\pard\pardeftab720
+
+\fs24 \cf0 \cb1 FILE * pFile;\
+   \cf4 int\cf0  n;\
+   \cf4 char\cf0  name [100];\
+\
+   pFile = fopen (\cf8 "myfile.txt"\cf0 ,\cf8 "w"\cf0 );\
+   \cf4 for\cf0  (n=0 ; n<3 ; n++)\
+   \{\
+     puts (\cf8 "please, enter a name: "\cf0 );\
+     gets (name);\
+     fprintf (pFile, \cf8 "Name %d [%-10.10s]\\n"\cf0 ,n,name);\
+   \}\
+   fclose (pFile);\
+\
+\pard\pardeftab720
+
+\f0\fs28 \cf0 Notice: 
+\f1 %-N.Ms
+\f0  : left-justified (-), minimum of N characters (N), maximum of M characters (.M), string (s).\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 15. endl\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 cout << endl;\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 It inserts a \ul new-line character\ulnone  and then \ul flushes\ulnone  the stream.\
+\
+Its behavior is equivalent to calling
+\f1  {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/ostream::put"}}{\fldrslt put}}('\\n')
+\f0 , and then {\field{\*\fldinst{HYPERLINK "http://www.cplusplus.com/basic_ostream::flush"}}{\fldrslt 
+\f1 flush()}}.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 16. flush()\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 cout << flush;
+\f0 \cf0 \cb1 \
+\
+It makes sure that the file stream is updated with the data. Its operation is like refreshing the output for User.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 17. fstream\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b0 \cf0 Input stream (
+\f1 ifstream
+\f0 ) or Output stream (
+\f1 ofstream
+\f0 ) class to operate on files. "
+\f1 fstream
+\f0 " can do both works of "
+\f1 ifstream
+\f0 " and "
+\f1 ofstream
+\f0 ".\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 IMPORTANT:
+\b0 \
+\
+1) 
+\f3\b cin
+\f0\b0  is an object of class 
+\f3\b istream
+\f0\b0 . --> 
+\f3\b istream
+\f0\b0  = Input Stream\
+2) 
+\f3\b cout
+\f0\b0  is an object of class of 
+\f3\b ostream
+\f0\b0 . --> 
+\f3\b ostream
+\f0\b0  = Output Stream\
+\
+
+\b Example:
+\b0 \
+\
+\pard\pardeftab720
+
+\f1\fs24 \cf10 string\cf0  str;
+\f0\fs28 \
+
+\f1\fs24 \cf11 ofstream\cf0  myfile1;\
+\
+\cf12 myfile1.open\cf0  (\cf8 "example.txt"\cf0 );\
+myfile1 << \cf8 "Writing this to a file.\\n"\cf0 ;\
+\
+myfile1.close();\
+\
+\cf11 ifstream\cf0  myfile2;\
+\
+\cf12 myfile2.open\cf0  (\cf8 "example.txt"\cf0 );\
+myfile2 >> str;\
+\
+myfile2.close();\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs28 \cf0 18. cerr\
+\
+\pard\pardeftab720
+
+\f1\b0 \cf2 \cb3 cerr << something;\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0 \cf0 \cb1 It is a standard output stream for errors.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f4\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5 \'c8\'d3\u1740 \'c7\'d1 \'e3\'e5\'e3 
+\f5 :
+\f4  
+\b0 \'e3\'cd\'ca\'e6\'c7\uc0\u1740 \u1740  \u1705 \'e5 \'e3\u1740  \'ce\'e6\'c7\'e5\u1740 \'e3 \'c8\'e5 \'d5\'e6\'d1\'ca \'ce\'d8\'c7 \'cf\'d1 \'ce\'d1\'e6\'cc\u1740  \'e4\'e3\'c7\u1740 \'d4 \'cf\'e5\u1740 \'e3 \'a1 \'e6\'c7\'d1\'cf \'c7\u1740 \'e4 
+\f0 Stream
+\f4  \'e3\uc0\u1740  \u1705 \'e4\u1740 \'e3. \'e1\'c7\'d2\'e3 \'c8\'e5 \'d0\u1705 \'d1 \'c7\'d3\'ca \u1705 \'e5 \'e5\'d1 \'cf\'e6\u1740  
+\f0 cerr
+\f4  \'e6 
+\f0 cout
+\f4  \'c7\'d2 \uc0\u1740 \u1705  
+\f0 Console
+\f4  \'e6 \'e3\'de\'d5\'cf \'c8\'d1\'c7\uc0\u1740  \'e4\'e3\'c7\u1740 \'d4 
+\f0 Data
+\f4  \'ce\'e6\'cf \'c7\'d3\'ca\'dd\'c7\'cf\'e5 \'e3\uc0\u1740  \u1705 \'e4\'e4\'cf 
+\f5 (
+\f4 \uc0\u1740 \'da\'e4\u1740  \'c8\u1740 \'e4 \'e5\'d1 \'cf\'e6\u1740  \'c2\'e4 \'e5\'c7 \'e3\'d4\'ca\'d1\u1705  \'c7\'d3\'ca
+\f5 )
+\f4 .\
+
+\f1\fs28 \cf10 \
+\pard\pardeftab720
+\cf10 std::cout  // Regular output (console output)\
+std::cerr  // Error output (console error)}

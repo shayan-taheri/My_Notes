@@ -1,0 +1,50 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier-Bold;\f2\fmodern\fcharset0 Courier;
+\f3\fnil\fcharset178 GeezaPro;\f4\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;\red255\green39\blue18;\red74\green0\blue230;}
+\margl1440\margr1440\vieww22660\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 stringstream
+\b0\fs28 \
+\
+\pard\pardeftab720
+\cf0 Stream class to operate on strings.\
+\
+Objects of this class use a \cf2 string buffer\cf0  that\ul  contains a sequence of characters\ulnone . This sequence of characters can be accessed directly as a \ul string object\ulnone , using member 
+\f1\b str
+\f0\b0 .\
+\
+Characters can be \ul inserted and/or extracted from the stream\ulnone  using any operation allowed on both 
+\b input stream (
+\f1 istringstream
+\f0 )
+\b0  and 
+\b output stream (
+\f1 ostringstream
+\f0\b0 ).\
+\
+
+\b Important:
+\b0  For clearing the stream, we have the following commands:\
+\
+
+\f2 \cf3 stringstream s;\
+s.str("");	// It is required to reset the string to be empty.\
+s.clear();	// It is required to clear any error flags that may be set.
+\f0 \cf0 \
+\
+\pard\pardeftab720\rtlpar\qr
+
+\f3\b\fs32 \cf0 \'e4\uc0\u1705 \'ca\'e5 
+\f4 \uc0\u8235 :
+\f3 \uc0\u8236  
+\b0 \'c7\uc0\u1740 \'e4 \u1705 \'e1\'c7\'d3 
+\f0 Stream
+\f3  \'c8\'d1 \'d1\'e6\uc0\u1740  \u1740 \u1705  \'c8\'c7\'dd\'d1 
+\f0 String
+\f3  \'da\'e3\'e1 \'e3\uc0\u1740  \u1705 \'e4\'cf \'e6 \'c8\'cf\u1740 \'e4 \'d5\'e6\'d1\'ca \'c7\'d3\'ca \u1705 \'e5 \'cf\'d1 \'cd\'c7\'e1\'ca \'ce\'d1\'e6\'cc\u1740  \'a1 \'c7\'d8\'e1\'c7\'da\'c7\'ca \'c8\'d1 \'d1\'e6\u1740  
+\f0 String
+\f3  \'e4\'e6\'d4\'ca\'e5 \'e3\uc0\u1740  \'d4\'e6\'cf \'e6 \'cf\'d1 \'cd\'c7\'e1\'ca \'e6\'d1\'e6\'cf\u1740  \'a1 \'c7\'d8\'e1\'c7\'da\'c7\'ca \'c7\'d2 
+\f0 String
+\f3  \'ce\'e6\'c7\'e4\'cf\'e5 \'e3\uc0\u1740  \'d4\'e6\'cf\uc0\u8235 .\uc0\u8236 }
