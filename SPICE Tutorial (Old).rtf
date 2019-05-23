@@ -1,0 +1,731 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas;\f2\fnil\fcharset178 GeezaPro;
+\f3\fnil\fcharset0 Consolas-Bold;\f4\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;\red174\green0\blue240;\red255\green39\blue18;\red74\green0\blue230;
+\red168\green24\blue75;}
+\margl1440\margr1440\vieww28040\viewh14620\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 SPICE Tutorial
+\b0\fs24 \
+\
+
+\fs28 1) 
+\b\fs32 Case Sensitivity
+\fs28 :
+\b0  SPICE is not case-sensitive.\
+\
+2) 
+\b\fs32 SPICE File:
+\b0\fs28  The format of an SPICE file is according to the following:\
+\
+\ul Format\ulnone :\
+\
+
+\f1 \cf2 Title Line\
+[Include Definitions]\
+[Options]\
+[Sub-Circuit Definitions]\
+Devices Declaration and Node Connections\
+Power and Signal Sources Declaration\
+Analysis Commands\
+Output Commands\
+.END
+\f0 \cf0 \
+\
+\ul Important 1\ulnone : Possible formats for saving an SPICE file are: 
+\f1 \cf2 .cir
+\f0 \cf0  , 
+\f1 \cf2 .sp
+\f0 \cf0  , or ...\
+\
+\ul Important 2\ulnone : To include a file in an SPICE file, the following command is used:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul \ulc0 Command\ulnone : 
+\f1 \cf2 .include  file_name.format               // format = txt , lib , or ...
+\f0 \cf0 \
+\
+\ul Important 3\ulnone : To define a parameter in an SPICE file, the following command is used. Defining parameter is used to change a feature of a circuit easily and rapidly.\
+\
+\ul Command\ulnone : 
+\f1 \cf2 .param Parameter_Name = Value
+\f0 \cf0 \
+\
+3) 
+\b\fs32 Units:
+\b0\fs28  The order-of-magnitude (
+\f2 \'e4\'e3\'c7\uc0\u1740 \'d4 \'e3\'d1\'ca\'c8\'e5
+\f0  
+\f2 \'c8\'d2\'d1\'90\uc0\u1740 
+\f0  
+\f2 \'c7\'da\'cf\'c7\'cf
+\f0  
+\f2 \'c8\'d1
+\f0  
+\f2 \'c7\'d3\'c7\'d3
+\f0  
+\f2 \'81\'c7\uc0\u1740 \'e5
+\f0  
+\f2 \uc0\u1777 \u1776 
+\f0 ) in SPICE are according to the following:\
+\
+f (femto)		E-15		|	p (pico)	E-12		|	n (nano)        E-9\
+\
+u (micro)		E-6		|	m (mili)	E-3		|	k (kilo)           E+3\
+\
+meg (mega)	E+6		|	g (giga)	E+9		|	t (tera)           E+12\
+\
+4) 
+\b\fs32 Passive Devices Declaration:
+\b0\fs28  Passive Devices such as Resistor, Capacitor, Inductor, and etc. are declared according to the following:\
+\
+\ul Format\ulnone :\
+\
+
+\f1 \cf2 Device_Name  Node_1  Node_2  Value  [Initial Condition]
+\f0 \cf0 \
+\
+\ul Explanation\ulnone :\
+\
+A) 
+\f1 \cf2 Device_Name = \{R or C or L\} "Number"
+\f0 \cf0 \
+\
+\ul Note\ulnone : R = Resistor , C = Capacitance , L = Inductor\
+\
+B) Nodes are usually shown by numbers. Node 
+\b 0
+\b0  is commonly used for \ul Ground\ulnone .\
+\
+C) \ul Initial Condition\ulnone : A voltage or current through the device.\
+\
+Example: 
+\f1 \cf2 R1 1 2 100k
+\f0 \cf0 \
+\
+5) 
+\b\fs32 Source Declaration:
+\b0\fs28  Different kinds of sources are declared according to the following:\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf3 -- Independent Sources:
+\b0 \cf0 \
+\
+A) 
+\i\b DC and AC Source:
+\i0\b0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Format\ulnone :\
+\
+
+\f1 \cf2 Source_Name  Positive_Node  Negative_Node  Type  Value
+\f0 \cf0 \
+\
+
+\f1 \cf2 Type
+\f0 \cf0 : Type of Source -- DC or AC\
+\
+
+\f1 \cf2 Value
+\f0 \cf0 : Magnitude of Source\
+\
+\ul Note\ulnone : 
+\f1 \cf2 Source_Name = \{V or I\} "Number"
+\f0 \cf0 \
+\
+Example: 
+\f1 \cf2 V1 1 0 DC 5v
+\f0 \cf0 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf3 -- Dependent Sources:
+\b0 \cf0 \
+\
+There are four types of dependent sources according to the following:\
+\
+A) 
+\i\b Voltage Source Controlled-By Voltage:
+\i0\b0  
+\f1 V = factor * Vx
+\f0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Format\ulnone : 
+\f1 \cf2 E "Number"  DS_POS_Node  DS_NEG_Node  IS_POS_Node  IS_NEG_Node  Scale_Value
+\f0 \cf0 \
+\
+
+\f1 \cf2 DS_POS_Node
+\f0 \cf0 : The positive terminal of dependent source.\
+\
+
+\f1 \cf2 DS_NEG_Node
+\f0 \cf0 : The negative terminal of dependent source.\
+\
+
+\f1 \cf2 IS_POS_Node
+\f0 \cf0 : The positive terminal of independent source.\
+\
+
+\f1 \cf2 IS_NEG_Node
+\f0 \cf0 : The negative terminal of independent source.\
+\
+
+\f1 \cf2 Scale_Value
+\f0 \cf0 : It is used to scale the value of independent source. The after-scaling value is used as the value of dependent source.\
+\
+B) 
+\i\b Current Source Controlled-By Voltage:
+\i0\b0  
+\f1 I = factor * Vx
+\f0 \
+\
+\ul Format\ulnone : 
+\f1 \cf2 G "Number"  DS_POS_Node  DS_NEG_Node  IS_POS_Node  IS_NEG_Node  Scale_Value
+\f0 \cf0 \
+\
+
+\f1 \cf2 IS_POS_Node
+\f0 \cf0 : The positive terminal of independent source.\
+\
+
+\f1 \cf2 IS_NEG_Node
+\f0 \cf0 : The negative terminal of independent source.\
+\
+C) 
+\i\b Voltage Source Controlled-By Current:
+\i0\b0  
+\f1 V = factor * Ix
+\f0 \
+\
+\ul Format\ulnone : 
+\f1 \cf2 H "Number" DS_POS_Node  DS_NEG_Node  V_Measurement_Name  Scale_Value
+\f0 \cf0 \
+\
+
+\f1 \cf2 V_Measurement_Name
+\f0 \cf0 : The name of the assumed zero-volt voltage source in the path, which is for under investigation current (
+\f3\b Ix
+\f0\b0 ).\
+\
+\ul Note\ulnone : The zero-volt voltage source, which is for measurement needs to be defined based on the related nodes.\
+\
+D) 
+\i\b Current Source Controlled-By Current:
+\i0\b0  
+\f1 I = factor * Ix
+\f0 \
+\
+\ul Format\ulnone : 
+\f1 \cf2 F "Number"  DS_POS_Node  DS_NEG_Node  V_Measurement_Name  Scale_Value
+\f0 \cf0 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf3 -- Transient Sources:
+\b0 \cf0 \
+\
+The following types of sources are available for both voltage and current:\
+\
+A) 
+\i\b Sine Source:
+\i0\b0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Format\ulnone : 
+\f1 \cf2 V "Number"  Pos_Node  Neg_Node  SIN (V0 VA FREQ [TD THETA PHASE])
+\f0 \cf0 \
+\
+
+\f1 \cf2 SIN
+\f0 \cf0 : It shows that the source's function is Sine.\
+\
+
+\f1 \cf2 V0
+\f0 \cf0 : Offset Voltage\
+\
+
+\f1 \cf2 VA
+\f0 \cf0 : Amplitude\
+\
+
+\f1 \cf2 FREQ
+\f0 \cf0 : Frequency\
+\
+
+\f1 \cf2 TD
+\f0 \cf0 : Delay -- At first, the source is DC and its value is V0 until time TD, which the wave gets started\
+\
+
+\f1 \cf2 THETA
+\f0 \cf0 : Damping Factor -- It is equal to zero for an undamped signal\
+\
+
+\f1 \cf2 PHASE
+\f0 \cf0 : Phase in Degree\
+\
+\ul Important\ulnone : For a damped sine source, the wave is multiplied by a factor of 
+\f3\b \cf3 exp (-THETA * (t - TD))
+\f0\b0 \cf0 \
+\
+B) 
+\i\b Piece-Wise Linear (PWL) Source:
+\i0\b0  It provides a signal, which takes value V1 at time T1, value V2 at time T2, and so on. The completed signal is constructed by connecting straight lines between the specified points.\
+\
+\ul Format\ulnone : 
+\f1 \cf2 V "Number"  Pos_Node  Neg_Node  PWL (T1 V1 T2 V2 T3 V3 \'85)
+\f0 \cf0 \
+\
+C) 
+\i\b Pulse Source:
+\i0\b0  \
+\
+\ul Format\ulnone : 
+\f1 \cf2 V "Number"  Pos_Node  Neg_Node  PULSE (Vi Vp TD Tr Tf PW Period)
+\f0 \cf0 \
+\
+
+\f1 \cf2 Vi
+\f0 \cf0 : Initial Voltage\
+\
+
+\f1 \cf2 Vp
+\f0 \cf0 : Peak Voltage\
+\
+
+\f1 \cf2 TD
+\f0 \cf0 : Delay (before the pulse gets started)\
+\
+
+\f1 \cf2 Tr
+\f0 \cf0 : Rise Time\
+\
+
+\f1 \cf2 Tf
+\f0 \cf0 : Fall Time\
+\
+
+\f1 \cf2 PW
+\f0 \cf0 : Pulse Width (the time between rise and fall)\
+\
+
+\f1 \cf2 Period
+\f0 \cf0 : Period (for repeating the pulse) --> The duration time between two consecutive pulses\
+\
+C) 
+\i\b Exponential Source:
+\i0\b0 \
+\
+\ul Format\ulnone : 
+\f1 \cf2 V "Number"  Pos_Node  Neg_Node  EXP (Vi Vp [Dr Tr Df Tf])
+\f0 \cf0 \
+\
+
+\f1 \cf2 Dr
+\f0 \cf0 : Delay before Rise\
+\
+
+\f1 \cf2 Tr
+\f0 \cf0 : Rise Time\
+\
+
+\f1 \cf2 Df
+\f0 \cf0 : Delay before Fall\
+\
+
+\f1 \cf2 Tf
+\f0 \cf0 : Fall Time\
+\
+\
+6) 
+\b\fs32 Analysis Modes:
+\b0\fs28  There are different kinds of analyses based on the following:\
+\
+A) 
+\i\b Operating Point:
+\i0\b0  It computes the static DC state of the circuit (the DC voltage of every node in the circuit) and is a pre-requisite for other analysis. The outcome of this analysis is placed in the output file.\
+\
+\ul Command\ulnone : 
+\f1 \cf2 .op
+\f0 \cf0 \
+\
+B) 
+\i\b DC Analysis:
+\i0\b0  It is used to sweep the voltage of an independent voltage or current source over a desired range.\
+\
+\ul Command\ulnone : 
+\f1 \cf2 .dc  Source_Name  Start  Stop  Step
+\f0 \cf0 \
+\
+Example: 
+\f1 \cf2 .dc V1 0v 5v 1v
+\f0 \cf0 \
+\
+C) 
+\i\b AC Analysis:
+\i0\b0  \
+\
+\ul Command\ulnone : 
+\f1 \cf2 .ac  \{LIN | OCT | DEC\}  Number  Start  Stop
+\f0 \cf0 \
+\
+
+\f1 \cf2 LIN
+\f0 \cf0 : Using a linear scale for frequency\
+\
+
+\f1 \cf2 OCT
+\f0 \cf0 : Using an octave (
+\f2\fs30 \uc0\u8235 \'e5\'d4\'ca
+\f0  
+\f2 \'ca\'c7\uc0\u1740 \u1740 
+\f0\fs28 \uc0\u8236 ) scale for frequency\
+\
+
+\f1 \cf2 DEC
+\f0 \cf0 : Using a decade (
+\f2\fs30 \uc0\u8235 \'cf\'e5
+\f0  
+\f2 \'ca\'c7\uc0\u1740 \u1740 
+\f0\fs28 \uc0\u8236 ) scale for frequency\
+\
+-----------------------------------------------------------------------------\
+\
+
+\f1 \cf2 Number
+\f0 \cf0 : Number of points per interval (based on the chosen scale for frequency)\
+\
+
+\f1 \cf2 Start
+\f0 \cf0 : Initial Frequency\
+\
+
+\f1 \cf2 Stop
+\f0 \cf0 : Final Frequency\
+\
+D) 
+\i\b Transient Analysis:
+\i0\b0  \
+\
+\ul Command\ulnone : 
+\f1 \cf2 .tran Step Duration
+\f0 \cf0 \
+\
+
+\f1 \cf2 Step
+\f0 \cf0 : Maximum Time Step\
+\
+
+\f1 \cf2 Duration
+\f0 \cf0 : Stop Time for Simulation\
+\
+7) 
+\b\fs32 Output Commands:
+\b0\fs28 \
+\
+A) 
+\i\b Print Out:
+\i0\b0  It is used to print the results of the analysis into the output file.\
+\
+\ul Command\ulnone : 
+\f1 \cf2 .print  \{AC | DC | TRAN\}  v(Node_Name)  i(source_name)
+\f0 \cf0 \
+\
+
+\f1 \cf2 v(Node_Name)
+\f0 \cf0 : It is used to print the voltage on node "
+\f1 \cf2 Node_Name
+\f0 \cf0 " versus time.\
+\
+
+\f1 \cf2 i(source_name)
+\f0 \cf0 : It is used to print the current through an independent voltage source "
+\f1 \cf2 source_name
+\f0 \cf0 " versus time.\
+\
+B) 
+\i\b Probe for Wave Display:
+\i0\b0  It is used to record all of the internal voltages and currents and display their waveforms.\
+\
+\ul Command\ulnone : 
+\f1 \cf2 .probe
+\f0 \cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\i \cf4 \ul MATLAB Support
+\i0 \cf0 \ulnone : To output the results in a CSV (Comma-Separated Values) file - a generic text format that can be easily imported by other programs -- the following command is used:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Command\ulnone : 
+\f1 \cf2 .probe/csdf
+\f0 \cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\i \cf4 \ul Log Plot
+\i0 \cf0 \ulnone : Its needed configuration is found in the toolbar of the wave-form tool.\
+\
+
+\i \cf4 \ul Bode Plot
+\i0 \cf0 \ulnone : To make a true Bode Plot, a 
+\i \ul Magnitude (in dB)
+\i0 \ulnone  trace and a 
+\i \ul Phase (in degree)
+\i0 \ulnone  trace is required. These two traces are achieved using 
+\f3\b\fs32 \cf5 DB()
+\f0\b0\fs28 \cf0  and 
+\f3\b\fs32 \cf5 P()
+\f0\b0\fs28 \cf0  functions respectively.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\i \cf0 \ul What is Bode Plot\ulnone ?
+\i0 \
+\
+\pard\pardeftab720\rtlpar\qr
+
+\f2\b\fs32 \cf0 \uc0\u8235 \'e4\'e3\'e6\'cf\'c7\'d1 \'c8\'e6\'cf
+\b0  
+\f4 (Bode Plot)
+\f2  \'e3\'da\'e3\'e6\'e1\'c7\'f0 \'d4\'c7\'e3\'e1 \'cf\'e6 \'e4\'e3\'e6\'cf\'c7\'d1 \ul \'c7\'e4\'cf\'c7\'d2\'e5 \'c8\'cf\uc0\u1740 \ulnone  \'e6 \ul \'dd\'c7\'d2 \'c8\'cf\uc0\u1740 \ulnone  \'e3\uc0\u1740 \'9d\'c8\'c7\'d4\'cf. \'cf\'d1 \'e4\'e3\'e6\'cf\'c7\'d1 
+\b \'c7\'e4\'cf\'c7\'d2\'e5 \'c8\'cf 
+\b0 \'a1 \'e3\'cd\'e6\'d1 \'da\'e3\'e6\'cf\uc0\u1740  
+\f4 (Y)
+\f2  \'a1 \'e1\'90\'c7\'d1\uc0\u1740 \'ca\'e3 \'cf\'c7\'e3\'e4\'e5 \'e6 \'e3\'cd\'e6\'d1 \'c7\'dd\'de\u1740  
+\f4 (X)
+\f2  \'a1 \'e1\'90\'c7\'d1\uc0\u1740 \'ca\'e3 \'dd\'d1\u1705 \'c7\'e4\'d3 \'c7\'d3\'ca \'e6 \'c8\'d1\'c7\u1740  \'e4\'e3\'c7\u1740 \'d4 
+\b \'ca\'c7\'c8\'da \'ca\'c8\'cf\uc0\u1740 \'e1
+\b0  
+\f4 (OUT / IN)
+\f2  \'e6 \uc0\u1740 \'c7 \ul \'81\'c7\'d3\'ce \'dd\'d1\uc0\u1705 \'c7\'e4\'d3\u1740 \ulnone  \uc0\u1740 \u1705  \'d3\u1740 \'d3\'ca\'e3 \'ce\'d8\u1740  \'ca\'db\u1740 \u1740 \'d1\'e4\'c7\'81\'d0\u1740 \'d1 \'c8\'c7 \'d2\'e3\'c7\'e4 \'c8\u1705 \'c7\'d1 \'e3\u1740 \'9d\'d1\'e6\'cf. \'e4\'e3\'e6\'cf\'c7\'d1 
+\b \'dd\'c7\'d2 \'c8\'cf
+\b0  \'a1 \'dd\'c7\'d2 \'d1\'c7 \'cf\'d1 \'e3\'de\'c7\'c8\'e1 \'dd\'d1\uc0\u1705 \'c7\'e4\'d3 \'e4\'d4\'c7\'e4 \'e3\u1740 \'9d\'cf\'e5\'cf \'e6 \'ca\'e4\'e5\'c7 \'e3\'cd\'e6\'d1 \'c7\'dd\'de\u1740  \'c2\'e4 \u1740 \'da\'e4\u1740  \'dd\'d1\u1705 \'c7\'e4\'d3 \'a1 \'e1\'90\'c7\'d1\u1740 \'ca\'e3\u1740  \'c7\'d3\'ca. \'e4\'e3\'e6\'cf\'c7\'d1 \'dd\'c7\'d2 \'c8\'cf\u1740  \'e4\'d4\'c7\'e4 \'cf\'e5\'e4\'cf\'e5 \'c2\'e4 \'c7\'d3\'ca \u1705 \'e5 \'d3\u1740 \'d3\'ca\'e3 \'e3\'e6\'d1\'cf \'e4\'d9\'d1 \ul \'dd\'c7\'d2 \'e5\'d1 \'e3\'c4\'e1\'dd\'e5 \'dd\'d1\uc0\u1705 \'c7\'e4\'d3\u1740 \ulnone  \'d1\'c7 \'c8\'e5 \'8d\'e5 \'e3\uc0\u1740 \'d2\'c7\'e4 \'ca\'db\u1740 \u1740 \'d1 \'e3\u1740 \'9d\'cf\'e5\'cf.\uc0\u8236 \
+\
+
+\b \'e4\uc0\u1705 \'ca\'e5
+\b0  
+\f4 :
+\f2  \'cf\'d1 \ul \'e4\'e3\'e6\'cf\'c7\'d1 \'c7\'e4\'cf\'c7\'d2\'e5 \'c8\'e6\'cf\ulnone  \'a1 \ul \'e5\'d1 \'cf\'e6 \'e3\'cd\'e6\'d1\ulnone  \'da\'e3\'e6\'cf\uc0\u1740  \'e6 \'c7\'dd\'de\u1740  \u1740 \'da\'e4\u1740  \ul \'e5\'e3 \'cf\'c7\'e3\'e4\'e5 \'e6 \'e5\'e3 \'dd\'d1\uc0\u1705 \'c7\'e4\'d3\ulnone  \ul \'e1\'90\'c7\'d1\uc0\u1740 \'ca\'e3\u1740 \ulnone  \'e5\'d3\'ca\'e4\'cf \'a1 \'cf\'d1 \'d5\'e6\'d1\'ca\uc0\u1740  \u1705 \'e5 \'cf\'d1 \ul \'e4\'e3\'e6\'cf\'c7\'d1 \'dd\'c7\'d2 \'c8\'e6\'cf\ulnone  \'ca\'e4\'e5\'c7 \ul \'e3\'cd\'e6\'d1 \'c7\'dd\'de\uc0\u1740  \u1740 \'da\'e4\u1740  \'dd\'d1\u1705 \'c7\'e4\'d3\ulnone  \ul \'e1\'90\'c7\'d1\uc0\u1740 \'ca\'e3\u1740 \ulnone  \'e3\uc0\u1740  \'c8\'c7\'d4\'cf.
+\f0\fs28 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+8) 
+\b\fs32 Hierarchical Design:
+\b0\fs28  A hierarchical design is created through the sub-circuit declaration:\
+\
+\ul Format\ulnone :\
+\
+
+\f1 \cf2 .subckt  Part_Name  Node_1  Node_2  Node_3 ...               // The name of nodes should be \ul Local Identifiers\ulnone  in here.\
+\
+...\
+...\
+...\
+\
+.ends  Part_Name\
+
+\f0 \cf0 \
+
+\b Important
+\b0 : The list of nodes \{
+\f1 \cf2 Node_1 Node_2 Node_3 ...
+\f0 \cf0 \} are \ul the name of external nodes of the sub-circuit\ulnone  and are \ul local identifiers\ulnone . It means that the names are valid only in the sub-circuit itself. However, \ul the global identifiers\ulnone  -- the name of \ul the related nodes in the main circuit\ulnone  -- can be the same as the local ones.\
+\
+\ul Note\ulnone : Node 0 (Ground) should not be used as an external node.\
+\
+
+\b Calling Sub-Circuit:
+\b0  To call a sub-circuit the following format should be used:\
+\
+\ul Format\ulnone : 
+\f1 \cf2 X "Number"  Node_1  Node_2  Node_3 ...  Part_Name               // The name of nodes should be \ul Global Identifiers\ulnone  in here.
+\f0 \cf0 \
+\
+
+\b Important
+\b0 : To refer to a node or an element within a sub-circuit, the following format should be used:\
+\
+\ul Format 1\ulnone : 
+\f1 \cf2 X_Name.Node_Name
+\f0 \cf0 \
+\
+\ul Format 2\ulnone : 
+\f1 \cf2 X_Name.Element_Name
+\f0 \cf0 \
+\
+9) 
+\b\fs32 Active Devices Declaration:
+\b0\fs28 \
+\
+A) 
+\i\b Diode:
+\i0\b0  Declaring a diode requires Specifying a model for it according to the following:\
+\
+\ul Specifying Model\ulnone : 
+\f1 \cf2 .model  Model_Name  D  (Parameters)
+\f0 \cf0 \
+\
+
+\f1 \cf2 Parameters
+\f0 \cf0 : 
+\b Is
+\b0  = , 
+\b n
+\b0  = , and etc.      -->      
+\f1 Id = Is * e ^ (Vd / (n * Vt))
+\f0 \
+\
+\ul Declaring Diode\ulnone : 
+\f1 \cf2 D "Number"  Anode  Cathode  Model_Name
+\f0 \cf0 \
+\
+
+\f1 \cf2 Anode
+\f0 \cf0 : Positive Terminal of Diode\
+\
+
+\f1 \cf2 Cathode
+\f0 \cf0 : Negative Terminal of Diode\
+\
+B) 
+\i\b MOSFET:
+\i0\b0  To declare a MOSFET device, its correspondence \ul Model\ulnone  should be specified in the Spice file, which determines the physical parameters of the device. A typical SPICE package (e.g. BSIM family) contains a variety of MOSFET models which differ in their degree of physical precision.\
+\
+\ul Specifying Model\ulnone : 
+\f1 \cf2 .model  Model_Name  \{NMOS | PMOS\}  (Parameters)
+\f0 \cf0 \
+\
+
+\f1 \cf2 Parameters
+\f0 \cf0 : 
+\b level
+\b0  = , 
+\b version
+\b0  = , 
+\b tox
+\b0  = , 
+\b vth0
+\b0  = , and etc.\
+\
+
+\b level
+\b0 : It is used to specify the desired model.\
+\
+
+\b version
+\b0 : It shows the version of the model.\
+\
+\ul Declaring MOSFET\ulnone : 
+\f1 \cf2 M "Number"  Drain  Gate  Source  Substrate  Model_Name  L=?  W=?  AD=?  PD=?  AS=?  PS=?
+\f0 \cf0 \
+\
+
+\f1 \cf2 L
+\f0 \cf0 : Length of Gate -- Only the part that is common between the gate material and the drain-source interface is considered 
+\b =
+\b0  \cf3 \ul Channel Length\cf0 \ulnone \
+\
+
+\f1 \cf2 W
+\f0 \cf0 : Width of Gate -- Only the part that is common between the gate material and the drain-source interface is considered 
+\b =
+\b0  \cf3 \ul \ulc3 Channel Width\cf0 \ulnone \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f1 \cf2 AD
+\f0 \cf0 : Area of Drain\
+\
+
+\f1 \cf2 PD
+\f0 \cf0 : Perimeter of Drain\
+\
+
+\f1 \cf2 AS
+\f0 \cf0 : Area of Source\
+\
+
+\f1 \cf2 PS
+\f0 \cf0 : Perimeter of Source\
+\
+C) 
+\i\b BJT (Bipolar Junction Transistor):
+\i0\b0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Specifying Model\ulnone : 
+\f1 \cf2 .model  Model_Name  \{NPN | PNP\}  (Parameters)
+\f0 \cf0 \
+\
+\ul Declaring BJT\ulnone : 
+\f1 \cf2 Q "Number"  Collector  Base  Emitter  [Substrate]  Model_Name  [Area]
+\f0 \cf0 \
+\
+\ul Note\ulnone : The parameters 
+\f1 \cf2 [Substrate]
+\f0 \cf0  and 
+\f1 \cf2 [Area]
+\f0 \cf0  should be included when an integrated BJT circuit is simulated, and they are not necessary for discrete device.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf3 VERY IMPORTANT:
+\b0 \cf0  
+\b Device Models =
+\b0  The models of the devices (Diode, MOSFET, BJT, and etc.) can be written in a 
+\f3\b\fs32 .lib
+\f0\b0\fs28  file and be placed in the simulation directory. Then, the library is included in the Spice file to be used for device declaration.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul What is Cut-Off Frequency\ulnone ?\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr
+
+\f2\b\fs32 \cf0 \uc0\u8235 \'dd\'d1\uc0\u1705 \'c7\'e4\'d3 \'de\'d8\'da
+\b0  \'a1 \uc0\u8236 \'dd\'d1\uc0\u1705 \'c7\'e4\'d3\u1740  \'c7\'d3\'ca \u1705 \'e5 \'c7\'d2 \'c2\'e4\'cc\'c7 \'c8\'e5 \'de\'c8\'e1 \'e6
+\f4  
+\f2 \uc0\u1740 \'c7
+\f4  
+\f2 \'c7\'d2
+\f4  
+\f2 \'c2\'e4\'cc\'c7
+\f4  
+\f2 \'c8\'e5
+\f4  
+\f2 \'c8\'da\'cf
+\f4  
+\f2 \'c7\'e4\'d1\'8e\uc0\u1740 
+\f4  
+\f2 \'d3\uc0\u1740 \'d3\'ca\'e3
+\f4  
+\f2 \uc0\u1705 \'c7\'e5\'d4 \'81\u1740 \'cf\'c7 \'e3\u1740  \u1705 \'e4\'cf 
+\f4 (
+\f2 \'c8\'e5
+\f4  
+\f2 \'cc\'c7\uc0\u1740 
+\f4  
+\f2 \'c7\'dd\'d2\'c7\uc0\u1740 \'d4
+\f4  
+\f2 \uc0\u1740 \'c7\'dd\'ca\'e4
+\f4 ). 
+\f2 \'c8\'d3\'ca\'e5 \'c8\'e5 \'e4\'e6\'da \'d3\uc0\u1740 \'d3\'ca\'e3 
+\f4 (
+\f2 \'e3\'cf\'c7\'d1
+\f4 ) 
+\f2 \'a1
+\f4  
+\f2 \uc0\u1740 \u1705  \u1740 \'c7 \'cf\'e6 \'dd\'d1\u1705 \'c7\'e4\'d3 \'de\'d8\'da \'e3\u1740  \'ca\'e6\'c7\'e4\'cf \'e6\'cc\'e6\'cf \'cf\'c7\'d4\'ca\'e5 \'c8\'c7\'d4\'cf.
+\f0\fs28 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\
+\
+}

@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww13860\viewh12380\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 NGSPICE Commands
+\b0\fs24 \
+\
+
+\b 1)
+\b0  To open the tool and read file in shell, write: 
+\f1\b\fs28 ngspice file_name.sp
+\f0\b0\fs24 \
+\
+
+\b 2)
+\b0  To write the raw file of a circuit: 
+\f1\b\fs28 ngspice -b lab1.sp -r lab1.raw
+\f0\b0\fs24 \
+\
+
+\b 3)
+\b0  To write the raw file for each specific part, you need to write the following commands while the NGSPICE is open:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul \ulc0 Command A\ulnone : 
+\f1\b\fs28 wrdata ac db(Node_1) db(Node_2) ...
+\f0\b0\fs24 \
+\
+\ul Command B\ulnone : 
+\f1\b\fs28 wrdata tran v(Node_1) v(Node_2) ...
+\f0\b0\fs24 \
+\
+\ul Command C\ulnone : 
+\f1\b\fs28 wrdata fft v(Node)
+\f0\b0\fs24 \
+\
+\ul Command in Terminal\ulnone : 
+\f1\b\fs28 ngspice -b File_Name.sp
+\f0\b0\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Very Important
+\b0 : In each \ul output file\ulnone  that is a \ul row vector\ulnone , all of the Odd numbered columns refer to the values of \ul function argument\ulnone  (e.g. Time) and all of the Even numbered columns refer to the values of \ul function output \ulnone (e.g. Voltage of Node).\
+\
+
+\b 4)
+\b0  To draw the 
+\b FFT Plot
+\b0  using MATLAB, write the following commands in its terminal:\
+\
+
+\f1\b\fs28 fft = importdata('fft.data')
+\f0\b0\fs24 \
+\
+
+\f1\b\fs28 frequency = fft(:,1)
+\f0\b0\fs24 \
+\
+
+\f1\b\fs28 real = fft(:,2)
+\f0\b0\fs24 \
+\
+
+\f1\b\fs28 img = fft(:,3)
+\f0\b0\fs24 \
+\
+
+\f1\b\fs28 semilogx(frequency,20*log10(real+i*img))
+\f0\b0\fs24 \
+\
+}
