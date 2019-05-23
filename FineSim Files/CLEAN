@@ -1,0 +1,1 @@
+rm -rf *.prt *.nc_log *.log *.ic *.out *.mt0 *.fsdb* *.wdf *.tr0  *.lsf_log core.* *.mf *.op0 *.vcd transcript vsim.wlf work .finewave_env *.env

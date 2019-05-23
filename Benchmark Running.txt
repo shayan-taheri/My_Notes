@@ -1,0 +1,15 @@
+MCF Benchmark Running Commands
+
+1) ../sim-bpred -dumpconfig config_file.config -redir:sim sim_file.out -redir:prog prog_file.out /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+2) ../sim-cache -dumpconfig config_file.config -redir:sim sim_file.out -redir:prog prog_file.out /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+3) ../sim-eio -dumpconfig config_file.config -redir:sim sim_file.out -redir:prog prog_file.out /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+4) ../sim-fast -dumpconfig config_file.config -redir:sim sim_file.out -redir:prog prog_file.out /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+5) ../sim-outorder -dumpconfig config_file.config -redir:sim sim_file.out -redir:prog prog_file.out /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+6) ../sim-profile -dumpconfig config_file.config -redir:sim sim_file.out -redir:prog prog_file.out /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+7) ../sim-safe -dumpconfig config_file.config -redir:sim sim_file.out -redir:prog prog_file.out /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in

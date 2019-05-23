@@ -1,0 +1,377 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;\f2\fnil\fcharset0 Consolas;
+}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue0;\red77\green0\blue105;}
+\margl1440\margr1440\vieww25120\viewh15960\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 \ul \ulc0 MATLAB Plotting
+\b0\fs24 \ulnone \
+\
+1) 
+\b \ul Two Dimensional Graph
+\b0 \ulnone : To draw a regular two dimensional graph, the following functions should be used in order:\
+\
+A) 
+\f1\b\fs28 plot (X_Var,Y_Var,'Color Marker and/or Line')
+\f0\b0\fs24 \
+\
+This function is used to plot 
+\b Y_Var
+\b0  against 
+\b X_Var
+\b0 . The options, 
+\f1\b\fs28 Color
+\f0\b0\fs24  and 
+\f1\b\fs28 Marker and/or Line
+\f0\b0\fs24  are used to determine the color and type of the marker and/or line.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs28 \cf0 \ul Very Important
+\b0 \ulnone : \cf2 The graph can be plotted by using \ul both Marker and Line\ulnone  or only one of them.
+\fs24 \cf0 \
+\
+-- \ul Choices for Color\ulnone : 
+\f1\b\fs28 b
+\f0\b0\fs24  (blue), 
+\f1\b\fs28 g
+\f0\b0\fs24  (green), 
+\f1\b\fs28 k
+\f0\b0\fs24  (black), 
+\f1\b\fs28 r
+\f0\b0\fs24  (red), 
+\f1\b\fs28 w
+\f0\b0\fs24  (white), 
+\f1\b\fs28 y
+\f0\b0\fs24  (yellow), and etc.\
+\
+-- \ul Choices for Marker\ulnone : 
+\f1\b\fs28 o
+\f0\b0\fs24  (circle), 
+\f1\b\fs28 d
+\f0\b0\fs24  (diamond), 
+\f1\b\fs28 +
+\f0\b0\fs24  (plus), 
+\f1\b\fs28 .
+\f0\b0\fs24  (point), 
+\f1\b\fs28 *
+\f0\b0\fs24  (star)\
+\
+-- \ul Choices for Line\ulnone : 
+\f1\b\fs28 --
+\f0\b0\fs24  (dashed), 
+\f1\b\fs28 -
+\f0\b0\fs24  (solid), 
+\f1\b\fs28 -.
+\f0\b0\fs24  (dash dot), 
+\f1\b\fs28 :
+\f0\b0\fs24  (dotted)\
+\
+B) 
+\f1\b\fs28 axis ([Min_X_Axis, Max_X_Axis, Min_Y_Axis, Max_Y_Axis])
+\f0\b0\fs24 \
+\
+This function is used to determine the ranges of X and Y axes. It is helpful to place the plot in the Figure without losing any border of it.\
+\
+C) 
+\f1\b\fs28 xlabel ('X_String')
+\f0\b0\fs24   and  
+\f1\b\fs28 ylabel ('Y_String')
+\f0\b0\fs24 \
+\
+These two functions specify the names of X and Y axes.\
+\
+D) 
+\f1\b\fs28 title ('Graph's Title')
+\f0\b0\fs24 \
+\
+This function specifies the title of the graph.\
+\
+2) 
+\b Clear Figure Window
+\b0 : The function 
+\f1\b\fs28 clf
+\f0\b0\fs24  is used to clear the Figure Window.\
+\
+3) 
+\b Figure Number
+\b0 : The function, 
+\f1\b\fs28 figure(n)
+\f0\b0\fs24  is used to to determine the index (or number) of a figure (= Figure N). To obtain more information about 
+\f1\b\fs28 figure
+\f0\b0\fs24  function, refer to cases 
+\b 13
+\b0  and 
+\b 14
+\b0 .\
+\
+4) 
+\b Freeze and Unfreeze Figure
+\b0 : The functions, 
+\f1\b\fs28 hold on
+\f0\b0\fs24  and 
+\f1\b\fs28 hold off
+\f0\b0\fs24  are used to freeze and unfreeze the current graph on the Figure Window.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Important
+\b0 : \ul It is useful for having multiple graphs on one Figure Window\ulnone .\
+\
+5) 
+\b Plot Name
+\b0 : The function, 
+\f1\b\fs28 legend()
+\f0\b0\fs24  is used to assign \ul Name\ulnone  or \ul String\ulnone  to each of the showing plots. They are shown in a particular box.\
+\
+Example: 
+\f2\fs28 legend ('String for Plot 1','String for Plot 2')
+\f0\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs28 \cf0 \ul Very Important
+\b0 \ulnone : \cf2 The characteristics and positions of \ul Labels\ulnone , \ul Titles\ulnone , \ul Legend\ulnone , and etc. can be modified by going to the "
+\b \cf2 Properties
+\b0 \cf2 " of the \ul Figure Window\ulnone .
+\fs24 \cf0 \
+\
+6) 
+\b Bar Chart
+\b0 : The function, 
+\f1\b\fs28 bar (X_Var,Y_Var)
+\f0\b0\fs24  plots bar chart.\
+\
+7) 
+\b subplot Function
+\b0 : It is used to draw multiple plots in one Figure Window. In other words, it makes a matrix of plots.\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 subplot (Row,Column,Index) , plot (argument(s))
+\f0\b0\fs24 \
+\
+\ul Notice\ulnone : For 
+\f1\b\fs28 subplot
+\f0\b0\fs24  function, the order of indexing is 
+\b row-wise
+\b0 .\
+\
+8) 
+\b \ul Three Dimensional Graph
+\b0 \ulnone : Most of the built-in functions of two dimensional graph category are available for three dimensional graph category too:\
+\
+\ul Example\ulnone : 
+\f1\b\fs28 plot3 (X_Var,Y_Var,Z_Var)
+\f0\b0\fs24   or  
+\f1\b\fs28 bar3 (X_Var,Y_Var,Z_Var)
+\f0\b0\fs24   or  
+\f1\b\fs28 zlabel ('Z_String')
+\f0\b0\fs24 \
+\
+A) 
+\f1\b\fs28 plot3 (X_Var,Y_Var,Z_Var)
+\f0\b0\fs24 \
+\
+This function plots lines and points in three dimensional space:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf3 \ul Specifications and Conditions for Arguments
+\b0 \cf0 \ulnone :\
+\
+There are three options for the arguments:\
+\
+a) All of the arguments should be \ul scalar\ulnone .\
+\
+b) In case of \ul vector\ulnone , all of them must have \ul the same length\ulnone .\
+\
+c) In case of \ul matrix\ulnone , all of them must have \ul the same size\ulnone .\
+\
+B) 
+\f1\b\fs28 surf (X_Var,Y_Var,Z_Var)
+\f0\b0\fs24 \
+\
+This functions plots a three dimensional colored surface.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf3 \ul \ulc3 Specifications and Conditions for Arguments
+\b0 \cf0 \ulnone :\
+\
+There are two options for the arguments:\
+\
+c) In case of \ul matrix\ulnone , all of them must have \ul the same size\ulnone .\
+\
+b) In case of \ul vector\ulnone , there are two choices:\
+\
+- All of them must have \ul the same length\ulnone .\
+\
+- The dimension of one of them must be multiplication of the lengths of the other ones   -->   
+\f1\b Z (Dimensions) == length (Y) x length (X)
+\f0\b0 \
+\
+
+\f1\b [length (Y) length (X)] = size (Z)
+\f0\b0 \
+\
+\ul Notice\ulnone : 
+\f1\b length (Y)
+\f0\b0  makes the number of 
+\b Rows
+\b0  and 
+\f1\b length (X)
+\f0\b0  makes the number of 
+\b Columns
+\b0 .\
+\
+9) 
+\b Scale of Axes
+\b0 : The following functions can be used to change the scale of axes:\
+\
+A) 
+\f1\b\fs28 loglog (X_Var,Y_Var)
+\f0\b0\fs24 \
+\
+It uses logarithmic scales for both X and Y axes.\
+\
+B) 
+\f1\b\fs28 semilogy (X_Var,Y_Var)
+\f0\b0\fs24 \
+\
+It uses a linear scale for X axis and a logarithmic scale for Y axis.\
+\
+C) 
+\f1\b\fs28 semilogx (X_Var,Y_Var)
+\f0\b0\fs24 \
+\
+It uses a logarithmic scale for X axis and a linear scale for Y axis.\
+\
+10) 
+\b Histogram Chart
+\b0 : It draws histogram chart according to \ul the frequency of each element\ulnone  (the number of times that it is repeated).\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 hist (Vector)
+\f0\b0\fs24 \
+\
+11) 
+\b Pie Chart (Circle Shape Chart)
+\b0 : It draws circle chart according to \ul the percentage that each element has\ulnone  in the whole sum.\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 pie (Vector)
+\f0\b0\fs24 \
+\
+12) 
+\b MeshGrid
+\b0 : This function gets two (or three) vectors and generates two (or three) matrices according to their data in grid plane. It means that it produces \ul all of the possible permutations of the data of vectors\ulnone  in \ul Matrix format\ulnone .\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 meshgrid (X_Vector,Y_Vector,Z_Vector)
+\f0\b0\fs24 \
+\
+13) 
+\b Creating Figure Graphics Object
+\b0 : It is used to create figure graphics object. Figure objects are the \ul individual windows\ulnone  on the screen in which MATLAB displays \ul graphical outputs\ulnone .\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 figure('Property_Name',Property_Value)
+\f0\b0\fs24 \
+\
+It creates a new figure object using the values of the properties specified.\
+\
+
+\f1\b\fs28 Property_Name
+\f0\b0\fs24  Sample: 
+\f1\b\fs28 Position
+\f0\b0\fs24  --> It shows the location and size of the figure.\
+\
+Its 
+\f1\b\fs28 Property_Value
+\f0\b0\fs24 : A 4-Element Vector named 
+\f1\b\fs28 SceenSize
+\f0\b0\fs24 , which is 
+\f1\b\fs28 [Left,Bottom,Width,Height]
+\f0\b0\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 \ul For the vector
+\b0 \ulnone , 
+\f1\b\fs28 Left
+\f0\b0\fs24  and 
+\f1\b\fs28 Bottom
+\f0\b0\fs24  are 
+\b Zero (0)
+\b0  for all Units except \ul Pixels\ulnone . For Pixels, they are 
+\b One (1)
+\b0 .\
+\
+The 
+\f1\b\fs28 Width
+\f0\b0\fs24  and 
+\f1\b\fs28 Height
+\f0\b0\fs24  are the \ul screen dimensions\ulnone  in units specified by the units property.\
+\
+
+\b \ul Important
+\b0 \ulnone : The units that are used for the elements of a vector can be:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f1\b\fs28 \cf0 Pixels
+\f0\b0\fs24 , 
+\f1\b\fs28 Normalized
+\f0\b0\fs24 , 
+\f1\b\fs28 Inches
+\f0\b0\fs24 , 
+\f1\b\fs28 Centimeters
+\f0\b0\fs24 , 
+\f1\b\fs28 Points
+\f0\b0\fs24 , 
+\f1\b\fs28 Characters
+\f0\b0\fs24 \
+\
+All of these units are measured from the \ul lower-left corner\ulnone  of the screen.\
+\
+14) 
+\f1\b\fs28 figure
+\f0\fs24 -Related Function
+\b0 : The following functions are related to the 
+\f1\b\fs28 figure
+\f0\b0\fs24  function according to the following:\
+\
+A) 
+\f1\b\fs28 get()
+\f0\b0\fs24 : It gets the properties of an object. For more information: https://nf.nci.org.au/facilities/software/Matlab/techdoc/ref/get.html\
+\
+B) 
+\f1\b\fs28 set()
+\f0\b0\fs24 : It sets the properties of an object. For more information: https://nf.nci.org.au/facilities/software/Matlab/techdoc/ref/set.html\
+\
+15) 
+\b Close Figure
+\b0 : To close a specified figure:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 close(Figure_Index)
+\f0\b0\fs24 \
+\
+\ul Notice\ulnone : To close the current figure:\
+\
+Command: 
+\f1\b\fs28 close(gcf)
+\f0\b0\fs24 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

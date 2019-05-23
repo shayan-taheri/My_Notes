@@ -1,0 +1,111 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww20760\viewh11840\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 Non-Linear Regression in MATLAB
+\b0\fs24 \
+\
+
+\b 1)
+\b0  
+\b Fitting Data
+\b0 : In order to fit the data and obtain the desired model, use the following command:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 mdl = fitnlm(X,Y,modelfun,beta0)
+\f0\b0\fs24 \
+\
+\ul Explanation of Arguments\ulnone :\
+\
+A. Predictor Variables (n x p) --> 
+\f1\b\fs28 X
+\f0\b0\fs24 \
+\
+B. Response Variable (n x 1) --> 
+\f1\b\fs28 Y
+\f0\b0\fs24 \
+\
+C. Functional Form of Model --> 
+\f1\b\fs28 modelfun
+\f0\b0\fs24 \
+\
+D. Initial Values for Coefficient Vector (in Searching Method) --> 
+\f1\b\fs28 beta0
+\f0\b0\fs24 \
+\
+
+\b Important 1
+\b0 : There is no need to include \ul a column of 1s\ulnone  in the matrix 
+\f1\b\fs28 x
+\f0\b0\fs24 , for the \ul constant term\ulnone  of the model.\
+\
+
+\b Important 2
+\b0 : 
+\f1\b\fs28 modelfun(b,x)
+\f0\b0\fs24  is a function which is specified for fitting the data. It returns a column vector, in which each row is the result of performing the function on the corresponding row in matrix 
+\f1\b\fs28 x
+\f0\b0\fs24 . The function form can be specified in two ways according to the following:\
+\
+1. \ul Function Handle\ulnone :\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 modelfun = @(b,x) *********;		% ********* is the place of writing the function in \ul Index Format\ulnone .
+\f0\b0\fs24 \
+\
+\ul Example\ulnone : 
+\f1\b\fs28 modelfun = @(b,x) b(1) + b(2)*x(:,1);
+\f0\b0\fs24 \
+\
+2. \ul String of Functional Form\ulnone :\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 fun_string = '*********';	% ********* is the place of writing the function in \ul Regular Format\ulnone .
+\f0\b0\fs24 \
+\
+\ul Example\ulnone : 
+\f1\b\fs28 fun_string = 'y ~ b1 + b2*x';
+\f0\b0\fs24 \
+\
+\ul Notice\ulnone : The variable 
+\f1\b\fs28 b
+\f0\b0\fs24  is the coefficient vector which has the same number of columns as 
+\f1\b\fs28 beta0
+\f0\b0\fs24 . Also, the variable 
+\f1\b\fs28 x
+\f0\b0\fs24  is a matrix which should have the same number of columns as matrix 
+\f1\b\fs28 X
+\f0\b0\fs24 .\
+\
+
+\b Important 3
+\b0 : If there is no prior knowledge of the values of  
+\f1\b\fs28 beta0
+\f0\b0\fs24 , it can be specified randomly according to the following:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 beta0 = randn(nVars,1); 
+\f0\b0\fs24 OR
+\f1\b\fs28  beta0 = 10*rand(nVars,1);
+\f0\b0\fs24 \
+\
+
+\b 2)
+\b0  
+\b Extracting Estimated Data
+\b0 : The following command can be used to estimate the response data.\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 Y_Estimated = feval(mdl,X)
+\f0\b0\fs24 \
+\
+
+\b 3)
+\b0  
+\b Calculating R-Squared
+\b0 : The estimated data is used for the purpose of calculating R-Squared and Adjusted R-Squared.\
+\
+\
+}

@@ -1,0 +1,7 @@
+There are two cases for this process:
+
+1) If "Hspice" simulator is used, then the generated "File_Name.tr0" file from simulation can be used in HSPICE Toolbox for MATLAB.
+
+2) If other simulators such as Nanosim or CustomSim are used, then the provided codes in the "Codes" directory can be used to process "File_Name.meas" output file.
+
+Notice: You can adjust the sampling rate according to the transient analysis time step!

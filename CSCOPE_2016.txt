@@ -1,0 +1,1 @@
+Run Command: /lhome/cad/synopsys/cscope64/L-2016.03/ai_bin/cscope

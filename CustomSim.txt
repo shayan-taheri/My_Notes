@@ -1,0 +1,3 @@
+XA --> Software for Circuit Simulation
+
+Command: xa Name.sp -o Name

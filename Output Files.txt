@@ -1,0 +1,5 @@
+Output Files
+
+"*.log" --> The generated file for simulation process.
+
+".meas" --> The generated file for measurement results.

@@ -1,0 +1,260 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;\f2\fnil\fcharset0 Consolas;
+}
+{\colortbl;\red255\green255\blue255;\red102\green0\blue141;\red133\green0\blue175;\red0\green61\blue204;
+\red59\green0\blue164;}
+\margl1440\margr1440\vieww20380\viewh12340\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 \ul \ulc0 CONTAINER, VECTOR and MATRIX
+\b0\fs24 \ulnone \
+\
+1) 
+\b Brackets 
+\f1\fs28 []
+\f0\b0\fs24 : It is used to make a vector or matrix.\
+\
+2) 
+\b Comma
+\b0 : It is used for separation of elements that are is a row.\
+\
+3) 
+\b Semicolon
+\b0 : It is used for separation of elements that are in a column.\
+\
+4) 
+\f1\b\fs28 start:end
+\f0\b0\fs24  or 
+\f1\b\fs28 start:step:end
+\f0\b0\fs24  : They are used for iterating through the elements of a specified range or making a vector according to the range (with defined step).\
+\
+5) 
+\f1\b\fs28 linspace (first,last,numbers)
+\f0\b0\fs24  and 
+\f1\b\fs28 logspace(first,last,numbers)
+\f0\b0\fs24 : They are used to make linearly and logarithmically spaced vectors respectively.\
+\
+6) 
+\b Concatenation
+\b0 :  For concatenating an element to a vector, the following formats are used:\
+\
+\ul Format 1\ulnone : 
+\f1\b\fs28 Vector = [Vector Element*]
+\f0\b0\fs24 \
+\
+\ul Format 2\ulnone : 
+\f1\b\fs28 Vector (end+1) = Element
+\f0\b0\fs24 \
+\
+
+\f1\b\fs28 *
+\f0\b0\fs24  = \ul Element or another vector\ulnone  !\
+\
+7) 
+\b Accessing Elements
+\b0 : For accessing an element of a vector or matrix, 
+\f1\b\fs28 Vector (Index)
+\f0\b0\fs24  and 
+\f1\b\fs28 Matrix (Row,Column)
+\f0\b0\fs24  are used respectively.\
+\
+\ul Notice\ulnone : 
+\f1\b\fs28 Matrix (Index)
+\f0\b0\fs24  format can be used for accessing the elements of a matrix too.\
+\
+\ul Remember\ulnone : The indices of arrays and containers 
+\b \cf2 start at ONE (1)
+\b0 \cf0  in MATLAB.\
+\
+8) 
+\b Transpose
+\b0 : For transposing a matrix, 
+\b\fs28 '
+\b0\fs24  (Apostrophe) is used.\
+\
+9) 
+\b Random Number Generators
+\b0 \
+\
+A) 
+\f1\b\fs28 rand \cf3 (row,column)
+\f0\b0\fs24 \cf0 : It gives random numbers in range (0,1)\
+\
+B) 
+\f1\b\fs28 randi \cf3 (row,column)
+\f0\b0\fs24 \cf0 : It gives integer random numbers. A range can be specified for it by 
+\f1\b\fs28 \cf3 ([first last],row,column)
+\f0\b0\fs24 \cf0 .\
+\
+\ul Notice\ulnone : They can generate \ul scalar random numbers\ulnone  by elimination of the arguments.\
+\
+10) 
+\b Zero Matrix
+\b0 : The function 
+\f1\b\fs28 zeros (row,column)
+\f0\b0\fs24  is used for generating a matrix of zeros.\
+\
+11) 
+\b One Matrix
+\b0 : The function 
+\f1\b\fs28 ones (row,column)
+\f0\b0\fs24  is used for generating a matrix of ones.\
+\
+12) 
+\b Storing in Memory
+\b0 : Matrices are stored in memory in \ul column major order\ulnone  (
+\b column-wise
+\b0 ).\
+\
+13) 
+\b Dimensions
+\b0 : For getting the dimensions of a matrix, 
+\f1\b\fs28 size (Matrix)
+\f0\b0\fs24  function is used.\
+\
+14) 
+\b Number of Elements
+\b0 : For achieving the number of elements of a vector or matrix, 
+\f1\b\fs28 numel (Container)
+\f0\b0\fs24  is used.\
+\
+15) 
+\b Number of Rows or Columns
+\b0 : For obtaining the number of rows or columns (whichever is the largest) of a matrix, 
+\f1\b\fs28 length (Matrix)
+\f0\b0\fs24  function is used.\
+\
+16) 
+\b Last Element
+\b0 : For accessing the last element of a vector or matrix, 
+\f1\b\fs28 end
+\f0\b0\fs24  index is used.\
+\
+17) 
+\b Configuration
+\b0 : For reconfiguring a matrix:\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 reshape (Matrix, New Row Number, New Column Number)
+\f0\b0\fs24 \
+\
+18) 
+\b Empty Vector
+\b0 : For making an empty vector:\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 Vector = []
+\f0\b0\fs24 \
+\
+19) 
+\b Removing Element
+\b0 : For removing an element of a vector or matrix:\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 Vector (Element's Index) = []
+\f0\b0\fs24   or  
+\f1\b\fs28 Matrix (Element's Index) = []
+\f0\b0\fs24 \
+\
+20) 
+\b 3-D Matrix Index Format
+\b0 : 
+\f1\b\fs28 Row x Column x Layer
+\f0\b0\fs24 \
+\
+21) 
+\b Built-In Functions
+\b0 : There are many built-in functions for vectors and matrices that can operate on them in 
+\b \ul Vectorizing
+\b0 \ulnone  manner. \cf4 \ul \ulc4 Vectorization is a great feature of MATLAB\cf0 \ulnone  !\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Example\ulnone : 
+\f2 min ()
+\f0  , 
+\f2 max ()
+\f0  , 
+\f2 sum ()
+\f0  , 
+\f2 prod ()
+\f0  , 
+\f2 flipud ()
+\f0  , 
+\f2 fliplr ()
+\f0  , ...\
+\
+22) 
+\b Arithmetic Operations
+\b0 :\
+\
+A) \ul Format\ulnone : 
+\f1\b\fs28 Scalar (Operation) Matrix	-->	Operation: + , - , * , /
+\f0\b0\fs24 \
+\
+B) \ul Format\ulnone : 
+\f1\b\fs28 Matrix (Operation) Matrix	--> Operation: + , - , .* , ./ --> 
+\f0\fs24 \cf5 \ul \ulc5 Note\ulnone : Doing the operation element by element (Element-wise).
+\b0 \cf0 \
+\
+C) \ul Format\ulnone : 
+\f1\b\fs28 Matrix (Multiply) Matrix	--> Operation: * --> 
+\f0\fs24 \ul Note\ulnone : Standard Matrix Multiplication.
+\b0 \
+\
+\ul Condition for C\ulnone : Inner dimensions must be the same = Number of columns for operand 1 should be the same as number of rows for operand 2.\
+\
+23) 
+\b Finding Element (s)
+\b0 : For finding an element (elements) of a matrix, the 
+\f1\b\fs28 find (Condition)
+\f0\b0\fs24  function can be used. By satisfying the condition, \ul the index of corresponding element\ulnone  is returned.\
+\
+Example: 
+\f2\fs28 find (Vector == Element)
+\f0\fs24  --> It finds the position of an element of a vector if it exists in it.\
+\
+24) 
+\b Container
+\b0 : A container is a vector or matrix of elements with \ul similar\ulnone  or \ul different\ulnone  type.\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 Container = \{Element_1, Element_2, Element_3, \'85\}
+\f0\b0\fs24 \
+\
+
+\b Important
+\b0 : To access an element of a container, the following format is used:\
+\
+\ul Format\ulnone : 
+\f1\b\fs28 Container \{Element's Index\}
+\f0\b0\fs24 \
+\
+\ul Notice\ulnone : The type of each element can be \ul similar to\ulnone  or \ul different from\ulnone  the other one.\
+\
+25) 
+\b Structure
+\b0 : A structure array can be built according to the following:\
+\
+A) To create a scalar structure (1-by-1) with no field (or member):\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 struct
+\f0\b0\fs24 \
+\
+B) To create a structure with multiple fields (members), that each can be a scalar or matrix:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 struct(Field_1,Value_1,Field_2,Value_2,Field_3,Value_3,...)
+\f0\b0\fs24 \
+\
+C) To create an empty structure (0-by-0) with no field:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 struct([])
+\f0\b0\fs24 \
+\
+\
+\
+\
+\
+}

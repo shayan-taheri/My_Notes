@@ -1,0 +1,9 @@
+#!/bin/bash
+rm *.fsdb *.ic *.log *.mt0 
+
+finesim -o spicemd in.sp  
+#finesim -o promd in.sp
+
+## User can also use -mode option try upper running command without modifying 'option.inc' file.
+#finesim -mode spicemd -o spicemd in.sp
+#finesim -mode promd -o promd in.sp

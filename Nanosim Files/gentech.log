@@ -1,0 +1,11 @@
+/lhome/cad/synopsys/ns/H-2013.03/amd64/ns/exec//gentech -f hspice64 -i ./tt_tech_tsmc25p p 0.9 0.3 0 -y tsmc25p -q -s 
+ --------------------------------------------------------
+|                                                        |
+|           GENTECH Version H-2013.03 (RHEL64)           |
+| Copyright (c) 2013 Synopsys Inc., All Rights Reserved. |
+|                                                        |
+ --------------------------------------------------------
+
+Built by nsmgr   on Wed Feb 27 23:27:06 PST 2013
+
+gentech: ERROR: 'hspice64 spice.in > spice.out' failed...

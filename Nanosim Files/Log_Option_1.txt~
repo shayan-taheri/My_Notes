@@ -1,0 +1,55 @@
+ --------------------------------------------------------
+|                                                        |
+|           NanoSim Version H-2013.03 (RHEL64)           |
+| Copyright (c) 2013 Synopsys Inc., All Rights Reserved. |
+|                                                        |
+ --------------------------------------------------------
+
+Built by nsmgr   on Wed Feb 27 23:41:07 PST 2013
+Mon Jan 11 23:13:09 EST 2016
+Machine Name: vlsi5
+
+
+Start netlist compilation at Mon Jan 11 23:13:09 2016
+
+Compiling "Example.sp" (SPICE)
+Compiling "/lhome/shayan/Hspice/NCSU-CDK-1.5.1/ncsu-cdk-1.5.1/models/hspice/public/publicModel/tsmc25N" (SPICE)
+Compiling "/lhome/shayan/Hspice/NCSU-CDK-1.5.1/ncsu-cdk-1.5.1/models/hspice/public/publicModel/tsmc25P" (SPICE)
+Compiling "Example.vec" (VECTOR)
+
+
+
+Parsing netlist finished in 0 seconds
+
+Circuit temperature from netlist                  :       25.000
+
+Building instance tree finished in 0 seconds
+
+Finish netlist compilation at Mon Jan 11 23:13:09 2016
+
+NOTICE:Techfile Voltage (*nanosim tech="voltage") set to  2.5V ... 
+*NOVAS INFO* ffw_Init(void) is obsolete, application does not need to call it any more.
+Profiling block-number for individual report_block_powr configuration commands (1 cmd's totally)  
+Cmd 1: 1 blocks from "report_block_powr total track_power=1 * "   
+Processing block power (number of blocks: 1) ...  
+
+Block-processing progresses to 100 percent
+
+Initializing level 0
+Initializing level 1
+Initializing level 2
+
+Simulation time progresses to 0.000 ns, 0.0% done
+Simulation time progresses to 20.000 ns, 2.0% done
+Simulation time progresses to 25.000 ns, 2.5% done
+Simulation time progresses to 40.000 ns, 4.0% done
+Simulation time progresses to 45.000 ns, 4.5% done
+Simulation time progresses to 50.000 ns, 5.0% done
+Simulation time progresses to 60.000 ns, 6.0% done
+Simulation time progresses to 65.000 ns, 6.5% done
+Simulation time progresses to 80.000 ns, 8.0% done
+Simulation time progresses to 85.000 ns, 8.5% done
+Simulation time progresses to 90.000 ns, 9.0% done
+Simulation time progresses to 100.000 ns, 10.0% done
+Simulation time progresses to 105.000 ns, 10.5% done
+Simulation time progresses to 1000.000 ns, 100.0% done

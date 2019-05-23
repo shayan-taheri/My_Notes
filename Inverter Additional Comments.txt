@@ -1,0 +1,24 @@
+* INVERTER Netlist
+-------------------------------------------
+* Main Measurements:
+
+(A) Propagation Delay
+(B) Average Power
+-------------------------------------------
+* Definition of AD, AS, PD, PS:
+
+Area and Perimeter of Drain and Source
+-------------------------------------------
+* Commands:
+
+1) .OPTIONS POST
+
+Outputting all of the variables
+
+2) .measure tplh trig v(in) val=vref fall=1 targ v(out) val=vref rise=1
+
+First command is used for measuring the propagation delay between the fall
+of the input voltage and the rise of the output voltage.
+
+* TRIG --> Trigger (Begin) , TARG --> Target (End)
+

@@ -1,0 +1,84 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas;\f2\fnil\fcharset0 Consolas-Bold;
+}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww15180\viewh10360\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 Useful Commands in Plotting
+\b0\fs24 \
+\
+1) 
+\b Figure Modification
+\b0 : To add and format 
+\f1\fs28 label
+\f0\fs24 , 
+\f1\fs28 title
+\f0\fs24 , 
+\f1\fs28 legend
+\f0\fs24 , and etc., you need to go to the "
+\f1\fs28 Edit/Figure Properties \'85
+\f0\fs24 " when the figure window was opened.\
+\
+2) 
+\b Graph Properties
+\b0 : To change and modify the properties of a graph (e.g. changing the formatting of the values of figure's variables), you are required to use the following command:\
+\
+\ul General Command\ulnone : 
+\f2\b\fs28 set(Object_Identifier,'Property_Name','Property_Value',...)
+\f0\b0\fs24 \
+\
+This command sets the specified property to the values of the object.\
+\
+\ul Example\ulnone  (\ul Changing Formatting\ulnone ): 
+\f1\fs28 set(gca,'XTickLabel',sprintf('%1.15f|',Variable_X_Axis))
+\f0\fs24 \
+\
+It shows the values of X axis with 15 decimal numbers.\
+\
+3) 
+\b Font Size Changing
+\b0 : To change the font size of 
+\b X Label
+\b0 , 
+\b Y Label
+\b0 , 
+\b Title
+\b0 , and 
+\b Axis Values
+\b0 , the following commands should be used after the 
+\f2\b\fs28 plot()
+\f0\b0\fs24  command:\
+\
+\ul X Label Command\ulnone : 
+\f2\b\fs28 xlabel('Your_X_Label', 'FontSize', Desired_Size)
+\f0\b0\fs24 \
+\
+\ul Y Label Command\ulnone : 
+\f2\b\fs28 ylabel('Your_Y_Label', 'FontSize', Desired_Size)
+\f0\b0\fs24 \
+\
+\ul Title\ulnone : 
+\f2\b\fs28 title('Your_Title', 'FontSize', Desired_Size)
+\f0\b0\fs24 \
+\
+\ul Axis Values\ulnone : 
+\f2\b\fs28 set(gca, 'fontsize', Desired_Size)
+\f0\b0\fs24 \
+\
+4) 
+\b Grid Plot
+\b0 : To provide grid lines for a plot, the following command should be used:\
+\
+\ul Command\ulnone : 
+\f2\b\fs28 grid on
+\f0\b0\fs24 \
+\
+\
+\
+\
+\
+\
+\
+\
+}

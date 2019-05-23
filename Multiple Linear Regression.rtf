@@ -1,0 +1,136 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;\f2\fnil\fcharset0 Consolas;
+\f3\fswiss\fcharset0 ArialMT;\f4\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red229\green229\blue229;\red193\green193\blue193;\red49\green49\blue49;
+}
+\margl1440\margr1440\vieww16380\viewh12180\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 Multiple Linear Regression in MATLAB
+\b0\fs24 \
+\
+
+\b 1)
+\b0  
+\b Preparing Data
+\b0 : The following command is required to be used:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 [Xout,Yout,Zout] = prepareSurfaceData(Xin,Yin,Zin)
+\f0\b0\fs24 \
+\
+
+\b 2)
+\b0  
+\b Fitting Data
+\b0 : In order to fit surface to data, use the following command:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 Fit_Object = fit([x,y],z,Fit_Type)
+\f0\b0\fs24 \
+\
+\ul Notice\ulnone : The argument 
+\f1\b\fs28 Fit_Type
+\f0\b0\fs24  can be 
+\f2\fs28 poly11
+\f0\fs24 , 
+\f2\fs28 poly21
+\f0\fs24 , 
+\f2\fs28 poly13
+\f0\fs24 , or etc. for \ul Surface Fitting\ulnone .\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrt\brdrnil \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clcbpat2 \clwWidth7320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx4320
+\clvertalt\clvertalbase \clcbpat2 \clwWidth7320\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+
+\f3\b\fs22 \cf0 Examples of Polynomial Model Names for Surfaces\cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 Equations\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrnil 
+\clvertalt \clcbpat1 \clwWidth7320\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx4320
+\clvertalt \clcbpat1 \clwWidth7320\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+
+\f4\b0\fs24 \cf4 poly21
+\f3 \cell 
+\pard\intbl\itap1\pardeftab720
+
+\f4 \cf4 Z = p00 + p10*x + p01*y + p20*x^2 + p11*x*y
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrr\brdrnil 
+\clvertalt \clcbpat1 \clwWidth7320\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx4320
+\clvertalt \clcbpat1 \clwWidth7320\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+
+\f4 \cf4 poly13
+\f3 \cell 
+\pard\intbl\itap1\pardeftab720
+
+\f4 \cf4 Z = p00 + p10*x + p01*y + p11*x*y + p02*y^2 + p12*x*y^2 + p03*y^3
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf3 \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat1 \clwWidth7320\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx4320
+\clvertalt \clcbpat1 \clwWidth7320\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+
+\f4 \cf4 poly55
+\f3 \cell 
+\pard\intbl\itap1\pardeftab720
+
+\f4 \cf4 Z = p00 + p10*x + p01*y +...+ p14*x*y^4 + p05*y^5
+\f3 \cell \lastrow\row
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0 \cf0 \
+\
+
+\b 3)
+\b0  
+\b Getting Coefficient Values
+\b0 : The following command is needed for this purpose:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 Coefficient_Values = coeffvalues(Fit_Object)
+\f0\b0\fs24 \
+\
+
+\b Important
+\b0 : The information of 
+\f1\b\fs28 Fit_Object
+\f0\b0\fs24  can be used for finding the index of each coefficient in the returned vector.\
+\
+
+\b 4)
+\b0  
+\b Extracting Estimated Data
+\b0 : The model of chosen polynomial along with the obtained coefficient values should be used in order to find the estimated data.\
+\
+
+\b 5)
+\b0  
+\b Calculating R-Squared
+\b0 : The estimated data is used for the purpose of calculating R-Squared and Adjusted R-Squared.\
+\
+
+\b 6)
+\b0  
+\b Plotting Results
+\b0 : The following command can be used for plotting both the actual and estimated data. In this way most of the required options for plotting the results are implemented.\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 plot(Fit_Object,[X,Y],Z)
+\f0\b0\fs24 \
+\
+\ul Notice\ulnone : The variables 
+\f1\b\fs28 X
+\f0\b0\fs24  and 
+\f1\b\fs28 Y
+\f0\b0\fs24  are considered as \ul the regressors\ulnone  or explanatory variables.\
+\
+}

@@ -1,0 +1,20 @@
+.GLOBAL  VDD  GND 
+
+VDD VDD GND 0.6v
+
+* Vclk  clk GND pulse 0v 0.6v 1ns 0.005ns 0.005ns 5ns 10ns
+Vclk clk GND pulse (0v 0.6v 1ns 0.005ns 0.005ns 5ns 10ns)
+
+.inc "/lhome/shayan/PTM-MG/modelfiles/lstp/20nfet.pm"
+.inc "/lhome/shayan/PTM-MG/modelfiles/lstp/20pfet.pm"
+
+* .options post
+.options post probe
+.probe v(*) i(VDD)
+
+.tran 0.1ns 2560ns
+
+* .MEAS TRAN avgval AVG i(vdd) FROM=20ns TO=27ns
+.measure tran avgval avg i(vdd) FROM=20ns TO=27ns
+
+.end

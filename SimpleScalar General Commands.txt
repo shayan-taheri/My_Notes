@@ -1,0 +1,35 @@
+SimpleScalar Command General Format
+
+You can invoke the desired simulator as follows style:
+
+./<your_Simulator_exec_file> [simulator_args] <executable_app> [app_args]
+
+Notice = The pharses in <> are mandatory but the [] ones are optional.
+
+-------------------------------------------------------------------------
+
+[A]
+
+You can find simulation specific configuration by dumping it to a file:
+
+./sim-??? -dumpconfig NAME.config
+
+-------------------------------------------------------------------------
+
+[B]
+
+There are two output after your simulation finished:
+
+1) Report of simulator results (-redir:sim)
+
+2) Report of simulated program output (-redir:prog)
+
+./sim-??? -redir:sim SIM_NAME.out -redir:prog PROG_NAME.out EXE_File
+
+--------------------------------------------------------------------------
+
+[C]
+
+An EXE file and its input are used for simulation according to the following:
+
+./sim-??? EXE_File Input_File -o Output_File

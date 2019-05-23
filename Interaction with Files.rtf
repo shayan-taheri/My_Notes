@@ -1,0 +1,274 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas;\f2\fnil\fcharset0 Consolas-Bold;
+}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww23600\viewh15120\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 \ul \ulc0 Interaction with Files
+\b0\fs24 \ulnone \
+\
+1) 
+\b Content of File
+\b0 : To see the content of a file, the command, 
+\f1\fs28 type file_name
+\f0\fs24  is used.\
+\
+2) 
+\b Execution
+\b0 : To execute a file, the command, 
+\f1\fs28 file_name
+\f0\fs24  is used.\
+\
+3) 
+\b Input Function
+\b0 : To get a data from user:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Format - Number\ulnone : 
+\f2\b\fs28 input ('Statement')
+\f0\b0\fs24 \
+\
+\ul Format - Character\ulnone : 
+\f2\b\fs28 input ('Statement','s')
+\f0\b0\fs24 \
+\
+4) 
+\b Output Function
+\b0 : To show a data to user:\
+\
+\ul Format - Without Variable\ulnone : 
+\f2\b\fs28 fprintf ('Statement')
+\f0\b0\fs24 \
+\
+\ul Format - With Variable\ulnone : 
+\f2\b\fs28 fprintf ('Statement + Formatting',Variable(s))
+\f0\b0\fs24 \
+\
+\ul Format - Writing to File\ulnone : 
+\f2\b\fs28 fprintf (fileID,'Statement + Formatting',Variable(s))
+\f0\b0\fs24 \
+\
+5) 
+\b Formatting
+\b0 : Variable Types for Formatting:\
+\
+A) 
+\f2\b\fs28 %d
+\f0\b0\fs24  = Decimal --> Integers\
+\
+B) 
+\f2\b\fs28 %f
+\f0\b0\fs24  = Float --> Floats and Doubles\
+\
+C) 
+\f2\b\fs28 %c
+\f0\b0\fs24  = Character --> Characters\
+\
+D) 
+\f2\b\fs28 %s
+\f0\b0\fs24  = String --> Strings\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Important
+\b0 : The complete version of a formatting is according to the following:\
+\
+Example: 
+\f2\b\fs28 %-12.5e
+\f0\b0\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f2\b\fs32 \cf0 -
+\f0\b0\fs24  --> Flag\
+\
+
+\f2\b\fs32 12.5
+\f0\b0\fs24  --> Field Width and Precision\
+\
+
+\f2\b\fs32 e
+\f0\b0\fs24  --> Conversion Character\
+\
+6) 
+\b Operations on File
+\b0 :\
+\
+A) \ul Read\ulnone : 
+\f2\b\fs28 load file_name
+\f0\b0\fs24 \
+\
+This command creates a matrix based on the name and content of a file.\
+\
+B) \ul Write\ulnone : 
+\f2\b\fs28 save file_name variable_name -ascii
+\f0\b0\fs24 \
+\
+This command writes the content of a variable to a file. It always writes from the beginning of the file.\
+\
+C) \ul Append\ulnone : 
+\f2\b\fs28 save file_name variable_name -ascii -append
+\f0\b0\fs24 \
+\
+This command appends the content of a variable to a file.\
+\
+7) 
+\b Making Data File
+\b0 : You just need to save your script with 
+\f2\b\fs28 .dat
+\f0\b0\fs24  postfix.\
+\
+8) 
+\b Opening File
+\b0 : To open a file or obtain information about it:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Command\ulnone : 
+\f2\b\fs28 fileID = fopen (file_name,permission)
+\f0\b0\fs24 \
+\
+
+\f2\b\fs28 fileID
+\f0\b0\fs24 : It is an \ul integer identifier\ulnone  equal to or greater than 
+\b\fs28 3
+\b0\fs24 .\
+\
+
+\f2\b\fs28 permission
+\f0\b0\fs24 : It specifies the type of access.\
+\
+\ul Notice 1\ulnone : The identifiers 
+\b\fs28 -1
+\b0\fs24 , 
+\b\fs28 0
+\b0\fs24 , 
+\b\fs28 1
+\b0\fs24 , and 
+\b\fs28 2
+\b0\fs24  are reserved according to the following:\
+\
+
+\b\fs28 -1
+\b0\fs24 : It is used when the file \ul cannot be opened\ulnone .\
+\
+
+\b\fs28 0
+\b0\fs24 : It is used for 
+\b Standard Input
+\b0 .\
+\
+
+\b\fs28 1
+\b0\fs24 : It is used for 
+\b Standard Output
+\b0  (\ul Screen\ulnone ).\
+\
+
+\b\fs28 2
+\b0\fs24 : It is used for 
+\b Standard Error
+\b0 .\
+\
+\ul Notice 2\ulnone : The options for  are according to the following:\
+\
+
+\f2\b\fs28 'r'
+\f0\b0\fs24  = Open file for reading.\
+\
+
+\f2\b\fs28 'w'
+\f0\b0\fs24  = Open or create new file for writing. Discard existing contents, if any.\
+\
+
+\f2\b\fs28 'a'
+\f0\b0\fs24  = Open or create new file for writing. Append data to the end of the file.\
+\
+
+\f2\b\fs28 'r+'
+\f0\b0\fs24  = Open file for reading and writing.\
+\
+
+\f2\b\fs28 'w+'
+\f0\b0\fs24  = Open or create new file for reading and writing. Discard existing contents, if any.\
+\
+
+\f2\b\fs28 'a+'
+\f0\b0\fs24  = Open or create new file for reading and writing. Append data to the end of the file.\
+\
+\
+9) 
+\b Write to File
+\b0 : To write data to a binary file:\
+\
+\ul Command\ulnone : 
+\f2\b\fs28 fwrite(fileID, Array, precision)
+\f0\b0\fs24 \
+\
+It writes the elements of an array (
+\f2\b\fs28 Array
+\f0\b0\fs24 ) to a binary file in \ul column order\ulnone . By specifying a precision (
+\f2\b\fs28 precision
+\f0\b0\fs24 ), the values of the array are translated according to the size and form of the precision before being written to the file.\
+\
+10) 
+\b Read from File
+\b0 : To write data to a binary file:\
+\
+\ul Command\ulnone : 
+\f2\b\fs28 fread(fileID, Array, precision)
+\f0\b0\fs24 \
+\
+It reads data from an open binary file into a \ul column vector\ulnone  (
+\f2\b\fs28 Array
+\f0\b0\fs24 ). By specifying a precision (
+\f2\b\fs28 precision
+\f0\b0\fs24 ), the values of the data are translated according to the size and form of the precision before being written to the array.\
+\
+11) 
+\b Closing File
+\b0 : To close a file:\
+\
+\ul Command\ulnone : 
+\f2\b\fs28 fclose (fileID)
+\f0\b0\fs24 \
+\
+12) 
+\b Position of File
+\b0 : To specify the position of a file:\
+\
+\ul Command\ulnone : 
+\f2\b\fs28 fseek (fileID,Offset,Origin)
+\f0\b0\fs24 \
+\
+It sets the position indicator of a file, 
+\f2\b\fs28 Offset
+\f0\b0\fs24  bytes from 
+\f2\b\fs28 Origin
+\f0\b0\fs24  in the file.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Important
+\b0 : For starting location in a file, we have:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f2\b\fs28 \cf0 'bof'
+\f0\b0\fs24  or 
+\f2\b\fs28 -1
+\f0\b0\fs24  = Beginning of File\
+\
+
+\f2\b\fs28 'cof'
+\f0\b0\fs24  or 
+\f2\b\fs28 0
+\f0\b0\fs24  = Current Position in File\
+\
+
+\f2\b\fs28 'eof'
+\f0\b0\fs24  or 
+\f2\b\fs28 +1
+\f0\b0\fs24  = End of File\
+\
+}

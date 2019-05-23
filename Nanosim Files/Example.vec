@@ -1,0 +1,26 @@
+; This is a test vector type that
+; determines a fixed time interval
+; between applying different input vectors.
+type nsvt
+
+; Specifying the input/output signals.
+signal IN_0 IN_1
+
+; Specifying the time interval value
+period 20
+
+; Specifying the fall time value
+fall 1
+
+; Specifying the rise time value
+rise 1
+
+; Specifying the associated number of bits with
+; the whole or each portion of an input signal.
+radix 1 1
+0 0
+0 1
+1 0
+0 1
+1 0
+1 1

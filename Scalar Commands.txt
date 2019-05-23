@@ -1,0 +1,43 @@
+MCF Benchmark Running Commands
+
+****** BPRED (93.37 Min) ******
+
+1) ../sim-bpred -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+Option: ../sim-bpred -bpred:bimod 1024 -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+****** CACHE (198.17 Min) ******
+
+2) ../sim-cache -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+Option: ../sim-cache -cache:dl1 dl1:256:32:4:l -cache:il1 il1:256:32:4:l -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+****** EIO (61.52 Min) ******
+
+3) ../sim-eio -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+Option: ../sim-eio -fastfwd 1000 -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+****** FAST (52.37 Min) ******
+
+4) ../sim-fast -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+Option: ../sim-fast -v true -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+****** OUT-OF-ORDER (2,718.09 Min) ******
+
+5) ../sim-outorder -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+Option: ../sim-outorder -issue:width 8 -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+****** PROFILE (A LOT Min) ****** --> It should be Rerun !
+
+6) ../sim-profile -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+Option: ../sim-profile -iprof true -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+****** SAFE (61.15 Min) ******
+
+7) ../sim-safe -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in
+
+Option: ../sim-safe -max:inst 10000000 -dumpconfig config_file.config /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/Mcf /home/sh861201/SimpleScalar/simplesim-3.0/benchmark/mcf/mcf/inp.in

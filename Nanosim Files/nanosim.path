@@ -1,0 +1,37 @@
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 20.500ns
+    Node net38 is falling at time 20.590ns
+    Node internal_1 is rising at time 20.670ns
+    Node out_1 is falling at time 20.760ns
+ Path from in_0 to out_0 :
+    Node in_0 is rising at time 40.500ns
+    Node internal_0 is falling at time 40.590ns
+    Node out_0 is rising at time 40.710ns
+ Path from in_1 to out_1 :
+    Node in_1 is falling at time 40.500ns
+    Node net38 is rising at time 40.680ns
+    Node internal_1 is falling at time 40.750ns
+    Node out_1 is rising at time 40.850ns
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 60.500ns
+    Node net38 is falling at time 60.590ns
+    Node internal_1 is rising at time 60.670ns
+    Node out_1 is falling at time 60.760ns
+ Path from in_0 to out_0 :
+    Node in_0 is falling at time 60.500ns
+    Node internal_0 is rising at time 60.680ns
+    Node out_0 is falling at time 60.780ns
+ Path from in_0 to out_0 :
+    Node in_0 is rising at time 80.500ns
+    Node internal_0 is falling at time 80.590ns
+    Node out_0 is rising at time 80.710ns
+ Path from in_1 to out_1 :
+    Node in_1 is falling at time 80.500ns
+    Node net38 is rising at time 80.680ns
+    Node internal_1 is falling at time 80.750ns
+    Node out_1 is rising at time 80.850ns
+ Path from in_1 to out_1 :
+    Node in_1 is rising at time 100.500ns
+    Node net38 is falling at time 100.590ns
+    Node internal_1 is rising at time 100.670ns
+    Node out_1 is falling at time 100.760ns

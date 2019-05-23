@@ -1,0 +1,23 @@
+;
+
+; --------------------------------------------------------
+;|                                                        |
+;|           GENTECH Version H-2013.03 (RHEL64)           |
+;| Copyright (c) 2013 Synopsys Inc., All Rights Reserved. |
+;|                                                        |
+; --------------------------------------------------------
+;
+;Built by nsmgr   on Wed Feb 27 23:27:06 PST 2013
+; Mon Jan 11 22:23:09 2016
+
+
+acm 1000 hspice
+
+; temperature and voltage of the model
+typical_case_def 25 2.5 typ
+; actual model name is tsmc25p
+lat_diff tsmc25p pmos 90 30 0.0237191 0.0274881 ; all in um
+
+; name type w l hdif2(um) rsh
+; acm cgbo cgdo cgso (F/m) cox (F/m2) lmlt wmlt rs rd
+model_par tsmc25p pmos 90 30 0 0 0 0 6.52385e-10 6.52385e-10 0.00595367 1 1 1076.16 1076.16 level 47 capop 4 xpart 0.4 js 0 jsw 0 dlc 0.0237191 dwc 0.0274881 gamma 0.459838 phi 0.888268

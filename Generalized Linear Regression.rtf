@@ -1,0 +1,283 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;\f2\fswiss\fcharset0 ArialMT;
+\f3\fmodern\fcharset0 Courier;\f4\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red133\green0\blue175;\red229\green229\blue229;\red193\green193\blue193;
+\red49\green49\blue49;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww20240\viewh12560\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 Generalized Linear Regression in MATLAB
+\b0\fs24 \
+\
+
+\b 1)
+\b0  
+\b Fitting Data
+\b0 : In order to fit the data and obtain the corresponding coefficients, use the following command:\
+\
+\ul General Command\ulnone : 
+\f1\b\fs28 Coefficients_Vector = glmfit(x,y,Distribution_Type)
+\f0\b0\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul \ulc0 An Optional Command\ulnone : 
+\f1\b\fs28 Coefficients_Vector = glmfit(x,y,Distribution_Type,'link','Link_Value')
+\f0\b0\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Important
+\b0 : The optional command is used when we want to use a certain link function (Not The Default One) for finding the coefficients.\
+\
+\ul Notice 1\ulnone : The argument 
+\f1\b\fs28 Distribution_Type
+\f0\b0\fs24  is used in order to determine the type of distribution for the estimation of data. The options for this argument are according to the following:\
+\
+A) 
+\f1\b\fs28 \cf2 'binomial'
+\f0\b0\fs24 \cf0 \
+\
+B) 
+\f1\b\fs28 \cf2 'gamma'
+\f0\b0\fs24 \cf0 \
+\
+C) 
+\f1\b\fs28 \cf2 'inverse gaussian'
+\f0\b0\fs24 \cf0 \
+\
+D) 
+\f1\b\fs28 \cf2 'normal'
+\f0\b0\fs24 \cf0  (\ul Default\ulnone )\
+\
+E) 
+\f1\b\fs28 \cf2 'poisson'
+\f0\b0\fs24 \cf0 \
+\
+
+\b Important
+\b0 : All of the regressors (explanatory variables) should be included in the matrix 
+\f1\b\fs28 x
+\f0\b0\fs24 .\
+\
+\ul Notice 2\ulnone : There is \ul no need\ulnone  to add a column vector of ones (1s) to the matrix 
+\f1\b\fs28 x
+\f0\b0\fs24 . It already is considered for finding the constant term in the model.\
+\
+\ul Notice 3\ulnone : The options for 
+\b Link Function
+\b0  are according to the following:\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrt\brdrnil \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvertalt\clvertalbase \clcbpat3 \clwWidth3260\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt\clvertalbase \clcbpat3 \clwWidth4760\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt\clvertalbase \clcbpat3 \clwWidth6400\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+
+\f2\b\fs22 \cf0 Parameter\cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 Value\cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 Description\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvmgf \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+
+\f3\b0\fs24 \cf5 'link'
+\f2 \cell 
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf5 'identity'
+\f2 , default for the distribution 
+\f3 'normal'
+\f2 \cell 
+\pard\intbl\itap1\pardeftab720
+
+\f4\i \cf5 \'b5
+\f2\i0  = 
+\f4\i Xb
+\f2\i0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvmrg \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\cell
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf5 'log'
+\f2 , default for the distribution 
+\f3 'poisson'
+\f2 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf5 log(
+\f4\i \'b5
+\f2\i0 ) = 
+\f4\i Xb
+\f2\i0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvmrg \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\cell
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf5 'logit'
+\f2 , default for the distribution 
+\f3 'binomial'
+\f2 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf5 log(
+\f4\i \'b5
+\f2\i0 /(1 \'96 
+\f4\i \'b5
+\f2\i0 )) = 
+\f4\i Xb
+\f2\i0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvmrg \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\cell
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf5 'probit'
+\f2 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf5 norminv(
+\f4\i \'b5
+\f2\i0 ) = 
+\f4\i Xb
+\f2\i0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvmrg \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\cell
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf5 'comploglog'
+\f2 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf5 log( -log(1 \'96 
+\f4\i \'b5
+\f2\i0 )) = 
+\f4\i Xb
+\f2\i0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvmrg \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\cell
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf5 'reciprocal'
+\f2 , default for the distribution 
+\f3 'gamma'
+\f2 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf5 1/
+\f4\i \'b5
+\f2\i0  = 
+\f4\i Xb
+\f2\i0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvmrg \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\cell
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf5 'loglog'
+\f2 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf5 log( -log(
+\f4\i \'b5
+\f2\i0 )) = 
+\f4\i Xb
+\f2\i0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrr\brdrnil 
+\clvmrg \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\cell
+\pard\intbl\itap1\pardeftab720
+
+\f3 \cf5 p
+\f2  (a number), default for the distribution 
+\f3 'inverse gaussian' 
+\f2 (with 
+\f4\i p
+\f2\i0  = -2)\cell 
+\pard\intbl\itap1\pardeftab720
+
+\f4\i \cf5 \'b5
+\fs18 p
+\f2\i0\fs24  = 
+\f4\i Xb
+\f2\i0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \tamarb240 \trbrdrl\brdrs\brdrw20\brdrcf4 \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvmrg \clvertalt \clcbpat1 \clwWidth3260\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx2880
+\clvertalt \clcbpat1 \clwWidth4760\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx5760
+\clvertalt \clcbpat1 \clwWidth6400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt120 \clpadl100 \clpadb120 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\cell
+\pard\intbl\itap1\pardeftab720
+\cf5 cell array of the form 
+\f3 \{FL FD FI\}
+\f2 , containing three function handles, created using 
+\f3 @
+\f2 , that define the link (
+\f3 FL
+\f2 ), the derivative of the link (
+\f3 FD
+\f2 ), and the inverse link (
+\f3 FI
+\f2 ).\cell 
+\pard\intbl\itap1\pardeftab720
+\cf5 Custom-defined link function. You must provide\
+\pard\intbl\itap1\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0
+\f3 \cf5 		FL(mu)
+\f2 \
+\ls1\ilvl0
+\f3 		FD = dFL(mu)/dmu
+\f2 \
+\ls1\ilvl0
+\f3 		FI = FL^(-1)\cell \lastrow\row
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0 \cf0 \
+\
+
+\b 2)
+\b0  
+\b Extracting Estimated Data
+\b0 : The following command can be used to estimate the response data.\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 y_Estimated = glmval(Coefficients_Vector,x,Link_Function)
+\f0\b0\fs24 \
+\
+\ul Notice 4\ulnone : Your desired link function, whether it is default or optional, should be specified in here.\
+\
+
+\b 3)
+\b0  
+\b Calculating R-Squared
+\b0 : The estimated data is used for the purpose of calculating R-Squared and Adjusted R-Squared.\
+\
+\
+}

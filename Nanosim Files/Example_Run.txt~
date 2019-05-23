@@ -1,0 +1,23 @@
+Example for Running Simulation using Nanosim
+
+Command (Option 1): nanosim -n Example.sp -c Example_Option_1.cfg -nvec Example.vec -out fsdb -z tt
+
+Command (Option 2): nanosim -n Example.sp -c Example_Option_2.cfg -nvec Example.vec -out out -z tt
+
+Arguments:
+
+* The following options can be used based on the requirements.
+
+1) "-n" --> It is used to specify the netlist.
+
+2) "-cfg" --> It is used to specify the configuration file.
+
+3) "-nvec" --> It is used to specify the vector file.
+
+4) "-out" --> It is used to specify the format of the output file.
+
+Notice 1: The "fsdb" format is used for generation of the waveform information.
+
+Notice 2: The "out" format is used for generation of the output files.
+
+5) "-z" --> It is used to instruct the tool to create the technology files with having "tt" at the beginning of their name.

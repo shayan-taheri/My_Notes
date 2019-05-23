@@ -1,0 +1,253 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Consolas-Bold;}
+{\colortbl;\red255\green255\blue255;\red41\green0\blue130;}
+\margl1440\margr1440\vieww20280\viewh5460\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs36 \cf0 \ul \ulc0 Functions
+\b0\fs24 \ulnone \
+\
+1) 
+\b Number to String
+\b0 : To convert a number to string:\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Command\ulnone : 
+\f1\b\fs28 string = num2str(Array,precision)
+\f0\b0\fs24 \
+\
+
+\f1\b\fs28 precision
+\f0\b0\fs24 : It specifies the maximum number of digits.\
+\
+It converts an array (
+\f1\b\fs28 Array
+\f0\b0\fs24 ) into a string representation (
+\f1\b\fs28 precision
+\f0\b0\fs24 ).\
+\
+\ul Notice\ulnone : This function is used for labeling and titling plots with numeric values.\
+\
+2) 
+\b Replace Substring
+\b0 : It is used to find a specified Substring in a String and replace it with a new Substring.\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 Modified_String = strrep(Original_String, Old_Substring, New_Substring)
+\f0\b0\fs24 \
+\
+It replaces all occurrences of the string 
+\f1\b\fs28 Old_Substring
+\f0\b0\fs24  within the main string 
+\f1\b\fs28 Original_String
+\f0\b0\fs24  with the string 
+\f1\b\fs28 New_Substring
+\f0\b0\fs24 .\
+\
+3) 
+\b Logical Function
+\b0 : This function converts any \ul non-zero element\ulnone  of an array to \ul Logic 1 (True)\ulnone  and converts \ul zeros\ulnone  to \ul Logic 0 (False)\ulnone .\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 logical(Array)
+\f0\b0\fs24 \
+\
+4) 
+\b Size of Array
+\b0 : Based on the configuration of 
+\f1\b\fs28 size()
+\f0\b0\fs24  function, we can have the following returns:\
+\
+A) 
+\f1\b\fs28 size(Array)
+\f0\b0\fs24  --> It returns both of the number of \ul rows\ulnone  and the number of \ul columns\ulnone : 
+\f1\b\fs28 [Row Column]
+\f0\b0\fs24 \
+\
+B) 
+\f1\b\fs28 size(Array,1)
+\f0\b0\fs24  --> It returns only the number of \ul Rows\ulnone .\
+\
+C) 
+\f1\b\fs28 size(Array,2)
+\f0\b0\fs24  --> It returns only the number of \ul Columns\ulnone .\
+\
+5) 
+\b Strings Comparison
+\b0 : To compare two strings (and their elements):\
+\
+\ul Command 1\ulnone : 
+\f1\b\fs28 Return_Scalar = strcmp('String_1', 'String_2')
+\f0\b0\fs24 \
+\
+It compares the strings 
+\f1\b\fs28 String_1
+\f0\b0\fs24  and 
+\f1\b\fs28 String_2
+\f0\b0\fs24  and returns 
+\b Logic 1 (True)
+\b0  if \ul the two are identical\ulnone , and 
+\b Logic 0 (False)
+\b0  otherwise.\
+\
+\ul Command 2\ulnone : 
+\f1\b\fs28 Return_Array = strcmp (String_Array_1, String_Array_2)
+\f0\b0\fs24 \
+\
+It compares the two array of strings, and r\ul eturns an array\ulnone , which contains 
+\b Logic 1 (True)
+\b0  for those elements of the two arrays that are matched and 
+\b Logic 0 (False)
+\b0  otherwise.\
+\
+5) 
+\b Continue Sentence
+\b0 : To continue a sentence in MATLAB, the operator 
+\b\fs44 \cf2 \'85
+\b0\fs24 \cf0  must be used.\
+\
+6) 
+\b Matrix Replication
+\b0 : To create a matrix, which consists of the replications of another matrix - in 
+\b Tiling Style
+\b0 , the following format is used:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 repmat(Base_Matrix, m, n)
+\f0\b0\fs24 \
+\
+It creates a matrix which contains 
+\f1\b\fs30 m x n
+\f0\b0\fs24  number of 
+\f1\b\fs28 Base_Matrix
+\f0\b0\fs24 .\
+\
+7) 
+\b Average of Array
+\b0 : To calculate the average of an array:\
+\
+\ul Command 1\ulnone : 
+\f1\b\fs28 mean(Array)
+\f0\b0\fs24 \
+\
+It returns the average of the elements in 
+\f1\b\fs28 Array
+\f0\b0\fs24 .\
+\
+\ul Command 2\ulnone : 
+\f1\b\fs28 mean(Array,Dimension)
+\f0\b0\fs24 \
+\
+If 
+\f1\b\fs28 Dimension = 1
+\f0\b0\fs24 : It returns a 
+\b Row Vector
+\b0  containing the \ul average of each 
+\b Column
+\b0 \ulnone .\
+\
+If 
+\f1\b\fs28 Dimension = 2
+\f0\b0\fs24 : It returns a 
+\b Column Vector
+\b0  containing the \ul average of each 
+\b Row
+\b0 \ulnone .\
+\
+\ul Command 3\ulnone : 
+\f1\b\fs28 mean(Matrix)
+\f0\b0\fs24 \
+\
+It returns the average of the elements that are in each Column in the 
+\f1\b\fs28 Matrix
+\f0\b0\fs24 .\
+\
+8) 
+\b Maximum of Array
+\b0 : To obtain the maximum of an array:\
+\
+\ul Command 1\ulnone : 
+\f1\b\fs28 max(Array)
+\f0\b0\fs24 \
+\
+\ul Command 2\ulnone : 
+\f1\b\fs28 max(Array,[],Dimension)
+\f0\b0\fs24 \
+\
+9) 
+\b Subscript to Index
+\b0 : To obtain the equivalent Index of a Subscript:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 sub2ind(Matrix_Size,Row_Index, Column_Index)
+\f0\b0\fs24 \
+\
+
+\f1\b\fs28 Matrix_Size
+\f0\b0\fs24 : It is the size of the matrix: 
+\f1\b\fs28 [Row Column]
+\f0\b0\fs24 \
+\
+
+\f1\b\fs28 Row_Index
+\f0\b0\fs24 : It is the number of the desired row.\
+\
+
+\f1\b\fs28 Column_Index
+\f0\b0\fs24 : It is the number of the desired column.\
+\
+10) 
+\b Element-by-Element Operation
+\b0 : To apply a certain element-wise function on two arrays:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 bsxfun(Function,Array_1,Array_2)
+\f0\b0\fs24 \
+\
+Samples for 
+\f1\b\fs28 Function
+\f0\b0\fs24 : Plus, Minus, Power, Max, Min, AND, OR, XOR\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 Important
+\b0 : The corresponding dimensions of 
+\f1\b\fs28 Array_1
+\f0\b0\fs24  and 
+\f1\b\fs28 Array_2
+\f0\b0\fs24  must be \ul the same\ulnone  or \ul equal to one\ulnone .\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul Notice\ulnone : 
+\b Singleton
+\b0  dimension means the dimension 
+\f1\b\fs28 1 x 1
+\f0\b0\fs24 .\
+\
+11) 
+\b Clock Function
+\b0 : It returns a vector that contains the current date and time in decimal format:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 clock
+\f0\b0\fs24 \
+\
+\ul Return\ulnone : 
+\f1\b\fs28 [Year Month Day Hour Minute Second]
+\f0\b0\fs24 \
+\
+12) 
+\b Elapsed Time
+\b0 : To obtain the elapsed time between two time data:\
+\
+\ul Command\ulnone : 
+\f1\b\fs28 etime(T2,T1)
+\f0\b0\fs24 \
+\
+It returns the number of seconds between two date containers.\
+\
+\
+\
+\
+\
+}
